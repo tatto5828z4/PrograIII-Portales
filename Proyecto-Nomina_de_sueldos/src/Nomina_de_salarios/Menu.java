@@ -38,9 +38,9 @@ import org.jfree.chart.plot.*;
  *
  */
 public class Menu {
-    String Database ="jdbc:mysql://127.0.0.1:3306/nomina";
+    String Database ="jdbc:mysql://localhost/nomina";
     String UsuarioDB = "root";
-    String Clave = "";
+    String Clave = "jorgito5828H";
 
 
     
