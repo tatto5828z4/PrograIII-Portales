@@ -28,7 +28,7 @@ public class Login {
     String Database = "jdbc:mysql://127.0.0.1:3306/nomina";
     String UsuarioDB = "root";
     String Clave = "";
-    String Correo = "alexlubu15@gmail.com";
+    String Correo;
     String[] UsuarioaConsultaBD = new String[5];
     String[] Admin = new String[2];
 
@@ -649,7 +649,7 @@ public class Login {
                         correo.put("mail.smtp.host", "smtp.gmail.com");
                         correo.setProperty("mail.smtp.starttls.enable", "true");
                         correo.setProperty("mail.smtp.port", "587");
-                        correo.setProperty("mail.smtp.user", "tunewayniac@gmail.com");
+                        correo.setProperty("mail.smtp.user", "grupo2programacioniii@gmail.com");
                         correo.setProperty("mail.smtp.auth", "true");
                         Session sesion = Session.getDefaultInstance(correo, null);
                         BodyPart texto = new MimeBodyPart();
@@ -661,12 +661,12 @@ public class Login {
                         m.addBodyPart(texto);
                         m.addBodyPart(ImagenAdjunta);
                         MimeMessage mensaje = new MimeMessage(sesion);
-                        mensaje.setFrom(new InternetAddress("tunewayniac@gmail.com"));
+                        mensaje.setFrom(new InternetAddress("grupo2programacioniii@gmail.com"));
                         mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(recuperar_PasswordMail));
                         mensaje.setSubject("Recuperacion de Contraseña - Proyecto Nomina UMG");
                         mensaje.setContent(m);
                         Transport t = sesion.getTransport("smtp");
-                        t.connect("tunewayniac@gmail.com", "sgxwgbgcnwcohrqf");
+                        t.connect("grupo2programacioniii@gmail.com", "jlhgdhvhhekkovcg");
                         t.sendMessage(mensaje, mensaje.getAllRecipients());
                         t.close();
                         Icon error = new ImageIcon(Main.class.getResource("/Imagenes/Enviado.png"));

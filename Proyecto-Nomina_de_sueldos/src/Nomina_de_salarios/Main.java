@@ -142,15 +142,14 @@ public class Main {
                      * (User.RecuperarUser()):Manda a llamar al metodo RecuperarUser del objeto (User)
                      */
                     User.RecuperarUser();
-                    break;
-                    
+                    break;      
                 case 3:
                     DesktopNotify.setDefaultTheme(NotifyTheme.Dark);
                     DesktopNotify.showDesktopMessage("Evento de Salida", "Gracias por confiar en nosotros, Por favor de click en este agredecimiento", DesktopNotify.INFORMATION,new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent evt) {
                               Icon mensaje = new ImageIcon(Main.class.getResource("/Imagenes/Mensaje.png"));
-                            JOptionPane.showMessageDialog(null, "Este es un mensaje de agredeciemiento, creado como resultado\nde los evento realizados en nuestro programa, y con esto\nconcluye su sesion del dia.\nEn futuras versiones se pueden incluir nuevas funciones y\nopciones para mejorar y personalizar aún más el proyecto.\nDesarrollado por estudiantes de la Facultad de Ingenieria en sistemas UMG\n\nPuede enviar sugerencias a: tunewayniac@gmail.com\n\n¡Gracias por descargar este software!", "Acción", JOptionPane.INFORMATION_MESSAGE,mensaje);
+                            JOptionPane.showMessageDialog(null, "Este es un mensaje de agredeciemiento, creado como resultado\nde los evento realizados en nuestro programa, y con esto\nconcluye su sesion del dia.\nEn futuras versiones se pueden incluir nuevas funciones y\nopciones para mejorar y personalizar aún más el proyecto.\nDesarrollado por estudiantes de la Facultad de Ingenieria en sistemas UMG\n\nPuede enviar sugerencias a: grupo2programacioniii@gmail.com\n\n¡Gracias por descargar este software!", "Acción", JOptionPane.INFORMATION_MESSAGE,mensaje);
 
                         }
                     }
