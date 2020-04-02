@@ -1,13 +1,13 @@
 package Nomina_de_salarios;
 
+import ds.desktop.notify.DesktopNotify;
+import ds.desktop.notify.NotifyTheme;
 import javax.swing.*;
 import java.awt.*;
-import java.net.InetAddress;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.sql.*;
-
 
 public class Main {
 
@@ -17,8 +17,8 @@ public class Main {
             /**
              * Sirve para diseño de JOptionPane fondo y botones
              */
-           // JFrame.setDefaultLookAndFeelDecorated(true);
-            //JDialog.setDefaultLookAndFeelDecorated(true);
+          JFrame.setDefaultLookAndFeelDecorated(true);
+           JDialog.setDefaultLookAndFeelDecorated(true);
 
 
 
@@ -28,8 +28,10 @@ public class Main {
              */
              //UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
             //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            // UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+           // UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+            
+            
 
             /**
              * Agregamos colores a botones,fondo,fondo de Boton,Mensaje de Regreso
@@ -52,6 +54,9 @@ public class Main {
             UIManager.put("Table.selectionBackground", new Color(243, 239, 243));
             UIManager.put("TableHeader.background", new Color(207, 198, 72));
             UIManager.put("TableHeader.foreground", new Color(7, 6, 7));
+            
+          
+            
 
 
         }
@@ -82,9 +87,10 @@ public class Main {
              * (Icon):Objeto de librera (javax.swing.Icon) y (javax.swing.ImageIcon)
              * que nos sirve para poder ingresar una imagen en un JOptionPane
              */
-            Icon icon = new ImageIcon(Main.class.getResource("/Imagenes/Login.png"));
-
-            try {
+            Icon icon = new ImageIcon(Main.class.getResource("/Imagenes/2.png"));
+           
+           
+            
                 /**
                  * (op):Le pide al usuario un entero
                  * (parentComponent):Agregar un componente(Ejemplo:un objeto) en este caso no utilizamos un componente por lo que colocamos un null
@@ -94,16 +100,29 @@ public class Main {
                  * (selectionValues):Pide un objeto en este caso nosotros no le ponemos por lo que es(null)
                  * (initialSelectionValue):Pide un objeto en este caso nosotros no le ponemos por lo que es(null)
                  */
-                op = Integer.parseInt((String) JOptionPane.showInputDialog(null, "INGRESE A LA PLATAFORMA\n"+"1. INGRESE A LA PLATAFORMA" + "\n" + "2. RECUPERAR CONTRASEÑA" + "\n" + "3. SALIR" + "\n\n" + "DIGITE LA OPCION: " +
+             boolean letra;
+              do{
+            try{
+                letra=true;
+            op = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Proyeto realizado parala la administracion de una planilla de sueldos\n Implementacion de JAVA + MySQL\n Excel, PDF, Codigos QR, Google Gmail, Notificaciones,\n Temas, Archivos planos, Graficas\n\n"+"<< LOGIN >>\n\n"+"1. INGRESAR" + "\n" + "2. RECUPERAR CONTRASEÑA" + "\n" + "3. SALIR" + "\n\n" + "DIGITE LA OPCION: " +
                         "", "Login", JOptionPane.INFORMATION_MESSAGE, icon, null, null));
-
+            
+             }catch(Exception e){
+             Icon error = new ImageIcon(Main.class.getResource("/Imagenes/ErrorNum.png"));
+            JOptionPane.showMessageDialog(null,  "EL DATO INGRESADO ES INCORRECTO", "ERROR", JOptionPane.INFORMATION_MESSAGE,error);
+            letra=false;
+             }
+           }
+          while(letra != true);
+            
+                
+             
+               
                 /**
                  * (NumberFormatException): Indicar que el proceso ha intentado
                  * convertir una cadena a uno de los tipos numéricos, pero que la cadena no tiene el formato apropiado.
                  */
-            } catch (NumberFormatException e) {
-
-            }
+            
 
                     /**
              * switch(op):Condicionales Para ingresar a una opcion
@@ -123,11 +142,24 @@ public class Main {
                      * (User.RecuperarUser()):Manda a llamar al metodo RecuperarUser del objeto (User)
                      */
                     User.RecuperarUser();
+                    break;      
+                case 3:
+                    DesktopNotify.setDefaultTheme(NotifyTheme.Dark);
+                    DesktopNotify.showDesktopMessage("Evento de Salida", "Gracias por confiar en nosotros, Por favor de click en este agredecimiento", DesktopNotify.INFORMATION,new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                              Icon mensaje = new ImageIcon(Main.class.getResource("/Imagenes/Mensaje.png"));
+                            JOptionPane.showMessageDialog(null, "Este es un mensaje de agredeciemiento, creado como resultado\nde los evento realizados en nuestro programa, y con esto\nconcluye su sesion del dia.\nEn futuras versiones se pueden incluir nuevas funciones y\nopciones para mejorar y personalizar aún más el proyecto.\nDesarrollado por estudiantes de la Facultad de Ingenieria en sistemas UMG\n\nPuede enviar sugerencias a: grupo2programacioniii@gmail.com\n\n¡Gracias por descargar este software!", "Acción", JOptionPane.INFORMATION_MESSAGE,mensaje);
+
+                        }
+                    }
+                    );
                     break;
             }
         } while (op != 3);
     }
-
+    
+  
 }
 
 
