@@ -6,24 +6,26 @@ import java.awt.*;
 /**
  * (Tabla extends JFrame):Sirve para ejecutar un Jframe(una tabla)
  */
-public class Tabla extends JFrame
+public class Matriz extends JFrame
 {
     /**
      * (cantaux):Cantidad de Usuarios Existentes en el Archivo
      */
-    int cantaux;
+    int filas;
+    int columnas;
     /**
      * (Nomina_jtable[][]):Matriz Para guardar datos de Empleados existentes
      */
-    String[][] Nomina_jtable;
+    String[][] Matriz_jtable;
     /**
      * (nomina[][]): Matriz de tipo Objeto para guardar la Matriz(Nomina_jtable)
      */
-    Object[][]  nomina;
+    Object[][] table;
     /**
      * (encabezado[]):Vector que contiene los titulos de mi Tabla(Nombres,etc)
      */
     String[] encabezado;
+    String[] Titulos;
 
     /**
      *
@@ -33,7 +35,7 @@ public class Tabla extends JFrame
      * (cantaux):Parametro a pedir cuando se mande a llamar nuestro constructorfuncion
      * que es la cantidad de Usuarios Existentes en el Archivo
      */
-    public Tabla(String[][] Nomina_jtable, int cantaux)
+    public Matriz(String[] Titulos,String[][] Matriz_jtable, int filas, int columnas)
     {
         /**
          * (this.nomia):Le decimos clase que la nomina de mi constructor osea( this.nomina) es igual
@@ -50,22 +52,24 @@ public class Tabla extends JFrame
          * nombre y cosas parecidas , pero que en total son 15 a lo que nos lleva que mi nomina va a tener una cantidad
          * de (nomina[4+1][15]) en este ejemplo.
          */
-        this.nomina = new Object[cantaux+1][15];
-        this.cantaux= cantaux;
-        this.encabezado = new String[15];
-        this.Nomina_jtable = new String[cantaux+1][15];
+        this.filas= filas;
+        this.columnas= columnas;
+        this.table = new Object[filas][columnas];
+        this.encabezado = new String[columnas];
+        this.Matriz_jtable = new String[filas][columnas];
+        this.Titulos = new String[columnas];
 
         /**
          * Bucle For para llenar los Titulos
          */
-        for(int j =0; j < 15; j++)
+        for(int j =0; j < columnas; j++)
         {
             /**
              * (Nomina_jtable[0][j]):Van a ser mis titulos en la Clase(Menu), a la hora de llamar
              * la funcion (llenarMatriz()) de mi clase Menu por lo que Nomina_jtable[0][i] = Titulos[i]
              * de mi clase Menu
              */
-            encabezado[j] = Nomina_jtable[0][j];
+            encabezado[j] = Titulos[j];
         }
 
         /**
@@ -76,11 +80,11 @@ public class Tabla extends JFrame
          * este(nomina[i-1]):hace que nuestra matriz no tome encuenta nuestra fila de totales, por es se le agrega
          * (cantaux+2) para que no reste mi fila de totales
          */
-        for(int i =1; i < cantaux+2;i++)
+        for(int i =0; i < filas;i++)
         {
-            for(int j =0; j < 15; j++)
+            for(int j =0; j < columnas; j++)
             {
-                nomina[i-1][j] = Nomina_jtable[i][j];
+                table[i][j] = Matriz_jtable[i+1][j];
             }
         }
 
@@ -89,8 +93,10 @@ public class Tabla extends JFrame
          * (java.awt.) para crear una tabla, que pide como parametros un objeto en este caso
          * (nomina) y pide un vector en este caso (encabezado).
          */
-        JTable tabla = new JTable(nomina,encabezado);
+        JTable tabla = new JTable(table,encabezado);
+       
         
+
         /**
          * (JScrollPane scroll): Se crea un Objeto de tipo (JScrollPane) en este caso scroll
          * que pide de parametro un JTable en este caso nosotros ingresamos (tabla),esto sirve
@@ -104,6 +110,7 @@ public class Tabla extends JFrame
          * (Height):Dando Alto a mi tabla
          */
         setBounds(350,130,500,500);
+       
         /**
          * (setVisible(true)):Sirve para poder mostrar una tabla tiene un parametro booleano
          * (true):Para que lo muestre
@@ -124,14 +131,15 @@ public class Tabla extends JFrame
         /**
          * (add(new Panel()):Agrega un panel
          */
-        add(new Panel());
+        //add(new Panel());
+        
+
         /**
          * (add(scroll)) = Agrega nuestro Scroll
          */
-       
-        add(scroll);
+       add(scroll);
+       //add(tabla);
       
-        
         /**
          * (setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)): Sirve para que tengamos opcion de
          * salir por defecto(es decir que al salir no alla ningun problema)
@@ -140,14 +148,14 @@ public class Tabla extends JFrame
         /**
          * (Icon Table):Agregamos una Imagen a nuestro JOptionPane
          */
-        Icon Table = new ImageIcon(getClass().getResource("/Imagenes/money.png"));
+        Icon Table = new ImageIcon(getClass().getResource("/Imagenes/User.png"));
         /**
          *(parentComponent):Agregar un componente(Ejemplo:un objeto) en este caso no utilizamos un componente por lo que colocamos un null
          *(message):Ingresamos un String en este caso le colocamos(ACEPTAR PARA CERRAR TABLA)
          *(title):Ingresamos un String como Titulo en este caso es (TABLA CON VALORES)
          *(icon):Ingresamos una imagen
          */
-       JOptionPane.showMessageDialog(null, "ACEPTAR PARA CERRAR TABLA ", "TABLA CON VALORES", JOptionPane.INFORMATION_MESSAGE,Table);
+       JOptionPane.showMessageDialog(null, "ACEPTAR PARA CERRAR TABLA ", "USUARIOS", JOptionPane.INFORMATION_MESSAGE,Table);
         /**
          * (setVisible(false)):Cierra Mi tabla
          */
