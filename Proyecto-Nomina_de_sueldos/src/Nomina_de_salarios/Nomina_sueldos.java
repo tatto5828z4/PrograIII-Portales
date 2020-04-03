@@ -56,6 +56,7 @@ public class Nomina_sueldos {
         this.Nomina_salarios = new float[cant + cantaux][13];
         this.totales = new float[13];
     }
+
     /**
      * Metodo de clase Nomina_sueldos donde tiene como parametros:
      * (Nomina_salariosArray[][]):Que es la matriz que contiene toda la nomina (
@@ -78,7 +79,7 @@ public class Nomina_sueldos {
         float igs = 0;
         float isr = 0;
         float auxtotales = 0;
-        String NombreAux=" ";
+        String NombreAux = " ";
 
         Icon Ingresar = new ImageIcon(getClass().getResource("/Imagenes/Altas.png"));
 
@@ -135,6 +136,7 @@ public class Nomina_sueldos {
             for (int i = cantaux; i < cantaux + cant; i++) {
                 ID = (String) JOptionPane.showInputDialog(null, "DIGITE EL ID DE LA PERSONA. -" + (i + 1), "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar, null, "");
                 do {
+
                     newArray[i] = (String) JOptionPane.showInputDialog(null, "DIGITE EL NOMBRE DE LA PERSONA NO. -" + (i + 1), "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar, null, "");
                     if (BuscarRegistro(newArray[i]) == true) {
 
@@ -143,7 +145,7 @@ public class Nomina_sueldos {
 
                 } while (BuscarRegistro(newArray[i]) == true);
                 Esc.println(newArray[i]);
-               NombreAux = newArray[i];
+                NombreAux = newArray[i];
                 newArray2[i] = (String) JOptionPane.showInputDialog(null, "DIGITE EL PUESTO DE LA PERSONA NO. -" + (i + 1), "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar, null, "");
                 Esc.println(newArray2[i]);
                 PrintWriter EscribirEnArchivo = new PrintWriter(newArray[i] + ".txt");
@@ -156,10 +158,13 @@ public class Nomina_sueldos {
                     switch (j) {
                         case 0:
                             do {
-                                Nomina_salarios[i][j] = Float.parseFloat((String) JOptionPane.showInputDialog(null, "DIGITE EL SUELDO ORDINARIO: ", "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar, null, ""));
+                                
+                                    Nomina_salarios[i][j] = Float.parseFloat((String) JOptionPane.showInputDialog(null, "DIGITE EL SUELDO ORDINARIO: ", "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar, null, ""));
+                               
+
                                 if (Nomina_salarios[i][j] < 2800) {
 
-                                    JOptionPane.showMessageDialog(null, "DIGITE DE NUEVO EL SUELDO ORDINARIO ", "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar);
+                                    JOptionPane.showMessageDialog(null, "DIGITE DE NUEVO EL SUELDO ORDINARIO ES MENOR QUE EL SUELDO ORDINARIO ", "ALTAS", JOptionPane.INFORMATION_MESSAGE, Ingresar);
                                 }
                             } while (Nomina_salarios[i][j] < 2800);
                             aux_igss = aux_igss + Nomina_salarios[i][j];
@@ -256,7 +261,7 @@ public class Nomina_sueldos {
                             EscribirEnArchivo.println("\nTOTALES\n");
                             EscribirEnArchivo.println("TOTAL LIQUIDADO: " + Nomina_salarios[i][j]);
                             EscribirEnArchivo.close();
-                             GenerarQR(ID, newArray[i]);
+                            GenerarQR(ID, newArray[i]);
                             break;
                     }
                 }
@@ -300,15 +305,16 @@ public class Nomina_sueldos {
             }
             System.out.println("\033[36m");
             Sonidos("Insertado.wav");
-            
+
             Icon Ingresado = new ImageIcon(getClass().getResource("/Imagenes/Ingresado.png"));
             JOptionPane.showMessageDialog(null, " REGISTRADO EN PLANILLA - SE MOSTRARASU TOTAL LIQUIDO ", "EMPLEADO INGRESADO CORRECTAMENTE", JOptionPane.INFORMATION_MESSAGE, Ingresado);
             Esc.close();
         } catch (Exception err) {
-             
-           Icon error = new ImageIcon(Main.class.getResource("/Imagenes/ErrorNum.png"));
-            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO ES INCORRECTO ES NECESARIO QUE LO VUELVA A INGRESAR CORRECTAMENTE", "ERROR", JOptionPane.INFORMATION_MESSAGE, error);
             
+          
+            Icon error = new ImageIcon(Main.class.getResource("/Imagenes/ErrorNum.png"));
+            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO ES INCORRECTO ES NECESARIO QUE LO VUELVA A INGRESAR CON LOS MISMOS DATOS CORRECTAMENTE", "ERROR", JOptionPane.INFORMATION_MESSAGE, error);
+           err.printStackTrace();
         }
     }
 
@@ -410,7 +416,8 @@ public class Nomina_sueldos {
                      * Calculo planilla total
                      */
                     Nomina_salarios[posicion][12] = Nomina_salarios[posicion][5] - Nomina_salarios[posicion][11];
-                    switch (op) {
+                    try{
+                        switch (op) {
                         case 1:
                             for (int j = 0; j < cantaux; j++) {
                                 if (j == posicion) {
@@ -464,6 +471,12 @@ public class Nomina_sueldos {
                             Nomina_salarios[posicion][10] = Float.parseFloat((String) JOptionPane.showInputDialog(null, "DIGITE LOS OTROS NUEVOS DESCUENTOS ", "CAMBIOS", JOptionPane.INFORMATION_MESSAGE, Modificar, null, ""));
                             break;
                     }
+                    }catch(Exception err){
+                         Icon error = new ImageIcon(Main.class.getResource("/Imagenes/ErrorNum.png"));
+            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO ES INCORRECTO ES NECESARIO QUE LO VUELVA A INGRESAR CORRECTAMENTE", "ERROR", JOptionPane.INFORMATION_MESSAGE, error);
+           
+                    }
+                    
                 } while (op != 11);
             }
         }
@@ -639,10 +652,10 @@ public class Nomina_sueldos {
             }
             Cantidad.close();
             Esc.close();
-           
+
             Icon Eliminado = new ImageIcon(getClass().getResource("/Imagenes/Eliminado.png"));
             if (cant > 0) {
-                 Sonidos("Eliminado.wav");
+                Sonidos("Eliminado.wav");
                 JOptionPane.showMessageDialog(null, "ELIMINADO/S EN PLANILLA - TODO REGISTRO DEL EMPLEADO HA DESAPARECIDO ", "EMPLEADO ELIMINADOS CORRECTAMENTE", JOptionPane.INFORMATION_MESSAGE, Eliminado);
 
             }
@@ -706,7 +719,7 @@ public class Nomina_sueldos {
             File Leer = new File(NombreArchivo + ".txt");
             Leer.delete();
         } catch (Exception err) {
-
+  err.printStackTrace();
         }
     }
 
@@ -733,8 +746,8 @@ public class Nomina_sueldos {
         int udm = 0, resolucion = 72, rotacion = 0;
         float mi = 0.000f, md = 0.000f, ms = 0.000f, min = 0.000f, tam = 5.00f;
         try {
-         
-            final String constante = "C:\\Users\\hp\\Desktop\\Tareas 5to semestre\\Programacion III\\Proyecto-Nomina_de_sueldos";
+
+            final String constante = "C:\\Users\\hp\\Documents\\NominaEmpleados\\Proyecto-Nomina_de_sueldos";
             QRCode c = new QRCode();
             c.setData(dato);
             c.setDataMode(QRCode.MODE_BYTE);
@@ -754,5 +767,7 @@ public class Nomina_sueldos {
             System.out.println("Error " + e);
         }
     }
+
+   
 
 }

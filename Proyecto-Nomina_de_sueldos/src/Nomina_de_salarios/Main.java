@@ -145,7 +145,7 @@ public class Main {
                     break;      
                 case 3:
                     DesktopNotify.setDefaultTheme(NotifyTheme.Dark);
-                    DesktopNotify.showDesktopMessage("Evento de Salida", "Gracias por confiar en nosotros, Por favor de click en este agredecimiento", DesktopNotify.INFORMATION,new ActionListener() {
+                    DesktopNotify.showDesktopMessage("Evento de Salida", "Gracias por confiar en nosotros, Por favor de click en este anuncio", DesktopNotify.INFORMATION,new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent evt) {
                               Icon mensaje = new ImageIcon(Main.class.getResource("/Imagenes/Mensaje.png"));

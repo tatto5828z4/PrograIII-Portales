@@ -739,7 +739,6 @@ public class Login {
     }
 
     public Boolean BuscarRegistroDB(String Usuario_Basededatos) {
-
         try {
             Connection cn = DriverManager.getConnection(Database, UsuarioDB, Clave);
             PreparedStatement pst = cn.prepareStatement("select * from Usuarios where Username = ?");

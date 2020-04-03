@@ -1,0 +1,28 @@
+DATOS PERSONALES
+
+ID: 1
+Nombre: 1
+Puesto: 1
+
+DEVENGADO
+
+Salario Ordinario: 3000.0
+Salario Extraordinario: 280.0
+Bonificaciones: 250.0
+Comisiones: 100.0
+Otros: 0.0
+
+Total Devengado: 3630.0
+
+DESCUENTOS
+
+Iggs: 163.254
+Isr: 0.0
+Anticipos: 100.0
+Descuentos Judiciales: 50.0
+Otros descuentos: 0.0
+Total descuentos: 313.254
+
+TOTALES
+
+TOTAL LIQUIDADO: 3316.746

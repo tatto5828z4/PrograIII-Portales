@@ -35,6 +35,7 @@ import java.io.FileOutputStream;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import ds.desktop.notify.DesktopNotify;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  * (Clase): CLASE QUE CONTIENE TODOS LOS COMPONENTES DE DISEÑO EXCEL GRAFICA
@@ -366,15 +367,7 @@ public class Menu {
 
         if (cantaux > 0) {
             System.out.println("\033[33m<< " + "\033[37m---PLANILLA---" + "\033[33m >>");
-            for (int i = 0; i < 13; i++) {
-
-                for (int j = 0; j < cantaux; j++) {
-
-                    auxtotales = auxtotales + Matriz[j][i];
-                }
-                totales[i] = auxtotales;
-                auxtotales = 0;
-            }
+           
             llenarMatriz(Nominastring, Matriz, totales);
 
             for (int i = 0; i < 15; i++) {
@@ -510,7 +503,7 @@ public class Menu {
      *
      */
     public void LeerEmpleadosArchivo() {
-
+ float auxtotales = 0;
         try {
             FileReader Leer = new FileReader("Cantidad.txt");
             BufferedReader Buffer = new BufferedReader(Leer);
@@ -576,6 +569,18 @@ public class Menu {
                 }
 
             }
+            if (cantaux > 0) {
+           
+            for (int i = 0; i < 13; i++) {
+
+                for (int j = 0; j < cantaux; j++) {
+
+                    auxtotales = auxtotales + Nomina_salariosArray[j][i];
+                }
+                totales[i] = auxtotales;
+                auxtotales = 0;
+            }
+            }
 
         } catch (Exception err) {
 
@@ -597,17 +602,17 @@ public class Menu {
             LeerEmpleadosArchivo();
 
             System.out.println(" ");
-            Icon icon = new ImageIcon(getClass().getResource("/Imagenes/UMG.png"));
+            Icon icon = new ImageIcon(getClass().getResource("/Imagenes/3.png"));
             boolean letra;
             do {
                 try {
                     letra = true;
-                    /*op = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Proyeto realizado parala la administracion de una planilla de sueldos\n Implementacion de JAVA + MySQL\n Excel, PDF, Codigos QR, Google Gmail, Notificaciones,\n Temas, Archivos planos, Graficas\n\n" + "<< PLATAFORMA >>\n\n" + "1. INGRESE DATOS Y VALORES SOLICITADOS/MOSTRAR PLANILLA DE SUELDOS" + "\n" + "2. MOSTRAR NOMINA / GENERAR EXCEL" + "\n" + "3."
+                    op = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Proyeto realizado parala la administracion de una planilla de sueldos\n Implementacion de JAVA + MySQL\n Excel, PDF, Codigos QR, Google Gmail, Notificaciones,\n Temas, Archivos planos, Graficas\n\n" + "<< PLATAFORMA >>\n\n" + "1. INGRESE DATOS Y VALORES SOLICITADOS/MOSTRAR PLANILLA DE SUELDOS" + "\n" + "2. MOSTRAR NOMINA / GENERAR EXCEL" + "\n" + "3."
+                            + " MODIFICAR DATOS" + "\n" + "4. ELIMINAR DATOS" + "\n" + "5. GRAFICA DE BARRAS" + "\n" +"6. GRAFICA DE PASTEL" + "\n" + "7. AJUSTES DE CUENTA/USUARIO" + "\n" + "8. TEMA" + "\n" + "9. CERRA SESION" + "\n" + "\n"
+                            + "DIGITE LA OPCION: ", "MENU", JOptionPane.INFORMATION_MESSAGE, icon, null, ""));
+                    /* op = Integer.parseInt((String) JOptionPane.showInputDialog(null,  "<< PLATAFORMA >>\n\n" + "1. INGRESE DATOS Y VALORES SOLICITADOS/MOSTRAR PLANILLA DE SUELDOS" + "\n" + "2. MOSTRAR NOMINA / GENERAR EXCEL" + "\n" + "3."
                             + " MODIFICAR DATOS" + "\n" + "4. ELIMINAR DATOS" + "\n" + "5. GRAFICAR" + "\n" + "6. AJUSTES DE CUENTA/USUARIO" + "\n" + "7. TEMA" + "\n" + "8. CERRA SESION" + "\n" + "\n"
                             + "DIGITE LA OPCION: ", "MENU", JOptionPane.INFORMATION_MESSAGE, icon, null, ""));*/
-                  op = Integer.parseInt((String) JOptionPane.showInputDialog(null,  "<< PLATAFORMA >>\n\n" + "1. INGRESE DATOS Y VALORES SOLICITADOS/MOSTRAR PLANILLA DE SUELDOS" + "\n" + "2. MOSTRAR NOMINA / GENERAR EXCEL" + "\n" + "3."
-                            + " MODIFICAR DATOS" + "\n" + "4. ELIMINAR DATOS" + "\n" + "5. GRAFICAR" + "\n" + "6. AJUSTES DE CUENTA/USUARIO" + "\n" + "7. TEMA" + "\n" + "8. CERRA SESION" + "\n" + "\n"
-                            + "DIGITE LA OPCION: ", "MENU", JOptionPane.INFORMATION_MESSAGE, icon, null, ""));
 
                 } catch (Exception e) {
                     Icon error = new ImageIcon(Main.class.getResource("/Imagenes/ErrorNum.png"));
@@ -637,31 +642,26 @@ public class Menu {
                             letra = false;
                         }
                     } while (letra != true);
-
                     ModificarCantidad = cant;
                     Nomina_sueldos Nomina = new Nomina_sueldos(cant, cantaux);
                     Nomina.IngresoDatos(Nomina_salariosArray, nombre, puesto);
                     break;
                 case 2:
 
+                    ImprimirNomina(0, Nomina_salariosArray);
+                    DesktopNotify.showDesktopMessage("¿Que le Permite esta opcion?",
+                            "Esta opcion le permite visualizar lo empleados de la planilla,"
+                            + " tanto que podra ver sus percepsiones y deducciones. "
+                            + "tambien se generar un excel con la tabla, podra ver la cantidad de empleados en consola y en la tabla, y su total liquidado, etc.",
+                            DesktopNotify.INFORMATION, 8000L);
+                    String[][] NominaParaFormato = new String[cantaux + 2][15];
+                    String ruta = "Nomina_formato.xls";
+                    llenarMatriz(NominaParaFormato, Nomina_salariosArray, totales);
+                    g.generarExcel(NominaParaFormato, ruta);
                     if (cantaux > 0) {
-                        DesktopNotify.showDesktopMessage("¿Que le Permite esta opcion?",
-                                "Esta opcion le permite visualizar lo empleados de la planilla,"
-                                + " tanto que podra ver sus percepsiones y deducciones. "
-                                + "tambien se generar un excel con la tabla, podra ver la cantidad de empleados en consola y en la tabla, y su total liquidado, etc.",
-                                DesktopNotify.INFORMATION, 8000L);
-                        ImprimirNomina(0, Nomina_salariosArray);
-                        String[][] NominaParaFormato = new String[cantaux + 2][15];
-
-                        String ruta = "Nomina_formato.xls";
-                        llenarMatriz(NominaParaFormato, Nomina_salariosArray, totales);
-                        g.generarExcel(NominaParaFormato, ruta);
-
                         Tabla mostrar = new Tabla(NominaParaFormato, cantaux);
-
-                    } else {
-                        MensajeNO();
                     }
+
                     break;
                 case 3:
                     if (cantaux > 0) {
@@ -713,7 +713,7 @@ public class Menu {
                 case 5:
                     if (cantaux > 0) {
                         DesktopNotify.showDesktopMessage("¿Que le Permite esta opcion?",
-                                "Esta opcion le permite visualizar una grafica de todos los totales,"
+                                "Esta opcion le permite visualizar una grafica de barras de todos los totales,"
                                 + " tanto que podra ver los totales de cada percepsion y deduccion. "
                                 + " si usted a modificado, ingresado, eliminado se actualizara automaticamente la grafica, todo sera conservado en archivos, base de datos, etc.",
                                 DesktopNotify.INFORMATION, 8000L);
@@ -722,7 +722,20 @@ public class Menu {
                         MensajeNO();
                     }
                     break;
-                case 6:
+                     case 6:
+                    if (cantaux > 0) {
+                        DesktopNotify.showDesktopMessage("¿Que le Permite esta opcion?",
+                                "Esta opcion le permite visualizar una grafica de pastel de todos los totales,"
+                                + " tanto que podra ver los totales de cada percepsion y deduccion. "
+                                + " si usted a modificado, ingresado, eliminado se actualizara automaticamente la grafica, todo sera conservado en archivos, base de datos, etc.",
+                                DesktopNotify.INFORMATION, 8000L);
+                        GraficaCircular(totales);
+                    } else {
+                        MensajeNO();
+                    }
+                    break;
+                    
+                case 7:
                     Icon pass = new ImageIcon(getClass().getResource("/Imagenes/Pass.png"));
                     Icon mail = new ImageIcon(getClass().getResource("/Imagenes/Mail.png"));
                     Icon usuario = new ImageIcon(getClass().getResource("/Imagenes/Username.png"));
@@ -753,10 +766,8 @@ public class Menu {
                                     JOptionPane.showMessageDialog(null, "INGRESADO CON EXITO", "USUARIO INGRESADO", JOptionPane.INFORMATION_MESSAGE, ingresado);
 
                                 } else {
-                                     DesktopNotify.showDesktopMessage("Fallo", "No tiene los permisos para esta opcion.", DesktopNotify.FAIL, 5000L);
+                                    DesktopNotify.showDesktopMessage("Fallo", "No tiene los permisos para esta opcion.", DesktopNotify.FAIL, 5000L);
                                     JOptionPane.showMessageDialog(null, "SOLO EL ADMINISTRADOR PUEDE REGISTRAR USUARIOS");
-
-                                   
 
                                 }
                                 break;
@@ -823,9 +834,8 @@ public class Menu {
 
                                     }
                                 } else {
-                                     DesktopNotify.showDesktopMessage("Fallo", "No tiene los permisos para esta opcion.", DesktopNotify.FAIL, 5000L);
+                                    DesktopNotify.showDesktopMessage("Fallo", "No tiene los permisos para esta opcion.", DesktopNotify.FAIL, 5000L);
                                     JOptionPane.showMessageDialog(null, "SOLO EL ADMINISTRADOR PUEDE REGISTRAR USUARIOS");
-                                   
 
                                 }
 
@@ -834,9 +844,8 @@ public class Menu {
                                 if (UsuarioqueAccedio.equals(admin) && ContraseñaqueAccedio.equals(clave)) {
                                     mostrarUsers();
                                 } else {
-                                     DesktopNotify.showDesktopMessage("Fallo", "No tiene los permisos para esta opcion.", DesktopNotify.FAIL, 5000L);
+                                    DesktopNotify.showDesktopMessage("Fallo", "No tiene los permisos para esta opcion.", DesktopNotify.FAIL, 5000L);
                                     JOptionPane.showMessageDialog(null, "SOLO EL ADMINISTRADOR PUEDE REGISTRAR USUARIOS");
-                                   
 
                                 }
 
@@ -846,7 +855,7 @@ public class Menu {
                     } while (opsion != 5);
 
                     break;
-                case 7:
+                case 8:
 
                     Icon tema = new ImageIcon(getClass().getResource("/Imagenes/Tema.png"));
                     DesktopNotify.showDesktopMessage("¿Que le Permite esta opcion?",
@@ -882,21 +891,21 @@ public class Menu {
                     }
 
                     break;
-                case 8:
+                case 9:
                     DesktopNotify.showDesktopMessage("Cerrar sesion con Éxito", "Nos vemos: " + UsuarioqueAccedio, DesktopNotify.SUCCESS, 5000L);
 
                     break;
             }
-        } while (op != 8);
+        } while (op != 9);
     }
 
     /**
      * (float Totales): los totales los grafica de cada columna de la nomina
      *
      */
-    public void Graficar(float Totales[]) {
+   public void Graficar(float Totales[]) {
         DefaultCategoryDataset data = new DefaultCategoryDataset();
-
+     
         final String TO = "SUELDO ORDINARIO";
         final String TE = "SUELDO EXTRAORDINARIO";
         final String TB = "BONIFICACIONES";
@@ -909,7 +918,8 @@ public class Menu {
         final String TDJ = "DESCUENTOS JUDICIALES";
         final String TOTROSDESC = "OTROS DESCUENTOS";
         final String TDESC = "TOTAL DESCUENTOS";
-
+       
+        
         data.addValue(Totales[0], TO, "SUELDO ORDINARIO");
         data.addValue(Totales[1], TE, "SUELDO EXTRAORDINARIO");
         data.addValue(Totales[2], TB, "BONIFICACIONES");
@@ -922,8 +932,9 @@ public class Menu {
         data.addValue(Totales[9], TDJ, "DESCUENTOS JUDICIALES");
         data.addValue(Totales[10], TOTROSDESC, "OTROS DESCUENTOS");
         data.addValue(Totales[11], TDESC, "TOTAL DESCUENTOS");
-
+    
         JFreeChart grafica = ChartFactory.createBarChart3D("NOMINA DE SUELDOS", "PERCEPCIONES / DEDEUCCIONES", "Y", data, PlotOrientation.VERTICAL, true, true, false);
+        
         ChartPanel contenedor = new ChartPanel(grafica);
         JFrame ventana = new JFrame("Grafica");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -936,7 +947,47 @@ public class Menu {
         ventana.setVisible(false);
 
     }
+public void GraficaCircular(float Totales[]) {
+       
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        final String TO = "SUELDO ORDINARIO";
+        final String TE = "SUELDO EXTRAORDINARIO";
+        final String TB = "BONIFICACIONES";
+        final String TC = "COMISIONES";
+        final String TOTROS = "OTROS";
+        final String TDEV = "TOTAL DEVENGADO";
+        final String TIGGS = "IGGS";
+        final String TISR = "ISR";
+        final String TA = "ANTICIPOS";
+        final String TDJ = "DESCUENTOS JUDICIALES";
+        final String TOTROSDESC = "OTROS DESCUENTOS";
+        final String TDESC = "TOTAL DESCUENTOS";
+        dataset.setValue("SUELDO ORDINARIO", new Double(Totales[0]));
+        dataset.setValue("SUELDO EXTRAORDINARIO", new Double(Totales[1]));
+        dataset.setValue("BONIFICACIONES", new Double(Totales[2]));
+        dataset.setValue("COMISIONES", new Double(Totales[3]));
+        dataset.setValue( "OTROS", new Double(Totales[4]));
+        dataset.setValue( "TOTAL DEVENGADO", new Double(Totales[5]));
+        dataset.setValue( "IGGS", new Double(Totales[6]));
+        dataset.setValue( "ISR", new Double(Totales[7]));
+        dataset.setValue( "ANTICIPOS", new Double(Totales[8]));
+        dataset.setValue( "DESCUENTOS JUDICIALES", new Double(Totales[9]));
+        dataset.setValue( "OTROS DESCUENTOS", new Double(Totales[10]));
+        dataset.setValue( "TOTAL DESCUENTOS", new Double(Totales[11]));
+        
+        JFreeChart grafica1 = ChartFactory.createPieChart3D("NOMINA DE SUELDOS",  dataset, true, true, false);
+        ChartPanel contenedor = new ChartPanel(grafica1);
+        JFrame ventana = new JFrame("Grafica");
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.add(contenedor);
+        ventana.setSize(700, 600);
+        ventana.setVisible(true);
+        ventana.setLocationRelativeTo(null);
+        Icon Grafica = new ImageIcon(getClass().getResource("/Imagenes/Grafica.png"));
+        JOptionPane.showMessageDialog(null, "ACEPTAR PARA CERRAR GRAFICA ", "GRAFICA", JOptionPane.INFORMATION_MESSAGE, Grafica);
+        ventana.setVisible(false);
 
+    }
     /**
      * (String entrada): la nomina a ingresar a un documento excel (String
      * ruta): la ruta que tendra
