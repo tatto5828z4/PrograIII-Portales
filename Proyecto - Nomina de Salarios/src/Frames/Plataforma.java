@@ -65,10 +65,10 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
-    public static String constante = "C:\\Users\\jorgi\\Desktop\\Nueva-Version-master\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-    String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
+    public static String constante = "C:\\Users\\hp\\Documents\\NominaEmpleados\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://127.0.0.1:3306/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "jorgito5828H";
+    String Clave = "";
 
     boolean theme = false;
     boolean graficas = false;
@@ -446,8 +446,8 @@ public class Plataforma extends javax.swing.JFrame {
         pnlContenido.revalidate();
         pnlMenu_barNomina.setVisible(false);
         pnlMenu_barUser.setVisible(false);
-        lblNomina.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomina.setForeground(new java.awt.Color(204,204,204));
+        lblUsuarios.setForeground(new java.awt.Color(204,204,204));
         lblIinicio.setForeground(new java.awt.Color(0, 204, 204));
 
         pnlOpciones.setVisible(false);
@@ -1175,7 +1175,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlCentro.setPreferredSize(new java.awt.Dimension(700, 508));
         pnlCentro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlEncabezados.setBackground(new java.awt.Color(240, 240, 240));
+        pnlEncabezados.setBackground(new java.awt.Color(60, 60, 60));
         pnlEncabezados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIinicio.setBackground(new java.awt.Color(0, 0, 0));
@@ -1191,7 +1191,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         lblUsuarios.setBackground(new java.awt.Color(153, 153, 255));
         lblUsuarios.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuarios.setForeground(new java.awt.Color(204, 204, 204));
         lblUsuarios.setText("USUARIOS");
         lblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1202,7 +1202,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         lblNomina.setBackground(new java.awt.Color(0, 0, 0));
         lblNomina.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblNomina.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomina.setForeground(new java.awt.Color(204, 204, 204));
         lblNomina.setText("NOMINA DE EMPLEADOS");
         lblNomina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1211,9 +1211,9 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlEncabezados.add(lblNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
 
-        pnlOpciones_ventana.setBackground(new java.awt.Color(240, 240, 240));
+        pnlOpciones_ventana.setBackground(new java.awt.Color(60, 60, 60));
 
-        btnMinimize.setBackground(new java.awt.Color(240, 240, 240));
+        btnMinimize.setBackground(new java.awt.Color(60, 60, 60));
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Minimize.png"))); // NOI18N
         btnMinimize.setContentAreaFilled(false);
         btnMinimize.setFocusable(false);
@@ -1233,7 +1233,7 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlOpciones_ventana.add(btnMinimize);
 
-        btnMaximize.setBackground(new java.awt.Color(240, 240, 240));
+        btnMaximize.setBackground(new java.awt.Color(60, 60, 60));
         btnMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Maximize.png"))); // NOI18N
         btnMaximize.setContentAreaFilled(false);
         btnMaximize.setFocusable(false);
@@ -1253,7 +1253,7 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlOpciones_ventana.add(btnMaximize);
 
-        btnExit.setBackground(new java.awt.Color(240, 240, 240));
+        btnExit.setBackground(new java.awt.Color(60, 60, 60));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Salir.png"))); // NOI18N
         btnExit.setContentAreaFilled(false);
         btnExit.setFocusable(false);
@@ -1275,7 +1275,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         pnlEncabezados.add(pnlOpciones_ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, -1, -1));
 
-        pnlTemas.setBackground(new java.awt.Color(240, 240, 240));
+        pnlTemas.setBackground(new java.awt.Color(60, 60, 60));
         pnlTemas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblOscuro.setBackground(new java.awt.Color(51, 51, 51));
@@ -1292,7 +1292,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         lblClaro.setBackground(new java.awt.Color(204, 204, 204));
         lblClaro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblClaro.setForeground(new java.awt.Color(102, 102, 102));
+        lblClaro.setForeground(new java.awt.Color(204, 204, 204));
         lblClaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ligth.png"))); // NOI18N
         lblClaro.setText("LIGTH");
         lblClaro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2630,7 +2630,6 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco4.setText("*");
         pnlIngreso_Usuarios.add(lblAsterisco4, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 280, 10, -1));
 
-        cbTipo.setBackground(new java.awt.Color(255, 255, 255));
         cbTipo.setBorder(null);
         cbTipo.setFocusable(false);
         pnlIngreso_Usuarios.add(cbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, 190, -1));
@@ -2882,7 +2881,6 @@ public class Plataforma extends javax.swing.JFrame {
         lblVeces.setForeground(new java.awt.Color(255, 255, 255));
         pnlModificar_Usuarios.add(lblVeces, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, 120, 20));
 
-        cbTipo1.setBackground(new java.awt.Color(255, 255, 255));
         cbTipo1.setBorder(null);
         cbTipo1.setFocusable(false);
         pnlModificar_Usuarios.add(cbTipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 190, -1));
@@ -3118,7 +3116,6 @@ public class Plataforma extends javax.swing.JFrame {
 
         pnlConsulta_Usuarios.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 870, 270));
 
-        cbTipoConsulta.setBackground(new java.awt.Color(255, 255, 255));
         cbTipoConsulta.setBorder(null);
         cbTipoConsulta.setFocusable(false);
         cbTipoConsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -4180,7 +4177,6 @@ public class Plataforma extends javax.swing.JFrame {
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(this, e);
-
         }
     }//GEN-LAST:event_btnPaginaMouseClicked
 
@@ -4195,11 +4191,11 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarMouseClicked
 
     private void btnMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseEntered
-        btnMinimize.setBackground(new Color(229, 229, 229));
+        btnMinimize.setBackground(new Color(93,93,93));
     }//GEN-LAST:event_btnMinimizeMouseEntered
 
     private void btnMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseExited
-        btnMinimize.setBackground(new Color(240, 240, 240));
+        btnMinimize.setBackground(new Color(60,60,60));
     }//GEN-LAST:event_btnMinimizeMouseExited
 
     private void btnMinimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizeActionPerformed
@@ -4207,11 +4203,11 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizeActionPerformed
 
     private void btnMaximizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaximizeMouseEntered
-        btnMaximize.setBackground(new Color(229, 229, 229));
+        btnMaximize.setBackground(new Color(93,93,93));
     }//GEN-LAST:event_btnMaximizeMouseEntered
 
     private void btnMaximizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaximizeMouseExited
-        btnMaximize.setBackground(new Color(240, 240, 240));
+        btnMaximize.setBackground(new Color(60,60,60));
     }//GEN-LAST:event_btnMaximizeMouseExited
 
     private void btnMaximizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizeActionPerformed
@@ -4232,7 +4228,7 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitMouseEntered
 
     private void btnExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseExited
-        btnExit.setBackground(new Color(240, 240, 240));
+        btnExit.setBackground(new Color(60,60,60));
     }//GEN-LAST:event_btnExitMouseExited
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -4386,9 +4382,9 @@ public class Plataforma extends javax.swing.JFrame {
         pnlContenido.repaint();
         pnlContenido.revalidate();
 
-        lblNomina.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomina.setForeground(new java.awt.Color(204,204,204));
         lblUsuarios.setForeground(new java.awt.Color(0, 204, 204));
-        lblIinicio.setForeground(new java.awt.Color(0, 0, 0));
+        lblIinicio.setForeground(new java.awt.Color(204,204,204));
 
     }//GEN-LAST:event_lblUsuariosMouseClicked
 
@@ -4405,8 +4401,8 @@ public class Plataforma extends javax.swing.JFrame {
         pnlContenido.revalidate();
 
         lblNomina.setForeground(new java.awt.Color(0, 204, 204));
-        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
-        lblIinicio.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuarios.setForeground(new java.awt.Color(204,204,204));
+        lblIinicio.setForeground(new java.awt.Color(204,204,204));
         /* pnlMenuUsuarios.setVisible(false);
        pnlBodyUsuarios.setVisible(false);
        pnlMenu.setVisible(true);
@@ -4567,8 +4563,8 @@ public class Plataforma extends javax.swing.JFrame {
         pnlContenido.repaint();
         pnlContenido.revalidate();
 
-        lblNomina.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomina.setForeground(new java.awt.Color(204,204,204));
+        lblUsuarios.setForeground(new java.awt.Color(204,204,204));
         lblIinicio.setForeground(new java.awt.Color(0, 204, 204));
     }//GEN-LAST:event_lblIinicioMouseClicked
 
