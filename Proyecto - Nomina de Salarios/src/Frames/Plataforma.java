@@ -958,15 +958,57 @@ public class Plataforma extends javax.swing.JFrame {
         txt_IDU_Empleado1 = new javax.swing.JTextField();
         jButton_BuscarE = new javax.swing.JButton();
         label_statusemp = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel71 = new javax.swing.JLabel();
         pnlModificarEmpleado = new javax.swing.JPanel();
         lblModificar_NominaEmpleado = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
+        jSeparator26 = new javax.swing.JSeparator();
+        jLabel70 = new javax.swing.JLabel();
+        txt_Sueldo_Empleado1 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        txt_BuscarE1 = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        txt_Nombre_Empleado2 = new javax.swing.JTextField();
+        jLabel74 = new javax.swing.JLabel();
+        txt_Apellido_Empleado2 = new javax.swing.JTextField();
+        jLabel75 = new javax.swing.JLabel();
+        txt_DPI_Empleado2 = new javax.swing.JTextField();
+        jLabel76 = new javax.swing.JLabel();
+        txt_Telefono_Empleado2 = new javax.swing.JTextField();
+        jLabel77 = new javax.swing.JLabel();
+        txt_Estado_Empleado2 = new javax.swing.JTextField();
+        jLabel78 = new javax.swing.JLabel();
+        txt_ID_Empleado1 = new javax.swing.JTextField();
+        jLabel79 = new javax.swing.JLabel();
+        txt_IDP_Empleado2 = new javax.swing.JTextField();
+        jLabel80 = new javax.swing.JLabel();
+        txt_IDD_Empleado2 = new javax.swing.JTextField();
+        jButton_InsertarE1 = new javax.swing.JButton();
+        jButton_ModificarE1 = new javax.swing.JButton();
+        jButton_EliminarE1 = new javax.swing.JButton();
+        jLabel81 = new javax.swing.JLabel();
+        txt_IDU_Empleado2 = new javax.swing.JTextField();
+        jButton_BuscarE1 = new javax.swing.JButton();
+        label_statusemp1 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
         pnlEliminarEmpleado = new javax.swing.JPanel();
         lblEliminar_NominaEmpleado = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
+        jTextField1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         pnlConsultaEmpleado = new javax.swing.JPanel();
         lblConsulta_NominaEmpleado = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
+        jTextField4 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         pnlPuestos = new javax.swing.JPanel();
         pnlIngresoPuesto = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado1 = new javax.swing.JLabel();
@@ -987,12 +1029,32 @@ public class Plataforma extends javax.swing.JFrame {
         pnlModificarPuesto = new javax.swing.JPanel();
         lblModificar_NominaEmpleado1 = new javax.swing.JLabel();
         jSeparator15 = new javax.swing.JSeparator();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        txt_idpuesto1 = new javax.swing.JTextField();
+        txt_nombrepuesto1 = new javax.swing.JTextField();
+        txt_estadopuesto1 = new javax.swing.JTextField();
+        btn_ingresarpuesto1 = new javax.swing.JButton();
+        btn_modificarpuesto1 = new javax.swing.JButton();
+        btn_eliminarpuesto1 = new javax.swing.JButton();
+        jLabel86 = new javax.swing.JLabel();
+        txt_buscarpuesto1 = new javax.swing.JTextField();
+        btn_buscarpuesto1 = new javax.swing.JButton();
         pnlEliminarPuesto = new javax.swing.JPanel();
         lblEliminar_NominaEmpleado1 = new javax.swing.JLabel();
         jSeparator16 = new javax.swing.JSeparator();
+        jButton4 = new javax.swing.JButton();
+        jTextField5 = new javax.swing.JTextField();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         pnlConsultaPuesto = new javax.swing.JPanel();
         lblConsulta_NominaEmpleado1 = new javax.swing.JLabel();
         jSeparator17 = new javax.swing.JSeparator();
+        jButton5 = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
         pnlDepartamentos = new javax.swing.JPanel();
         pnlIngresoDep = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado2 = new javax.swing.JLabel();
@@ -1013,12 +1075,33 @@ public class Plataforma extends javax.swing.JFrame {
         pnlModificarDep = new javax.swing.JPanel();
         lblModificar_NominaEmpleado2 = new javax.swing.JLabel();
         jSeparator19 = new javax.swing.JSeparator();
+        jLabel87 = new javax.swing.JLabel();
+        txt_iddep1 = new javax.swing.JTextField();
+        jLabel88 = new javax.swing.JLabel();
+        txt_nombredep1 = new javax.swing.JTextField();
+        jLabel89 = new javax.swing.JLabel();
+        txt_estadodep1 = new javax.swing.JTextField();
+        btn_ingresardep1 = new javax.swing.JButton();
+        btn_modificardep1 = new javax.swing.JButton();
+        btn_eliminardep1 = new javax.swing.JButton();
+        jLabel90 = new javax.swing.JLabel();
+        btn_buscardep1 = new javax.swing.JButton();
+        txt_buscardep1 = new javax.swing.JTextField();
         pnlEliminarDep = new javax.swing.JPanel();
         lblEliminar_NominaEmpleado2 = new javax.swing.JLabel();
         jSeparator20 = new javax.swing.JSeparator();
+        jLabel91 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
         pnlConsultaDep = new javax.swing.JPanel();
         lblConsulta_NominaEmpleado2 = new javax.swing.JLabel();
         jSeparator21 = new javax.swing.JSeparator();
+        jLabel92 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
         pnlConceptos = new javax.swing.JPanel();
         pnlIngresoConcepto = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado3 = new javax.swing.JLabel();
@@ -1044,15 +1127,51 @@ public class Plataforma extends javax.swing.JFrame {
         pnlModificarConcepto = new javax.swing.JPanel();
         lblModificar_NominaEmpleado3 = new javax.swing.JLabel();
         jSeparator23 = new javax.swing.JSeparator();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        txt_Buscar1 = new javax.swing.JTextField();
+        jLabel95 = new javax.swing.JLabel();
+        txt_Nombre_Concepto_Planilla1 = new javax.swing.JTextField();
+        jLabel96 = new javax.swing.JLabel();
+        txt_Tipo_Concepto_Planilla1 = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        txt_Clase_Concepto_Planilla1 = new javax.swing.JTextField();
+        txt_Valor_Concepto_Planilla1 = new javax.swing.JTextField();
+        jLabel98 = new javax.swing.JLabel();
+        txt_ID_Concepto_Planilla1 = new javax.swing.JTextField();
+        jButton_Ingresar1 = new javax.swing.JButton();
+        jButton_Modificar1 = new javax.swing.JButton();
+        jButton_Eliminar1 = new javax.swing.JButton();
+        jLabel99 = new javax.swing.JLabel();
+        txt_IDU_Concepto_Planilla1 = new javax.swing.JTextField();
+        jButton_Buscar1 = new javax.swing.JButton();
         pnlEliminarConcepto = new javax.swing.JPanel();
         lblEliminar_NominaEmpleado3 = new javax.swing.JLabel();
         jSeparator24 = new javax.swing.JSeparator();
+        jLabel100 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jTextField9 = new javax.swing.JTextField();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTable7 = new javax.swing.JTable();
         pnlConsultaConcepto = new javax.swing.JPanel();
         lblConsulta_NominaEmpleado3 = new javax.swing.JLabel();
         jSeparator25 = new javax.swing.JSeparator();
+        jLabel101 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jTextField10 = new javax.swing.JTextField();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTable8 = new javax.swing.JTable();
         pnlTabla = new javax.swing.JPanel();
         lblTabla_Nomina = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jTable10 = new javax.swing.JTable();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jTable11 = new javax.swing.JTable();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jTable12 = new javax.swing.JTable();
 
         jLabel32.setText("jLabel32");
 
@@ -4241,7 +4360,7 @@ public class Plataforma extends javax.swing.JFrame {
                 jButton_InsertarEActionPerformed(evt);
             }
         });
-        pnlIngresoEmpleado.add(jButton_InsertarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+        pnlIngresoEmpleado.add(jButton_InsertarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, -1));
 
         jButton_ModificarE.setText("Modificar");
         jButton_ModificarE.addActionListener(new java.awt.event.ActionListener() {
@@ -4249,7 +4368,7 @@ public class Plataforma extends javax.swing.JFrame {
                 jButton_ModificarEActionPerformed(evt);
             }
         });
-        pnlIngresoEmpleado.add(jButton_ModificarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
+        pnlIngresoEmpleado.add(jButton_ModificarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, -1, -1));
 
         jButton_EliminarE.setText("Eliminar");
         jButton_EliminarE.addActionListener(new java.awt.event.ActionListener() {
@@ -4257,7 +4376,7 @@ public class Plataforma extends javax.swing.JFrame {
                 jButton_EliminarEActionPerformed(evt);
             }
         });
-        pnlIngresoEmpleado.add(jButton_EliminarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
+        pnlIngresoEmpleado.add(jButton_EliminarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, -1, -1));
 
         jLabel69.setText("Ingresar ID Empleado");
         pnlIngresoEmpleado.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
@@ -4274,6 +4393,12 @@ public class Plataforma extends javax.swing.JFrame {
         label_statusemp.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         pnlIngresoEmpleado.add(label_statusemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 280, 40));
 
+        pnlIngresoEmpleado.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 220, -1));
+        pnlIngresoEmpleado.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 150, -1));
+
+        jLabel71.setText("Valor de Concepto:");
+        pnlIngresoEmpleado.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
+
         pnlModificarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlModificarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4282,6 +4407,92 @@ public class Plataforma extends javax.swing.JFrame {
         lblModificar_NominaEmpleado.setText("MODIFICAR EMPLEADOS");
         pnlModificarEmpleado.add(lblModificar_NominaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlModificarEmpleado.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+        pnlModificarEmpleado.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+
+        jLabel70.setText("ID Empleado");
+        pnlModificarEmpleado.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        pnlModificarEmpleado.add(txt_Sueldo_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 100, -1));
+
+        jLabel72.setText("Nombre Empleado");
+        pnlModificarEmpleado.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        pnlModificarEmpleado.add(txt_BuscarE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 100, -1));
+
+        jLabel73.setText("Apellido Empleado");
+        pnlModificarEmpleado.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        pnlModificarEmpleado.add(txt_Nombre_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 100, -1));
+
+        jLabel74.setText("DPI Empleado");
+        pnlModificarEmpleado.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        pnlModificarEmpleado.add(txt_Apellido_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 100, -1));
+
+        jLabel75.setText("Telefono Empleado");
+        pnlModificarEmpleado.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        pnlModificarEmpleado.add(txt_DPI_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 100, -1));
+
+        jLabel76.setText("Estado Empleado");
+        pnlModificarEmpleado.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        pnlModificarEmpleado.add(txt_Telefono_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 100, -1));
+
+        jLabel77.setText("Sueldo Empleado");
+        pnlModificarEmpleado.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
+        pnlModificarEmpleado.add(txt_Estado_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, -1));
+
+        jLabel78.setText("ID Puesto");
+        pnlModificarEmpleado.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        pnlModificarEmpleado.add(txt_ID_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, -1));
+
+        jLabel79.setText("ID Departamento");
+        pnlModificarEmpleado.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        pnlModificarEmpleado.add(txt_IDP_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 100, -1));
+
+        jLabel80.setText("ID Usuario");
+        pnlModificarEmpleado.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        pnlModificarEmpleado.add(txt_IDD_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 100, -1));
+
+        jButton_InsertarE1.setText("Insertar");
+        jButton_InsertarE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_InsertarE1ActionPerformed(evt);
+            }
+        });
+        pnlModificarEmpleado.add(jButton_InsertarE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, -1));
+
+        jButton_ModificarE1.setText("Modificar");
+        jButton_ModificarE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ModificarE1ActionPerformed(evt);
+            }
+        });
+        pnlModificarEmpleado.add(jButton_ModificarE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, -1, -1));
+
+        jButton_EliminarE1.setText("Eliminar");
+        jButton_EliminarE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EliminarE1ActionPerformed(evt);
+            }
+        });
+        pnlModificarEmpleado.add(jButton_EliminarE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, -1, -1));
+
+        jLabel81.setText("Ingresar ID Empleado");
+        pnlModificarEmpleado.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
+        pnlModificarEmpleado.add(txt_IDU_Empleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 100, -1));
+
+        jButton_BuscarE1.setText("Buscar");
+        jButton_BuscarE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_BuscarE1ActionPerformed(evt);
+            }
+        });
+        pnlModificarEmpleado.add(jButton_BuscarE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, -1, -1));
+
+        label_statusemp1.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        pnlModificarEmpleado.add(label_statusemp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 280, 40));
+
+        pnlModificarEmpleado.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 220, -1));
+        pnlModificarEmpleado.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 150, -1));
+
+        jLabel82.setText("Valor de Concepto:");
+        pnlModificarEmpleado.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
 
         pnlEliminarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -4292,6 +4503,27 @@ public class Plataforma extends javax.swing.JFrame {
         pnlEliminarEmpleado.add(lblEliminar_NominaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlEliminarEmpleado.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jTextField1.setText("jTextField1");
+        pnlEliminarEmpleado.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+
+        jButton2.setText("jButton2");
+        pnlEliminarEmpleado.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable1);
+
+        pnlEliminarEmpleado.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
+
         pnlConsultaEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlConsultaEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4300,6 +4532,27 @@ public class Plataforma extends javax.swing.JFrame {
         lblConsulta_NominaEmpleado.setText("CONSULTA EMPLEADOS");
         pnlConsultaEmpleado.add(lblConsulta_NominaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlConsultaEmpleado.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+
+        jTextField4.setText("jTextField1");
+        pnlConsultaEmpleado.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+
+        jButton3.setText("jButton2");
+        pnlConsultaEmpleado.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable2);
+
+        pnlConsultaEmpleado.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         javax.swing.GroupLayout pnlEmpleadosLayout = new javax.swing.GroupLayout(pnlEmpleados);
         pnlEmpleados.setLayout(pnlEmpleadosLayout);
@@ -4397,6 +4650,60 @@ public class Plataforma extends javax.swing.JFrame {
         pnlModificarPuesto.add(lblModificar_NominaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlModificarPuesto.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jLabel83.setText("ID Puesto");
+        pnlModificarPuesto.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        jLabel84.setText("Nombre del Puesto");
+        pnlModificarPuesto.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+
+        jLabel85.setText("Estado Puesto");
+        pnlModificarPuesto.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+        pnlModificarPuesto.add(txt_idpuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 70, -1));
+
+        txt_nombrepuesto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nombrepuesto1ActionPerformed(evt);
+            }
+        });
+        pnlModificarPuesto.add(txt_nombrepuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 70, -1));
+        pnlModificarPuesto.add(txt_estadopuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, -1));
+
+        btn_ingresarpuesto1.setText("Ingresar");
+        btn_ingresarpuesto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarpuesto1ActionPerformed(evt);
+            }
+        });
+        pnlModificarPuesto.add(btn_ingresarpuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+
+        btn_modificarpuesto1.setText("Modificar");
+        btn_modificarpuesto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificarpuesto1ActionPerformed(evt);
+            }
+        });
+        pnlModificarPuesto.add(btn_modificarpuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+
+        btn_eliminarpuesto1.setText("Eliminar");
+        btn_eliminarpuesto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarpuesto1ActionPerformed(evt);
+            }
+        });
+        pnlModificarPuesto.add(btn_eliminarpuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
+
+        jLabel86.setText("Ingrese el ID del puesto");
+        pnlModificarPuesto.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+        pnlModificarPuesto.add(txt_buscarpuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 60, -1));
+
+        btn_buscarpuesto1.setText("Buscar");
+        btn_buscarpuesto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarpuesto1ActionPerformed(evt);
+            }
+        });
+        pnlModificarPuesto.add(btn_buscarpuesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+
         pnlEliminarPuesto.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarPuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4406,6 +4713,27 @@ public class Plataforma extends javax.swing.JFrame {
         pnlEliminarPuesto.add(lblEliminar_NominaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlEliminarPuesto.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jButton4.setText("jButton4");
+        pnlEliminarPuesto.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+
+        jTextField5.setText("jTextField5");
+        pnlEliminarPuesto.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane9.setViewportView(jTable3);
+
+        pnlEliminarPuesto.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+
         pnlConsultaPuesto.setBackground(new java.awt.Color(255, 255, 255));
         pnlConsultaPuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4414,6 +4742,27 @@ public class Plataforma extends javax.swing.JFrame {
         lblConsulta_NominaEmpleado1.setText("CONSULTA PUESTOS");
         pnlConsultaPuesto.add(lblConsulta_NominaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlConsultaPuesto.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+
+        jButton5.setText("jButton4");
+        pnlConsultaPuesto.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+
+        jTextField6.setText("jTextField5");
+        pnlConsultaPuesto.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane10.setViewportView(jTable4);
+
+        pnlConsultaPuesto.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
 
         javax.swing.GroupLayout pnlPuestosLayout = new javax.swing.GroupLayout(pnlPuestos);
         pnlPuestos.setLayout(pnlPuestosLayout);
@@ -4513,6 +4862,54 @@ public class Plataforma extends javax.swing.JFrame {
         pnlModificarDep.add(lblModificar_NominaEmpleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlModificarDep.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jLabel87.setText("Ingrese ID del Departamento");
+        pnlModificarDep.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        pnlModificarDep.add(txt_iddep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 40, -1));
+
+        jLabel88.setText("Ingrese Nombre del Departamento");
+        pnlModificarDep.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        pnlModificarDep.add(txt_nombredep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 130, -1));
+
+        jLabel89.setText("Ingrese el estado del Departamento");
+        pnlModificarDep.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        pnlModificarDep.add(txt_estadodep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, -1));
+
+        btn_ingresardep1.setText("Ingresar");
+        btn_ingresardep1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresardep1ActionPerformed(evt);
+            }
+        });
+        pnlModificarDep.add(btn_ingresardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
+
+        btn_modificardep1.setText("Modificar");
+        btn_modificardep1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificardep1ActionPerformed(evt);
+            }
+        });
+        pnlModificarDep.add(btn_modificardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+
+        btn_eliminardep1.setText("Eliminar");
+        btn_eliminardep1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminardep1ActionPerformed(evt);
+            }
+        });
+        pnlModificarDep.add(btn_eliminardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
+
+        jLabel90.setText("Ingrese ID departamento");
+        pnlModificarDep.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+
+        btn_buscardep1.setText("Buscar");
+        btn_buscardep1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscardep1ActionPerformed(evt);
+            }
+        });
+        pnlModificarDep.add(btn_buscardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
+        pnlModificarDep.add(txt_buscardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 110, -1));
+
         pnlEliminarDep.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarDep.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4522,6 +4919,27 @@ public class Plataforma extends javax.swing.JFrame {
         pnlEliminarDep.add(lblEliminar_NominaEmpleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlEliminarDep.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jLabel91.setText("jLabel91");
+        pnlEliminarDep.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        jTextField7.setText("jTextField7");
+        pnlEliminarDep.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane11.setViewportView(jTable5);
+
+        pnlEliminarDep.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
+
         pnlConsultaDep.setBackground(new java.awt.Color(255, 255, 255));
         pnlConsultaDep.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4530,6 +4948,30 @@ public class Plataforma extends javax.swing.JFrame {
         lblConsulta_NominaEmpleado2.setText("CONSULTA DEPARTAMENTOS");
         pnlConsultaDep.add(lblConsulta_NominaEmpleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlConsultaDep.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+
+        jLabel92.setText("jLabel92");
+        pnlConsultaDep.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+
+        jTextField8.setText("jTextField8");
+        pnlConsultaDep.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
+
+        jButton6.setText("jButton6");
+        pnlConsultaDep.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane12.setViewportView(jTable6);
+
+        pnlConsultaDep.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
 
         javax.swing.GroupLayout pnlDepartamentosLayout = new javax.swing.GroupLayout(pnlDepartamentos);
         pnlDepartamentos.setLayout(pnlDepartamentosLayout);
@@ -4640,6 +5082,66 @@ public class Plataforma extends javax.swing.JFrame {
         pnlModificarConcepto.add(lblModificar_NominaEmpleado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlModificarConcepto.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jLabel93.setText("ID Concepto Planilla");
+        pnlModificarConcepto.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        jLabel94.setText("Nombre Concepto Planilla");
+        pnlModificarConcepto.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        pnlModificarConcepto.add(txt_Buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 130, -1));
+
+        jLabel95.setText("Tipo Concepto Panilla");
+        pnlModificarConcepto.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        pnlModificarConcepto.add(txt_Nombre_Concepto_Planilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 130, -1));
+
+        jLabel96.setText("Clase Concepto Planilla");
+        pnlModificarConcepto.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        pnlModificarConcepto.add(txt_Tipo_Concepto_Planilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 130, -1));
+
+        jLabel97.setText("Valor Concepto Planilla");
+        pnlModificarConcepto.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        pnlModificarConcepto.add(txt_Clase_Concepto_Planilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 130, -1));
+        pnlModificarConcepto.add(txt_Valor_Concepto_Planilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 130, -1));
+
+        jLabel98.setText("ID Usuario");
+        pnlModificarConcepto.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        pnlModificarConcepto.add(txt_ID_Concepto_Planilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 130, -1));
+
+        jButton_Ingresar1.setText("Ingresar");
+        jButton_Ingresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Ingresar1ActionPerformed(evt);
+            }
+        });
+        pnlModificarConcepto.add(jButton_Ingresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
+
+        jButton_Modificar1.setText("Modificar");
+        jButton_Modificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Modificar1ActionPerformed(evt);
+            }
+        });
+        pnlModificarConcepto.add(jButton_Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+
+        jButton_Eliminar1.setText("Eliminar");
+        jButton_Eliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Eliminar1ActionPerformed(evt);
+            }
+        });
+        pnlModificarConcepto.add(jButton_Eliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
+
+        jLabel99.setText("Ingrese ID Concepto Planilla");
+        pnlModificarConcepto.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
+        pnlModificarConcepto.add(txt_IDU_Concepto_Planilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 130, -1));
+
+        jButton_Buscar1.setText("Buscar");
+        jButton_Buscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Buscar1ActionPerformed(evt);
+            }
+        });
+        pnlModificarConcepto.add(jButton_Buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
+
         pnlEliminarConcepto.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarConcepto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4649,6 +5151,30 @@ public class Plataforma extends javax.swing.JFrame {
         pnlEliminarConcepto.add(lblEliminar_NominaEmpleado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlEliminarConcepto.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jLabel100.setText("jLabel100");
+        pnlEliminarConcepto.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+
+        jButton7.setText("jButton7");
+        pnlEliminarConcepto.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        jTextField9.setText("jTextField9");
+        pnlEliminarConcepto.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+
+        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane13.setViewportView(jTable7);
+
+        pnlEliminarConcepto.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+
         pnlConsultaConcepto.setBackground(new java.awt.Color(255, 255, 255));
         pnlConsultaConcepto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4657,6 +5183,30 @@ public class Plataforma extends javax.swing.JFrame {
         lblConsulta_NominaEmpleado3.setText("CONSULTA CONCEPTOS");
         pnlConsultaConcepto.add(lblConsulta_NominaEmpleado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlConsultaConcepto.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+
+        jLabel101.setText("jLabel100");
+        pnlConsultaConcepto.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+
+        jButton8.setText("jButton7");
+        pnlConsultaConcepto.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        jTextField10.setText("jTextField9");
+        pnlConsultaConcepto.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+
+        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane14.setViewportView(jTable8);
+
+        pnlConsultaConcepto.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
         javax.swing.GroupLayout pnlConceptosLayout = new javax.swing.GroupLayout(pnlConceptos);
         pnlConceptos.setLayout(pnlConceptosLayout);
@@ -4688,28 +5238,73 @@ public class Plataforma extends javax.swing.JFrame {
         pnlCuerpoNomina.add(pnlConceptos, "card4");
 
         pnlTabla.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTabla_Nomina.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 16)); // NOI18N
         lblTabla_Nomina.setForeground(new java.awt.Color(44, 62, 80));
         lblTabla_Nomina.setText("TABLA");
+        pnlTabla.add(lblTabla_Nomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
+        pnlTabla.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
-        javax.swing.GroupLayout pnlTablaLayout = new javax.swing.GroupLayout(pnlTabla);
-        pnlTabla.setLayout(pnlTablaLayout);
-        pnlTablaLayout.setHorizontalGroup(
-            pnlTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTablaLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(pnlTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTabla_Nomina)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        pnlTablaLayout.setVerticalGroup(
-            pnlTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTablaLayout.createSequentialGroup()
-                .addComponent(lblTabla_Nomina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane15.setViewportView(jTable9);
+
+        pnlTabla.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 58, -1, 95));
+
+        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane16.setViewportView(jTable10);
+
+        pnlTabla.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(529, 58, -1, 95));
+
+        jTable11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane17.setViewportView(jTable11);
+
+        pnlTabla.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 218, 461, 99));
+
+        jTable12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane18.setViewportView(jTable12);
+
+        pnlTabla.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, -1, 100));
 
         pnlCuerpoNomina.add(pnlTabla, "card6");
 
@@ -7343,6 +7938,74 @@ public class Plataforma extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton_EliminarEActionPerformed
+
+    private void jButton_InsertarE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_InsertarE1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_InsertarE1ActionPerformed
+
+    private void jButton_ModificarE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ModificarE1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_ModificarE1ActionPerformed
+
+    private void jButton_EliminarE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarE1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_EliminarE1ActionPerformed
+
+    private void jButton_BuscarE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BuscarE1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_BuscarE1ActionPerformed
+
+    private void txt_nombrepuesto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombrepuesto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nombrepuesto1ActionPerformed
+
+    private void btn_ingresarpuesto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarpuesto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresarpuesto1ActionPerformed
+
+    private void btn_modificarpuesto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarpuesto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_modificarpuesto1ActionPerformed
+
+    private void btn_eliminarpuesto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarpuesto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_eliminarpuesto1ActionPerformed
+
+    private void btn_buscarpuesto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarpuesto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_buscarpuesto1ActionPerformed
+
+    private void btn_ingresardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresardep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresardep1ActionPerformed
+
+    private void btn_modificardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificardep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_modificardep1ActionPerformed
+
+    private void btn_eliminardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminardep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_eliminardep1ActionPerformed
+
+    private void btn_buscardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscardep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_buscardep1ActionPerformed
+
+    private void jButton_Ingresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Ingresar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_Ingresar1ActionPerformed
+
+    private void jButton_Modificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Modificar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_Modificar1ActionPerformed
+
+    private void jButton_Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Eliminar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_Eliminar1ActionPerformed
+
+    private void jButton_Buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Buscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_Buscar1ActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -7964,13 +8627,21 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JButton btnTemas;
     private javax.swing.JButton btnTipodeUsuario;
     private javax.swing.JButton btn_buscardep;
+    private javax.swing.JButton btn_buscardep1;
     private javax.swing.JButton btn_buscarpuesto;
+    private javax.swing.JButton btn_buscarpuesto1;
     private javax.swing.JButton btn_eliminardep;
+    private javax.swing.JButton btn_eliminardep1;
     private javax.swing.JButton btn_eliminarpuesto;
+    private javax.swing.JButton btn_eliminarpuesto1;
     private javax.swing.JButton btn_ingresardep;
+    private javax.swing.JButton btn_ingresardep1;
     private javax.swing.JButton btn_ingresarpuesto;
+    private javax.swing.JButton btn_ingresarpuesto1;
     private javax.swing.JButton btn_modificardep;
+    private javax.swing.JButton btn_modificardep1;
     private javax.swing.JButton btn_modificarpuesto;
+    private javax.swing.JButton btn_modificarpuesto1;
     private javax.swing.JCheckBox cbHorizontal;
     private javax.swing.JCheckBox cbLineal;
     private javax.swing.JCheckBox cbPastel;
@@ -8030,16 +8701,35 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JCheckBox chbPorIdConcepto;
     private javax.swing.JCheckBox chbPorNombreUsuario;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton_Buscar;
+    private javax.swing.JButton jButton_Buscar1;
     private javax.swing.JButton jButton_BuscarE;
+    private javax.swing.JButton jButton_BuscarE1;
     private javax.swing.JButton jButton_Eliminar;
+    private javax.swing.JButton jButton_Eliminar1;
     private javax.swing.JButton jButton_EliminarE;
+    private javax.swing.JButton jButton_EliminarE1;
     private javax.swing.JButton jButton_Ingresar;
+    private javax.swing.JButton jButton_Ingresar1;
     private javax.swing.JButton jButton_InsertarE;
+    private javax.swing.JButton jButton_InsertarE1;
     private javax.swing.JButton jButton_Modificar;
+    private javax.swing.JButton jButton_Modificar1;
     private javax.swing.JButton jButton_ModificarE;
+    private javax.swing.JButton jButton_ModificarE1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -8105,15 +8795,57 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel_Plataforma;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
@@ -8130,15 +8862,39 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator23;
     private javax.swing.JSeparator jSeparator24;
     private javax.swing.JSeparator jSeparator25;
+    private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable10;
+    private javax.swing.JTable jTable11;
+    private javax.swing.JTable jTable12;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
+    private javax.swing.JTable jTable7;
+    private javax.swing.JTable jTable8;
+    private javax.swing.JTable jTable9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JScrollPane jspModificar_UsuariosTipo;
     private javax.swing.JScrollPane jspnlModificar_Usuarios;
     private javax.swing.JLabel label_status;
     private javax.swing.JLabel label_statusemp;
+    private javax.swing.JLabel label_statusemp1;
     private javax.swing.JLabel label_statuspuesto;
     private javax.swing.JLabel lblAsterisco;
     private javax.swing.JLabel lblAsterisco1;
@@ -8386,30 +9142,56 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtTelefonoModificar;
     private javax.swing.JTextField txt_Apellido_Empleado1;
+    private javax.swing.JTextField txt_Apellido_Empleado2;
     private javax.swing.JTextField txt_Buscar;
+    private javax.swing.JTextField txt_Buscar1;
     private javax.swing.JTextField txt_BuscarE;
+    private javax.swing.JTextField txt_BuscarE1;
     private javax.swing.JTextField txt_Clase_Concepto_Planilla;
+    private javax.swing.JTextField txt_Clase_Concepto_Planilla1;
     private javax.swing.JTextField txt_DPI_Empleado1;
+    private javax.swing.JTextField txt_DPI_Empleado2;
     private javax.swing.JTextField txt_Estado_Empleado1;
+    private javax.swing.JTextField txt_Estado_Empleado2;
     private javax.swing.JTextField txt_IDD_Empleado1;
+    private javax.swing.JTextField txt_IDD_Empleado2;
     private javax.swing.JTextField txt_IDP_Empleado1;
+    private javax.swing.JTextField txt_IDP_Empleado2;
     private javax.swing.JTextField txt_IDU_Concepto_Planilla;
+    private javax.swing.JTextField txt_IDU_Concepto_Planilla1;
     private javax.swing.JTextField txt_IDU_Empleado1;
+    private javax.swing.JTextField txt_IDU_Empleado2;
     private javax.swing.JTextField txt_ID_Concepto_Planilla;
+    private javax.swing.JTextField txt_ID_Concepto_Planilla1;
     private javax.swing.JTextField txt_ID_Empleado;
+    private javax.swing.JTextField txt_ID_Empleado1;
     private javax.swing.JTextField txt_Nombre_Concepto_Planilla;
+    private javax.swing.JTextField txt_Nombre_Concepto_Planilla1;
     private javax.swing.JTextField txt_Nombre_Empleado1;
+    private javax.swing.JTextField txt_Nombre_Empleado2;
     private javax.swing.JTextField txt_Sueldo_Empleado;
+    private javax.swing.JTextField txt_Sueldo_Empleado1;
     private javax.swing.JTextField txt_Telefono_Empleado1;
+    private javax.swing.JTextField txt_Telefono_Empleado2;
     private javax.swing.JTextField txt_Tipo_Concepto_Planilla;
+    private javax.swing.JTextField txt_Tipo_Concepto_Planilla1;
     private javax.swing.JTextField txt_Valor_Concepto_Planilla;
+    private javax.swing.JTextField txt_Valor_Concepto_Planilla1;
     private javax.swing.JTextField txt_buscardep;
+    private javax.swing.JTextField txt_buscardep1;
     private javax.swing.JTextField txt_buscarpuesto;
+    private javax.swing.JTextField txt_buscarpuesto1;
     private javax.swing.JTextField txt_estadodep;
+    private javax.swing.JTextField txt_estadodep1;
     private javax.swing.JTextField txt_estadopuesto;
+    private javax.swing.JTextField txt_estadopuesto1;
     private javax.swing.JTextField txt_iddep;
+    private javax.swing.JTextField txt_iddep1;
     private javax.swing.JTextField txt_idpuesto;
+    private javax.swing.JTextField txt_idpuesto1;
     private javax.swing.JTextField txt_nombredep;
+    private javax.swing.JTextField txt_nombredep1;
     private javax.swing.JTextField txt_nombrepuesto;
+    private javax.swing.JTextField txt_nombrepuesto1;
     // End of variables declaration//GEN-END:variables
 }
