@@ -66,10 +66,10 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
-    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    public static String constante = "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "jorgito5828H";
+    String Clave = "Langas798";
 
     boolean theme = false;
     boolean graficas = false;
@@ -733,7 +733,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco2 = new javax.swing.JLabel();
         lblAsterisco3 = new javax.swing.JLabel();
         lblAsterisco4 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<>();
+        cbTipo = new javax.swing.JComboBox<String>();
         lblTipo = new javax.swing.JLabel();
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
@@ -771,7 +771,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTelefono1 = new javax.swing.JPanel();
         txtTelefonoModificar = new javax.swing.JTextField();
         lblVeces = new javax.swing.JLabel();
-        cbTipo1 = new javax.swing.JComboBox<>();
+        cbTipo1 = new javax.swing.JComboBox<String>();
         lblAsterisco23 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
         lblNombreDeUsuario2 = new javax.swing.JLabel();
@@ -806,7 +806,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblPrimerNombre3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUsuariosConsulta = new javax.swing.JTable();
-        cbTipoConsulta = new javax.swing.JComboBox<>();
+        cbTipoConsulta = new javax.swing.JComboBox<String>();
         chbPorNombreUsuario = new javax.swing.JCheckBox();
         chbPorId = new javax.swing.JCheckBox();
         chbPorIdConcepto = new javax.swing.JCheckBox();
@@ -931,6 +931,32 @@ public class Plataforma extends javax.swing.JFrame {
         pnlIngresoEmpleado = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
+        jLabel23 = new javax.swing.JLabel();
+        txt_Sueldo_Empleado = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        txt_BuscarE = new javax.swing.JTextField();
+        jLabel61 = new javax.swing.JLabel();
+        txt_Nombre_Empleado1 = new javax.swing.JTextField();
+        jLabel62 = new javax.swing.JLabel();
+        txt_Apellido_Empleado1 = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
+        txt_DPI_Empleado1 = new javax.swing.JTextField();
+        jLabel64 = new javax.swing.JLabel();
+        txt_Telefono_Empleado1 = new javax.swing.JTextField();
+        jLabel65 = new javax.swing.JLabel();
+        txt_Estado_Empleado1 = new javax.swing.JTextField();
+        jLabel66 = new javax.swing.JLabel();
+        txt_ID_Empleado = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        txt_IDP_Empleado1 = new javax.swing.JTextField();
+        jLabel68 = new javax.swing.JLabel();
+        txt_IDD_Empleado1 = new javax.swing.JTextField();
+        jButton_InsertarE = new javax.swing.JButton();
+        jButton_ModificarE = new javax.swing.JButton();
+        jButton_EliminarE = new javax.swing.JButton();
+        jLabel69 = new javax.swing.JLabel();
+        txt_IDU_Empleado1 = new javax.swing.JTextField();
+        jButton_BuscarE = new javax.swing.JButton();
         pnlModificarEmpleado = new javax.swing.JPanel();
         lblModificar_NominaEmpleado = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
@@ -996,6 +1022,24 @@ public class Plataforma extends javax.swing.JFrame {
         pnlIngresoConcepto = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado3 = new javax.swing.JLabel();
         jSeparator22 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txt_Buscar = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txt_Nombre_Concepto_Planilla = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        txt_Tipo_Concepto_Planilla = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        txt_Clase_Concepto_Planilla = new javax.swing.JTextField();
+        txt_Valor_Concepto_Planilla = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txt_ID_Concepto_Planilla = new javax.swing.JTextField();
+        jButton_Ingresar = new javax.swing.JButton();
+        jButton_Modificar = new javax.swing.JButton();
+        jButton_Eliminar = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        txt_IDU_Concepto_Planilla = new javax.swing.JTextField();
+        jButton_Buscar = new javax.swing.JButton();
         pnlModificarConcepto = new javax.swing.JPanel();
         lblModificar_NominaEmpleado3 = new javax.swing.JLabel();
         jSeparator23 = new javax.swing.JSeparator();
@@ -4150,6 +4194,62 @@ public class Plataforma extends javax.swing.JFrame {
         pnlIngresoEmpleado.add(lblIngreso_NominaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlIngresoEmpleado.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
+        jLabel23.setText("ID Empleado");
+        pnlIngresoEmpleado.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        pnlIngresoEmpleado.add(txt_Sueldo_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 100, -1));
+
+        jLabel28.setText("Nombre Empleado");
+        pnlIngresoEmpleado.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        pnlIngresoEmpleado.add(txt_BuscarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 100, -1));
+
+        jLabel61.setText("Apellido Empleado");
+        pnlIngresoEmpleado.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        pnlIngresoEmpleado.add(txt_Nombre_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 100, -1));
+
+        jLabel62.setText("DPI Empleado");
+        pnlIngresoEmpleado.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        pnlIngresoEmpleado.add(txt_Apellido_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 100, -1));
+
+        jLabel63.setText("Telefono Empleado");
+        pnlIngresoEmpleado.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        pnlIngresoEmpleado.add(txt_DPI_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 100, -1));
+
+        jLabel64.setText("Estado Empleado");
+        pnlIngresoEmpleado.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        pnlIngresoEmpleado.add(txt_Telefono_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 100, -1));
+
+        jLabel65.setText("Sueldo Empleado");
+        pnlIngresoEmpleado.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
+        pnlIngresoEmpleado.add(txt_Estado_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, -1));
+
+        jLabel66.setText("ID Puesto");
+        pnlIngresoEmpleado.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
+        pnlIngresoEmpleado.add(txt_ID_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, -1));
+
+        jLabel67.setText("ID Departamento");
+        pnlIngresoEmpleado.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        pnlIngresoEmpleado.add(txt_IDP_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 100, -1));
+
+        jLabel68.setText("ID Usuario");
+        pnlIngresoEmpleado.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        pnlIngresoEmpleado.add(txt_IDD_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 100, -1));
+
+        jButton_InsertarE.setText("Insertar");
+        pnlIngresoEmpleado.add(jButton_InsertarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+
+        jButton_ModificarE.setText("Modificar");
+        pnlIngresoEmpleado.add(jButton_ModificarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
+
+        jButton_EliminarE.setText("Eliminar");
+        pnlIngresoEmpleado.add(jButton_EliminarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
+
+        jLabel69.setText("Ingresar ID Empleado");
+        pnlIngresoEmpleado.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
+        pnlIngresoEmpleado.add(txt_IDU_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 100, -1));
+
+        jButton_BuscarE.setText("Buscar");
+        pnlIngresoEmpleado.add(jButton_BuscarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, -1, -1));
+
         pnlModificarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlModificarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -4446,6 +4546,66 @@ public class Plataforma extends javax.swing.JFrame {
         lblIngreso_NominaEmpleado3.setText("INGRESO CONCEPTOS");
         pnlIngresoConcepto.add(lblIngreso_NominaEmpleado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlIngresoConcepto.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
+
+        jLabel13.setText("ID Concepto Planilla");
+        pnlIngresoConcepto.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        jLabel14.setText("Nombre Concepto Planilla");
+        pnlIngresoConcepto.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        pnlIngresoConcepto.add(txt_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 130, -1));
+
+        jLabel12.setText("Tipo Concepto Panilla");
+        pnlIngresoConcepto.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        pnlIngresoConcepto.add(txt_Nombre_Concepto_Planilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 130, -1));
+
+        jLabel21.setText("Clase Concepto Planilla");
+        pnlIngresoConcepto.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        pnlIngresoConcepto.add(txt_Tipo_Concepto_Planilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 130, -1));
+
+        jLabel22.setText("Valor Concepto Planilla");
+        pnlIngresoConcepto.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        pnlIngresoConcepto.add(txt_Clase_Concepto_Planilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 130, -1));
+        pnlIngresoConcepto.add(txt_Valor_Concepto_Planilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 130, -1));
+
+        jLabel26.setText("ID Usuario");
+        pnlIngresoConcepto.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        pnlIngresoConcepto.add(txt_ID_Concepto_Planilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 130, -1));
+
+        jButton_Ingresar.setText("Ingresar");
+        jButton_Ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_IngresarActionPerformed(evt);
+            }
+        });
+        pnlIngresoConcepto.add(jButton_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
+
+        jButton_Modificar.setText("Modificar");
+        jButton_Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ModificarActionPerformed(evt);
+            }
+        });
+        pnlIngresoConcepto.add(jButton_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+
+        jButton_Eliminar.setText("Eliminar");
+        jButton_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EliminarActionPerformed(evt);
+            }
+        });
+        pnlIngresoConcepto.add(jButton_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
+
+        jLabel27.setText("Ingrese ID Concepto Planilla");
+        pnlIngresoConcepto.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
+        pnlIngresoConcepto.add(txt_IDU_Concepto_Planilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 130, -1));
+
+        jButton_Buscar.setText("Buscar");
+        jButton_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_BuscarActionPerformed(evt);
+            }
+        });
+        pnlIngresoConcepto.add(jButton_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
 
         pnlModificarConcepto.setBackground(new java.awt.Color(255, 255, 255));
         pnlModificarConcepto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -6913,6 +7073,115 @@ public class Plataforma extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_btn_buscarpuestoActionPerformed
+
+    private void jButton_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IngresarActionPerformed
+        // TODO add your handling code here:
+        
+        try        
+        {
+            Connection cn = DriverManager.getConnection(Base_de_Datos,Usuario,Clave);
+            PreparedStatement pst = cn.prepareStatement("insert into Concepto_Planilla values(?,?,?,?,?,?)");
+            
+            pst.setString(1, txt_ID_Concepto_Planilla.getText().trim());
+            pst.setString(2, txt_Nombre_Concepto_Planilla.getText().trim());
+            pst.setString(3, txt_Tipo_Concepto_Planilla.getText().trim());
+            pst.setString(4, txt_Clase_Concepto_Planilla.getText().trim());
+            pst.setString(5, txt_Valor_Concepto_Planilla.getText().trim());
+            pst.setString(6, txt_IDU_Concepto_Planilla.getText().trim());
+            pst.executeUpdate();
+            
+            txt_ID_Concepto_Planilla.setText("");
+            txt_Nombre_Concepto_Planilla.setText("");
+            txt_Tipo_Concepto_Planilla.setText("");
+            txt_Clase_Concepto_Planilla.setText("");
+            txt_Valor_Concepto_Planilla.setText("");
+            txt_IDU_Concepto_Planilla.setText("");
+            label_status.setText("Registrado.");
+            
+        }catch (Exception e)
+        {
+            
+        }
+    }//GEN-LAST:event_jButton_IngresarActionPerformed
+
+    private void jButton_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ModificarActionPerformed
+        // TODO add your handling code here:
+        
+        try
+        {
+            String ID = txt_Buscar.getText().trim();
+            
+            Connection cn = DriverManager.getConnection(Base_de_Datos,Usuario,Clave);
+            PreparedStatement pst = cn.prepareStatement("update Concepto_Planilla set id_conceptoPlanilla = ?,nombre_concepto = ?, tipo_concepto = ?,clase_concepto=?,Valor_concepto=?,ID_Usuario=? where id_conceptoPlanilla = " + ID);
+            
+            pst.setString(1, txt_ID_Concepto_Planilla.getText().trim());
+            pst.setString(2, txt_Nombre_Concepto_Planilla.getText().trim());
+            pst.setString(3, txt_Tipo_Concepto_Planilla.getText().trim());
+            pst.setString(4, txt_Clase_Concepto_Planilla.getText().trim());
+            pst.setString(5, txt_Valor_Concepto_Planilla.getText().trim());
+            pst.setString(6, txt_IDU_Concepto_Planilla.getText().trim());
+            pst.executeUpdate();
+            
+            label_status.setText("Modificación exitosa.");
+            
+        } catch (Exception e) 
+        {
+            
+        }
+    }//GEN-LAST:event_jButton_ModificarActionPerformed
+
+    private void jButton_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BuscarActionPerformed
+        // TODO add your handling code here:
+        
+            try
+            {
+            Connection cn = DriverManager.getConnection(Base_de_Datos,Usuario,Clave);
+            PreparedStatement pst = cn.prepareStatement("select * from Concepto_Planilla where id_conceptoPlanilla = ?");
+            pst.setString(1, txt_Buscar.getText().trim());
+            
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next())
+            {
+                txt_ID_Concepto_Planilla.setText(rs.getString("id_conceptoPlanilla"));
+                txt_Nombre_Concepto_Planilla.setText(rs.getString("nombre_concepto"));
+                txt_Tipo_Concepto_Planilla.setText(rs.getString("tipo_concepto"));
+                txt_Clase_Concepto_Planilla.setText(rs.getString("clase_concepto"));
+                txt_Valor_Concepto_Planilla.setText(rs.getString("Valor_concepto"));
+                txt_IDU_Concepto_Planilla.setText(rs.getString("ID_Usuario"));
+            } else 
+            {
+                JOptionPane.showMessageDialog(null, "Concepto Planilla no registrado.");
+            }
+            
+        }catch (Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton_BuscarActionPerformed
+
+    private void jButton_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarActionPerformed
+        // TODO add your handling code here:
+        try 
+        {
+            Connection cn = DriverManager.getConnection(Base_de_Datos,Usuario,Clave);
+            PreparedStatement pst = cn.prepareStatement("delete from Concepto_Planilla where id_conceptoPlanilla = ?");
+            
+            pst.setString(1, txt_Buscar.getText().trim());
+            pst.executeUpdate();
+            
+            txt_ID_Concepto_Planilla.setText("");
+            txt_Nombre_Concepto_Planilla.setText("");
+            txt_Tipo_Concepto_Planilla.setText("");
+            txt_Clase_Concepto_Planilla.setText("");
+            txt_Valor_Concepto_Planilla.setText("");
+            txt_IDU_Concepto_Planilla.setText("");
+
+            
+            label_status.setText("Registro eliminado.");
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton_EliminarActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -7600,9 +7869,20 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JCheckBox chbPorIdConcepto;
     private javax.swing.JCheckBox chbPorNombreUsuario;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton_Buscar;
+    private javax.swing.JButton jButton_BuscarE;
+    private javax.swing.JButton jButton_Eliminar;
+    private javax.swing.JButton jButton_EliminarE;
+    private javax.swing.JButton jButton_Ingresar;
+    private javax.swing.JButton jButton_InsertarE;
+    private javax.swing.JButton jButton_Modificar;
+    private javax.swing.JButton jButton_ModificarE;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -7610,8 +7890,14 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -7648,6 +7934,15 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -7928,6 +8223,24 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreDeUsuario;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtTelefonoModificar;
+    private javax.swing.JTextField txt_Apellido_Empleado1;
+    private javax.swing.JTextField txt_Buscar;
+    private javax.swing.JTextField txt_BuscarE;
+    private javax.swing.JTextField txt_Clase_Concepto_Planilla;
+    private javax.swing.JTextField txt_DPI_Empleado1;
+    private javax.swing.JTextField txt_Estado_Empleado1;
+    private javax.swing.JTextField txt_IDD_Empleado1;
+    private javax.swing.JTextField txt_IDP_Empleado1;
+    private javax.swing.JTextField txt_IDU_Concepto_Planilla;
+    private javax.swing.JTextField txt_IDU_Empleado1;
+    private javax.swing.JTextField txt_ID_Concepto_Planilla;
+    private javax.swing.JTextField txt_ID_Empleado;
+    private javax.swing.JTextField txt_Nombre_Concepto_Planilla;
+    private javax.swing.JTextField txt_Nombre_Empleado1;
+    private javax.swing.JTextField txt_Sueldo_Empleado;
+    private javax.swing.JTextField txt_Telefono_Empleado1;
+    private javax.swing.JTextField txt_Tipo_Concepto_Planilla;
+    private javax.swing.JTextField txt_Valor_Concepto_Planilla;
     private javax.swing.JTextField txt_buscardep;
     private javax.swing.JTextField txt_buscarpuesto;
     private javax.swing.JTextField txt_estadodep;
