@@ -46,7 +46,7 @@ public class Login2 extends javax.swing.JFrame {
     
      String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "Langas798";
+    String Clave = "admin";
 
     
     

@@ -66,10 +66,10 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
-    public static String constante = "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "Langas798";
+    String Clave = "admin";
 
     boolean theme = false;
     boolean graficas = false;
@@ -733,7 +733,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco2 = new javax.swing.JLabel();
         lblAsterisco3 = new javax.swing.JLabel();
         lblAsterisco4 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<String>();
+        cbTipo = new javax.swing.JComboBox<>();
         lblTipo = new javax.swing.JLabel();
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
@@ -771,7 +771,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTelefono1 = new javax.swing.JPanel();
         txtTelefonoModificar = new javax.swing.JTextField();
         lblVeces = new javax.swing.JLabel();
-        cbTipo1 = new javax.swing.JComboBox<String>();
+        cbTipo1 = new javax.swing.JComboBox<>();
         lblAsterisco23 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
         lblNombreDeUsuario2 = new javax.swing.JLabel();
@@ -806,7 +806,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblPrimerNombre3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUsuariosConsulta = new javax.swing.JTable();
-        cbTipoConsulta = new javax.swing.JComboBox<String>();
+        cbTipoConsulta = new javax.swing.JComboBox<>();
         chbPorNombreUsuario = new javax.swing.JCheckBox();
         chbPorId = new javax.swing.JCheckBox();
         chbPorIdConcepto = new javax.swing.JCheckBox();
@@ -957,6 +957,7 @@ public class Plataforma extends javax.swing.JFrame {
         jLabel69 = new javax.swing.JLabel();
         txt_IDU_Empleado1 = new javax.swing.JTextField();
         jButton_BuscarE = new javax.swing.JButton();
+        label_statusemp = new javax.swing.JLabel();
         pnlModificarEmpleado = new javax.swing.JPanel();
         lblModificar_NominaEmpleado = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
@@ -4223,7 +4224,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlIngresoEmpleado.add(txt_Estado_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, -1));
 
         jLabel66.setText("ID Puesto");
-        pnlIngresoEmpleado.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
+        pnlIngresoEmpleado.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
         pnlIngresoEmpleado.add(txt_ID_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, -1));
 
         jLabel67.setText("ID Departamento");
@@ -4235,12 +4236,27 @@ public class Plataforma extends javax.swing.JFrame {
         pnlIngresoEmpleado.add(txt_IDD_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 100, -1));
 
         jButton_InsertarE.setText("Insertar");
+        jButton_InsertarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_InsertarEActionPerformed(evt);
+            }
+        });
         pnlIngresoEmpleado.add(jButton_InsertarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
 
         jButton_ModificarE.setText("Modificar");
+        jButton_ModificarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ModificarEActionPerformed(evt);
+            }
+        });
         pnlIngresoEmpleado.add(jButton_ModificarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         jButton_EliminarE.setText("Eliminar");
+        jButton_EliminarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EliminarEActionPerformed(evt);
+            }
+        });
         pnlIngresoEmpleado.add(jButton_EliminarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
 
         jLabel69.setText("Ingresar ID Empleado");
@@ -4248,7 +4264,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlIngresoEmpleado.add(txt_IDU_Empleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 100, -1));
 
         jButton_BuscarE.setText("Buscar");
+        jButton_BuscarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_BuscarEActionPerformed(evt);
+            }
+        });
         pnlIngresoEmpleado.add(jButton_BuscarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, -1, -1));
+
+        label_statusemp.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        pnlIngresoEmpleado.add(label_statusemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 280, 40));
 
         pnlModificarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlModificarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -7182,6 +7206,143 @@ public class Plataforma extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton_EliminarActionPerformed
+
+    private void jButton_InsertarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_InsertarEActionPerformed
+        // TODO add your handling code here:
+        //Insertar
+        
+        try        
+        {
+            Connection cn = DriverManager.getConnection(Base_de_Datos, Usuario, Clave);
+            PreparedStatement pst = cn.prepareStatement("insert into Empleado values(?,?,?,?,?,?,?,?,?,?)");
+            
+            pst.setString(1, txt_ID_Empleado.getText().trim());
+            pst.setString(2, txt_Nombre_Empleado1.getText().trim());
+            pst.setString(3, txt_Apellido_Empleado1.getText().trim());
+            pst.setString(4, txt_DPI_Empleado1.getText().trim());
+            pst.setString(5, txt_Telefono_Empleado1.getText().trim());
+            pst.setString(6, txt_Estado_Empleado1.getText().trim());
+            pst.setString(7, txt_Sueldo_Empleado.getText().trim());
+            pst.setString(8, txt_IDP_Empleado1.getText().trim());
+            pst.setString(9, txt_IDD_Empleado1.getText().trim());
+            pst.setString(10, txt_IDU_Empleado1.getText().trim());
+            
+            pst.executeUpdate();
+            
+            txt_ID_Empleado.setText("");
+            txt_Nombre_Empleado1.setText("");
+            txt_Apellido_Empleado1.setText("");
+            txt_DPI_Empleado1.setText("");
+            txt_Telefono_Empleado1.setText("");
+            txt_Estado_Empleado1.setText("");
+            txt_Sueldo_Empleado.setText("");
+            txt_IDP_Empleado1.setText("");
+            txt_IDD_Empleado1.setText("");
+            txt_IDU_Empleado1.setText("");
+
+            label_statusemp.setText("Registro Ingresado Correctamente.");
+            
+        }catch (Exception e)
+        {
+            
+        }
+    }//GEN-LAST:event_jButton_InsertarEActionPerformed
+
+    private void jButton_ModificarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ModificarEActionPerformed
+      // TODO add your handling code here:
+        
+        try
+        {
+            String ID = txt_BuscarE.getText().trim();
+            
+            Connection cn = DriverManager.getConnection(Base_de_Datos, Usuario, Clave);
+            PreparedStatement pst = cn.prepareStatement("update Empleado set id_empleado = ?,nombre_empleado = ?, apellido_empleado = ?,dpi_empleado = ?,telefono_empleado = ?,estado_empleado = ?,sueldo =?, id_puesto=?, id_departamento=?, ID_Usuario=? where id_empleado = " + ID);
+            
+            pst.setString(1, txt_ID_Empleado.getText().trim());
+            pst.setString(2, txt_Nombre_Empleado1.getText().trim());
+            pst.setString(3, txt_Apellido_Empleado1.getText().trim());
+            pst.setString(4, txt_DPI_Empleado1.getText().trim());
+            pst.setString(5, txt_Telefono_Empleado1.getText().trim());
+            pst.setString(6, txt_Estado_Empleado1.getText().trim());
+            pst.setString(7, txt_Sueldo_Empleado.getText().trim());
+            pst.setString(8, txt_IDP_Empleado1.getText().trim());
+            pst.setString(9, txt_IDD_Empleado1.getText().trim());
+            pst.setString(10, txt_IDU_Empleado1.getText().trim());
+            
+            pst.executeUpdate();
+            
+            label_statusemp.setText("Modificación exitosa.");
+            
+        } catch (Exception e) 
+        {
+            
+        }
+    }//GEN-LAST:event_jButton_ModificarEActionPerformed
+
+    private void jButton_BuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BuscarEActionPerformed
+         // TODO add your handling code here:
+        
+            try
+            {
+            Connection cn = DriverManager.getConnection(Base_de_Datos, Usuario, Clave);
+            PreparedStatement pst = cn.prepareStatement("select * from Empleado where id_empleado = ?");
+            pst.setString(1, txt_BuscarE.getText().trim());
+            
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next())
+            {
+                txt_ID_Empleado.setText(rs.getString("id_empleado"));
+                txt_Nombre_Empleado1.setText(rs.getString("nombre_empleado"));
+                txt_Apellido_Empleado1.setText(rs.getString("apellido_empleado"));
+                txt_DPI_Empleado1.setText(rs.getString("dpi_empleado"));
+                txt_Telefono_Empleado1.setText(rs.getString("telefono_empleado"));
+                txt_Estado_Empleado1.setText(rs.getString("estado_empleado"));
+                txt_Sueldo_Empleado.setText(rs.getString("sueldo"));
+                txt_IDP_Empleado1.setText(rs.getString("id_puesto"));
+                txt_IDD_Empleado1.setText(rs.getString("id_departamento"));
+                txt_IDU_Empleado1.setText(rs.getString("ID_Usuario"));
+
+                                
+            } else 
+            {
+                JOptionPane.showMessageDialog(null, "Empleado no registrado.");
+            }
+            
+        }catch (Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton_BuscarEActionPerformed
+
+    private void jButton_EliminarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarEActionPerformed
+       // TODO add your handling code here:
+        
+        try 
+        {
+            Connection cn = DriverManager.getConnection(Base_de_Datos, Usuario, Clave);
+            PreparedStatement pst = cn.prepareStatement("delete from Empleado where id_empleado = ?");
+            
+            pst.setString(1, txt_BuscarE.getText().trim());
+            
+            pst.executeUpdate();
+            
+            txt_ID_Empleado.setText("");
+            txt_Nombre_Empleado1.setText("");
+            txt_Apellido_Empleado1.setText("");
+            txt_DPI_Empleado1.setText("");
+            txt_Telefono_Empleado1.setText("");
+            txt_Estado_Empleado1.setText("");
+            txt_Sueldo_Empleado.setText("");
+            txt_IDP_Empleado1.setText("");
+            txt_IDD_Empleado1.setText("");
+            txt_IDU_Empleado1.setText("");
+
+            
+            label_statusemp.setText("Registro eliminado.");
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton_EliminarEActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -7977,6 +8138,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JScrollPane jspModificar_UsuariosTipo;
     private javax.swing.JScrollPane jspnlModificar_Usuarios;
     private javax.swing.JLabel label_status;
+    private javax.swing.JLabel label_statusemp;
     private javax.swing.JLabel label_statuspuesto;
     private javax.swing.JLabel lblAsterisco;
     private javax.swing.JLabel lblAsterisco1;
