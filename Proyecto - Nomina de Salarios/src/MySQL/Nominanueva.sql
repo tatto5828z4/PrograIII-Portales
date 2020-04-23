@@ -102,7 +102,7 @@ ON DELETE SET NULL
 
 create table PlanillaDet
 (
-id_planillaDet int primary key,
+id_planillaDet int primary key auto_increment,
 id_conceptoPlanilla int ,
 id_empleado int,
 valor_conceptoDet float,
@@ -114,7 +114,7 @@ ON DELETE CASCADE
 
 create table PlanillaGen
 (
-id_planillaGen int primary key,
+id_planillaGen int primary key auto_increment,
 id_empleado int,
 total_percepsion float not null,
 total_deduccion float not null,
