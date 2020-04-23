@@ -1,6 +1,0 @@
-USER: Jorge
-PASSWORD: Castaneda
-HOST: localhost
-IP LOCAL: 192.168.43.15
-MAIL: jorgitoskyline@hotmail.com
-
