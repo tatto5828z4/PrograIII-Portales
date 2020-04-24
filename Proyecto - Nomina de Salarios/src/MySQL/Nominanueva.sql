@@ -52,11 +52,11 @@ create table Concepto_Planilla
 (
 	id_conceptoPlanilla int primary key,
 	nombre_concepto varchar(20) not null,
-	tipo_concepto varchar (10) not null,
+	tipo_concepto varchar (20) not null,
 	clase_concepto varchar(25) not null,
 	Valor_concepto  float not null,
 	-- valor float not null,
-	aplicacion_concepto varchar(20) not null,
+	
     ID_Usuario varchar(10),
     
     foreign key (ID_Usuario) references Usuarios(ID_Usuario)
@@ -64,6 +64,10 @@ create table Concepto_Planilla
     ON DELETE SET NULL
 )engine = InnoDB;
 
+insert into Concepto_Planilla values ("1","IGGS","Porcentaje","Deducccion","4.83",null);
+insert into Concepto_Planilla values ("2","ISR1","Porcentaje","Deducccion","0.05", null);
+insert into Concepto_Planilla values ("3","ISR2","Porcentaje","Deducccion","0.06",null);
+insert into Concepto_Planilla values ("4","ISR3","Porcentaje","Deducccion","0.08",null);
 
 create table Departamento
 (
@@ -77,6 +81,7 @@ create table Puesto
 	id_puesto int primary key,
 	nombre_puestos varchar(25) not null,
 	estado char(1) not null
+    
 )engine=InnoDB;
 
 create table Empleado
@@ -102,7 +107,7 @@ ON DELETE SET NULL
 
 create table PlanillaDet
 (
-id_planillaDet int primary key,
+id_planillaDet int primary key auto_increment,
 id_conceptoPlanilla int ,
 id_empleado int,
 valor_conceptoDet float,
@@ -114,7 +119,7 @@ ON DELETE CASCADE
 
 create table PlanillaGen
 (
-id_planillaGen int primary key,
+id_planillaGen int primary key auto_increment,
 id_empleado int,
 total_percepsion float not null,
 total_deduccion float not null,
@@ -123,3 +128,4 @@ foreign key(id_empleado) references Empleado(id_empleado)
 ON UPDATE CASCADE
 ON DELETE CASCADE
 )engine InnoDB;
+
