@@ -44,10 +44,9 @@ import javax.swing.table.DefaultTableModel;
 public class Login2 extends javax.swing.JFrame {
     
     
-     String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
+     String Base_de_Datos = "jdbc:mysql://127.0.0.1:3306/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "admin";
-
+    String Clave = "";
     
     
     private Timer tiempo;
