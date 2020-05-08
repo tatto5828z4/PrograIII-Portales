@@ -9067,10 +9067,7 @@ public class Plataforma extends javax.swing.JFrame {
             GuardarBasedeDatosMatrizEmpleados("Empleado", 10, NombresColumnasEmpleados);
             tblEmpleados.setModel(new DefaultTableModel(BasedeDatosEmpleados, NombresColumnasEmpleados));
             GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
-<<<<<<< HEAD
-            
-=======
->>>>>>> 421c73037324650535264c17706fe596ffe72ce3
+
 
             tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
             txt_ID_Empleado.setText("");
@@ -9131,10 +9128,7 @@ public class Plataforma extends javax.swing.JFrame {
             GuardarBasedeDatosMatrizEmpleados("Empleado", 10, NombresColumnasEmpleados);
             tblEmpleados.setModel(new DefaultTableModel(BasedeDatosEmpleados, NombresColumnasEmpleados));
             GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
-<<<<<<< HEAD
-          
-=======
->>>>>>> 421c73037324650535264c17706fe596ffe72ce3
+
 
             tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
             txt_ID_Empleado.setText("");
