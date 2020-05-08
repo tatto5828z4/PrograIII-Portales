@@ -39,14 +39,14 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author hp
+ * @author Langas
  */
 public class Login2 extends javax.swing.JFrame {
     
     
-     String Base_de_Datos = "jdbc:mysql://127.0.0.1:3306/Nomina_de_Empleados";
-    String Usuario = "root";
-    String Clave = "";
+     String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
+     String Usuario = "root";
+     String Clave = "Langas798";
     
     
     private Timer tiempo;
@@ -1272,16 +1272,16 @@ public class Login2 extends javax.swing.JFrame {
     public void EnviarRecuperacion() {
         try {
             Properties correo = new Properties();
-            correo.put("mail.smtp.host", "smtp.gmail.com");
-            correo.setProperty("mail.smtp.starttls.enable", "true");
-            correo.setProperty("mail.smtp.port", "587");
-            correo.setProperty("mail.smtp.user", "grupo2programacioniii@gmail.com");
-            correo.setProperty("mail.smtp.auth", "true");
-            Session sesion = Session.getDefaultInstance(correo, null);
+            correo.put("mail.smtp.host", "smtp.gmail.com");//servidor de google
+            correo.setProperty("mail.smtp.starttls.enable", "true");//Para conectar de manera sergura al servidor
+            correo.setProperty("mail.smtp.port", "587");//Puerto seguro de google
+            correo.setProperty("mail.smtp.user", "grupo2programacioniii@gmail.com");//Correo que sirve para enviar tus datos
+            correo.setProperty("mail.smtp.auth", "true");//Usa autenticacion de Usuario y Clave
+            Session sesion = Session.getDefaultInstance(correo, null);//Crea sesion para 
             BodyPart texto = new MimeBodyPart();
             texto.setText("USUARIO: " + DatosPersonales1[2] + "\n" + "CONTRASEÑA: " + DatosPersonales1[3]);
             BodyPart ImagenAdjunta = new MimeBodyPart();
-            ImagenAdjunta.setDataHandler(new DataHandler(new FileDataSource("Recuperar.png")));
+            ImagenAdjunta.setDataHandler(new DataHandler(new FileDataSource("Recuperar.png")));//Sirve para transferencia
             ImagenAdjunta.setFileName("Recuperar.png");
             MimeMultipart m = new MimeMultipart();
             m.addBodyPart(texto);
