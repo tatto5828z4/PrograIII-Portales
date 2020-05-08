@@ -66,6 +66,12 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+    public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
+    String Usuario = "root";
+    String Clave = "admin";
+=======
 
     public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
@@ -83,6 +89,7 @@ public class Plataforma extends javax.swing.JFrame {
      //Uclave
     String Clave = "condominio";
     
+>>>>>>> 2ff761fde8536c93db6939f7e4140d85dfe4572f
 
     boolean theme = false;
     boolean graficas = false;
@@ -5418,6 +5425,8 @@ public class Plataforma extends javax.swing.JFrame {
         jLabel82.setText("Valor de Concepto:");
         pnlModificarEmpleado.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
 
+        pnlIngresoEmpleado.add(pnlModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 1090, 490));
+
         pnlEliminarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -5482,19 +5491,17 @@ public class Plataforma extends javax.swing.JFrame {
         pnlEmpleados.setLayout(pnlEmpleadosLayout);
         pnlEmpleadosLayout.setHorizontalGroup(
             pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
-            .addComponent(pnlModificarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
         );
         pnlEmpleadosLayout.setVerticalGroup(
             pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-            .addComponent(pnlModificarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE))
+                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE))
         );
 
         pnlCuerpoNomina.add(pnlEmpleados, "card8");
@@ -5757,15 +5764,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlPuestos.setLayout(pnlPuestosLayout);
         pnlPuestosLayout.setHorizontalGroup(
             pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
+            .addGap(0, 1350, Short.MAX_VALUE)
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlIngresoPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlModificarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlEliminarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
         );
         pnlPuestosLayout.setVerticalGroup(
             pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6032,15 +6039,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlDepartamentos.setLayout(pnlDepartamentosLayout);
         pnlDepartamentosLayout.setHorizontalGroup(
             pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
+            .addGap(0, 1350, Short.MAX_VALUE)
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlIngresoDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlModificarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlEliminarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlConsultaDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
         );
         pnlDepartamentosLayout.setVerticalGroup(
             pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6353,15 +6360,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlConceptos.setLayout(pnlConceptosLayout);
         pnlConceptosLayout.setHorizontalGroup(
             pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
+            .addGap(0, 1350, Short.MAX_VALUE)
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlIngresoConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlModificarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlEliminarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlConsultaConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
         );
         pnlConceptosLayout.setVerticalGroup(
             pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6576,9 +6583,9 @@ public class Plataforma extends javax.swing.JFrame {
                     .addComponent(pnlCuerpoUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlMenuInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlMenuInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
             .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
+                .addComponent(pnlIInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8812,7 +8819,7 @@ public class Plataforma extends javax.swing.JFrame {
                 txt_nombredep.setText(rs.getString("nombre_departamento"));
                 txt_estadodep.setText(rs.getString("estado"));
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
+                JOptionPane.showMessageDialog(null, "Departamento no registrado.");
             }
 
         } catch (Exception e) {
