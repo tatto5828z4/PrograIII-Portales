@@ -26,7 +26,6 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URI;
 import java.sql.Connection;
@@ -38,8 +37,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -68,25 +65,11 @@ import org.jfree.data.xy.XYSeriesCollection;
  * @author Langas
  */
 public class Plataforma extends javax.swing.JFrame {
-<<<<<<< HEAD
 
     public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
     String Usuario = "jorge";
     String Clave = "condominio";
-=======
-    //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
-   String URL= "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
-    //Esta variable la cambian es la direccion para generar los QR
-    public static String constante = "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-     //Esta variable la solo una vez es la Base de datos general
-    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
-     //Usuario
-    String Usuario = "josue";
-     //Uclave
-    String Clave = "zapata";
-    
->>>>>>> a76c48ab374c77bdd7d745bd9c40f0ebf8a3c8d7
 
     boolean theme = false;
     boolean graficas = false;
@@ -9707,14 +9690,7 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHelpMouseClicked
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
-        try {
-            
-            ProcessBuilder p= new ProcessBuilder();
-            p.command("cmd.exe", "/c", URL);
-            p.start();
-        } catch (IOException ex) {
-            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnHelpActionPerformed
 
     private void btnInformesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseMoved
@@ -10015,14 +9991,7 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnManualMouseClicked
 
     private void btnManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManualActionPerformed
-       try {
-            
-            ProcessBuilder p= new ProcessBuilder();
-            p.command("cmd.exe", "/c", URL);
-            p.start();
-        } catch (IOException ex) {
-            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnManualActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
