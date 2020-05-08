@@ -65,11 +65,31 @@ import org.jfree.data.xy.XYSeriesCollection;
  * @author Langas
  */
 public class Plataforma extends javax.swing.JFrame {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Jorge
 
     public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
     String Usuario = "jorge";
     String Clave = "condominio";
+<<<<<<< HEAD
+=======
+=======
+    //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
+   String URL= "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
+    //Esta variable la cambian es la direccion para generar los QR
+    public static String constante = "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+     //Esta variable la solo una vez es la Base de datos general
+    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
+     //Usuario
+    String Usuario = "josue";
+     //Uclave
+    String Clave = "zapata";
+    
+>>>>>>> a76c48ab374c77bdd7d745bd9c40f0ebf8a3c8d7
+>>>>>>> Jorge
 
     boolean theme = false;
     boolean graficas = false;
