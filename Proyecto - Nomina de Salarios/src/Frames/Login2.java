@@ -43,20 +43,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Langas
  */
 public class Login2 extends javax.swing.JFrame {
-    
-<<<<<<< HEAD
-    
-     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
-     String Usuario = "jorge";
-     String Clave = "condominio";
-=======
       //Esta variable la solo una vez es la Base de datos general
      String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
        //Usuario
-    String Usuario = "josue";
+    String Usuario = "jorge";
      //Uclave
-    String Clave = "zapata";
->>>>>>> a76c48ab374c77bdd7d745bd9c40f0ebf8a3c8d7
+    String Clave = "condominio";
      int[] color = {255, 2255, 255};
     
     private Timer tiempo;
