@@ -62,14 +62,34 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  *
- * @author hp
+ * @author Langas
  */
 public class Plataforma extends javax.swing.JFrame {
 
+<<<<<<< HEAD
     public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
     String Usuario = "root";
     String Clave = "admin";
+=======
+
+    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
+    String Usuario = "jorge";
+    String Clave = "condominio";
+
+    //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
+   String URL= "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src";
+    //Esta variable la cambian es la direccion para generar los QR
+    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+     //Esta variable la solo una vez es la Base de datos general
+    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
+     //Usuario
+    String Usuario = "jorge";
+     //Uclave
+    String Clave = "condominio";
+    
+>>>>>>> 2ff761fde8536c93db6939f7e4140d85dfe4572f
 
     boolean theme = false;
     boolean graficas = false;
@@ -198,7 +218,6 @@ public class Plataforma extends javax.swing.JFrame {
         lblMAC2.setText(Integer.toString(sesion1));
         lblCorreo2.setText(DatosPersonales2[4]);
         lblTel2.setText(DatosPersonales2[5]);
-
         JButton[] botones = {btnHome, btnAjustes, btnCuenta, btnGrafica, btnCalculadora, btnPagina, btnCerrar};
         for (JButton btn : botones) {
             btn.setBackground(new Color(12, 12, 12));
@@ -222,9 +241,7 @@ public class Plataforma extends javax.swing.JFrame {
                 public void mouseEntered(MouseEvent e) {
 
                     btn.setBackground(new Color(0, 153, 255));
-                    if (botones[1] == btnAjustes) {
-
-                    }
+                   
 
                 }
 
@@ -239,6 +256,79 @@ public class Plataforma extends javax.swing.JFrame {
 
         }
 
+        JButton[] MenuBarUsuarios = {btnCatalogos, btnProcesos, btnInformes, btnHerramientas, btnHelp, btnMantenimientoUsuarios, btnMantenimientoUsuarios1,
+            btnME, btnMP, btnMPP, btnMD, btnMC, btnIP, btnCalc, btnManual};
+        for (JButton btn : MenuBarUsuarios) {
+            btn.setBackground(new Color(46, 46, 46));
+            btn.setUI(new BasicButtonUI());
+            btn.addMouseListener(new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+
+                    btn.setBackground(new Color(75, 75, 75));
+
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+
+                    btn.setBackground(new Color(46, 46, 46));
+
+                }
+
+            });
+
+        }
+        JButton[] MenuBarNomina = {btnCatalogos1, btnProcesos1, btnInformes1, btnHerramientas1, btnHelp1};
+        for (JButton btn : MenuBarNomina) {
+            btn.setBackground(new Color(46, 46, 46));
+            btn.setUI(new BasicButtonUI());
+            btn.addMouseListener(new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+
+                    btn.setBackground(new Color(75, 75, 75));
+
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+
+                    btn.setBackground(new Color(46, 46, 46));
+
+                }
+
+            });
+
+        }
         JButton[] subbotones = {btnTemas, btnBarras, btnPastel};
         for (JButton btn : subbotones) {
             btn.setBackground(new Color(32, 32, 32));
@@ -278,7 +368,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         JButton[] OpcionesMenuUsuarios = {btnOpsion_Ingresar, btnOpsion_Modificar, btnOpsion_Eliminar, btnOpsion_Consultar};
         for (JButton btn : OpcionesMenuUsuarios) {
-            btn.setBackground(new Color(102, 153, 255));
+            btn.setBackground(new Color(36, 36, 36));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
@@ -303,7 +393,7 @@ public class Plataforma extends javax.swing.JFrame {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color(102, 153, 255));
+                    btn.setBackground(new Color(36, 36, 36));
 
                 }
 
@@ -313,7 +403,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         JButton[] OpcionesMenuUsuariosTipo = {btnOpsion_IngresarTipo, btnOpsion_ModificarTipo, btnOpsion_EliminarTipo, btnOpsion_ConsultarTipo};
         for (JButton btn : OpcionesMenuUsuariosTipo) {
-            btn.setBackground(new Color(0, 204, 204));
+            btn.setBackground(new Color(36, 36, 36));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
@@ -332,13 +422,13 @@ public class Plataforma extends javax.swing.JFrame {
 
                 @Override
                 public void mouseEntered(MouseEvent e) {
-                    btn.setBackground(new Color(0, 169, 169));
+                    btn.setBackground(new Color(255, 102, 102));
 
                 }
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color(0, 204, 204));
+                    btn.setBackground(new Color(36, 36, 36));
 
                 }
 
@@ -348,7 +438,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         JButton[] OpcionesMenuNominaIngreso = {btnOpsion_IngresarEmpleado, btnOpsion_ModificarEmpleado, btnOpsion_EliminarEmpleado, btnOpsion_ConsultaEmpleado};
         for (JButton btn : OpcionesMenuNominaIngreso) {
-            btn.setBackground(new Color(88, 122, 255));
+            btn.setBackground(new Color(36, 36, 36));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
@@ -373,7 +463,7 @@ public class Plataforma extends javax.swing.JFrame {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color(88, 122, 255));
+                    btn.setBackground(new Color(36, 36, 36));
 
                 }
 
@@ -381,7 +471,7 @@ public class Plataforma extends javax.swing.JFrame {
         }
         JButton[] OpcionesMenuNominaConsulta = {btnOpsion_IngresarConcepto, btnOpsion_ModificarConcepto, btnOpsion_EliminarConcepto, btnOpsion_ConsultaConcepto};
         for (JButton btn : OpcionesMenuNominaConsulta) {
-            btn.setBackground(new Color(51, 153, 255));
+            btn.setBackground(new Color(36, 36, 36));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
@@ -406,7 +496,7 @@ public class Plataforma extends javax.swing.JFrame {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color(51, 153, 255));
+                    btn.setBackground(new Color(36, 36, 36));
 
                 }
 
@@ -414,7 +504,7 @@ public class Plataforma extends javax.swing.JFrame {
         }
         JButton[] OpcionesMenuNominaModificar = {btnOpsion_IngresarPuesto, btnOpsion_ModificarPuesto, btnOpsion_EliminarPuesto, btnOpsion_ConsultaPuesto};
         for (JButton btn : OpcionesMenuNominaModificar) {
-            btn.setBackground(new Color(0, 204, 255));
+            btn.setBackground(new Color(36, 36, 36));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
@@ -439,7 +529,7 @@ public class Plataforma extends javax.swing.JFrame {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color(0, 204, 255));
+                    btn.setBackground(new Color(36, 36, 36));
 
                 }
 
@@ -447,7 +537,7 @@ public class Plataforma extends javax.swing.JFrame {
         }
         JButton[] OpcionesMenuNominaEliminar = {btnOpsion_IngresarDep, btnOpsion_ModificarDep, btnOpsion_EliminarDep, btnOpsion_ConsultaDep};
         for (JButton btn : OpcionesMenuNominaEliminar) {
-            btn.setBackground(new Color(0, 204, 204));
+            btn.setBackground(new Color(36, 36, 36));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
@@ -472,7 +562,7 @@ public class Plataforma extends javax.swing.JFrame {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color(0, 204, 204));
+                    btn.setBackground(new Color(36, 36, 36));
 
                 }
 
@@ -505,8 +595,15 @@ public class Plataforma extends javax.swing.JFrame {
         lblOscuro.setVisible(false);
         pnlSubOpcionTema.setVisible(false);
         pnlGraph.setVisible(false);
+        btnMantenimientoUsuarios.setVisible(false);
+        btnMantenimientoUsuarios1.setVisible(false);
 
-        /* Timer tiempoDeAnuncio = new Timer();
+        pnlCatalogo.setVisible(false);
+        pnlProcesos.setVisible(false);
+        pnlHerramientas.setVisible(false);
+        pnlInformes.setVisible(false);
+        pnlAyuda.setVisible(false);
+       /* Timer tiempoDeAnuncio = new Timer();
 
         TimerTask task = new TimerTask() {
             int tiempo = 0;
@@ -516,9 +613,15 @@ public class Plataforma extends javax.swing.JFrame {
 
                 if (tiempo == 1) {
                     lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/fondo4.jpg")));
+                    // lbllogouser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/menubaruser.png")));
                 } else if (tiempo == 2) {
                     lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/fondo5.jpg")));
+                    //lbllogouser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/menubaruser.png")));
                     tiempo = 0;
+                } else if (tiempo == 3) {
+                    lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/fondo0.jpg")));
+                    // lbllogouser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/menubaruser.png")));
+
                 }
 
                 tiempo++;
@@ -648,37 +751,9 @@ public class Plataforma extends javax.swing.JFrame {
         lblOscuro = new javax.swing.JLabel();
         lblClaro = new javax.swing.JLabel();
         pnlMenu_barUser = new javax.swing.JPanel();
-        pnlOpciones = new javax.swing.JPanel();
-        btnOpsion_Consultar = new javax.swing.JButton();
-        btnOpsion_Ingresar = new javax.swing.JButton();
-        btnOpsion_Modificar = new javax.swing.JButton();
-        btnOpsion_Eliminar = new javax.swing.JButton();
-        pnlOpcionesTipo = new javax.swing.JPanel();
-        btnOpsion_ConsultarTipo = new javax.swing.JButton();
-        btnOpsion_IngresarTipo = new javax.swing.JButton();
-        btnOpsion_ModificarTipo = new javax.swing.JButton();
-        btnOpsion_EliminarTipo = new javax.swing.JButton();
+        lbllogouser = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
         pnlMenu_barNomina = new javax.swing.JPanel();
-        pnlOpciones_NominaEmpleados = new javax.swing.JPanel();
-        btnOpsion_IngresarEmpleado = new javax.swing.JButton();
-        btnOpsion_ModificarEmpleado = new javax.swing.JButton();
-        btnOpsion_ConsultaEmpleado = new javax.swing.JButton();
-        btnOpsion_EliminarEmpleado = new javax.swing.JButton();
-        pnlOpciones_NominaPuestos = new javax.swing.JPanel();
-        btnOpsion_IngresarPuesto = new javax.swing.JButton();
-        btnOpsion_ModificarPuesto = new javax.swing.JButton();
-        btnOpsion_EliminarPuesto = new javax.swing.JButton();
-        btnOpsion_ConsultaPuesto = new javax.swing.JButton();
-        pnlOpciones_NominaDepartamentos = new javax.swing.JPanel();
-        btnOpsion_IngresarDep = new javax.swing.JButton();
-        btnOpsion_ModificarDep = new javax.swing.JButton();
-        btnOpsion_EliminarDep = new javax.swing.JButton();
-        btnOpsion_ConsultaDep = new javax.swing.JButton();
-        pnlOpciones_NominaConceptos = new javax.swing.JPanel();
-        btnOpsion_EliminarConcepto = new javax.swing.JButton();
-        btnOpsion_IngresarConcepto = new javax.swing.JButton();
-        btnOpsion_ModificarConcepto = new javax.swing.JButton();
-        btnOpsion_ConsultaConcepto = new javax.swing.JButton();
         pnlContenido = new javax.swing.JPanel();
         pnlMenuInicio = new javax.swing.JPanel();
         lblUsernameInicio = new javax.swing.JLabel();
@@ -707,12 +782,28 @@ public class Plataforma extends javax.swing.JFrame {
         cbLineal = new javax.swing.JCheckBox();
         cbPastel = new javax.swing.JCheckBox();
         pnlMenuUsuarios = new javax.swing.JPanel();
+        btnCatalogos = new javax.swing.JButton();
+        btnProcesos = new javax.swing.JButton();
+        btnHelp = new javax.swing.JButton();
+        btnInformes = new javax.swing.JButton();
+        btnHerramientas = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         btnInicioUsuarios = new javax.swing.JButton();
         lblIngresarUser = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         btnTipodeUsuario = new javax.swing.JButton();
         lbltipodeUsuario = new javax.swing.JLabel();
+        btnMantenimientoUsuarios = new javax.swing.JButton();
+        pnlOpciones = new javax.swing.JPanel();
+        btnOpsion_Consultar = new javax.swing.JButton();
+        btnOpsion_Ingresar = new javax.swing.JButton();
+        btnOpsion_Modificar = new javax.swing.JButton();
+        btnOpsion_Eliminar = new javax.swing.JButton();
+        btnMantenimientoUsuarios1 = new javax.swing.JButton();
+        pnlOpcionesTipo = new javax.swing.JPanel();
+        btnOpsion_ConsultarTipo = new javax.swing.JButton();
+        btnOpsion_IngresarTipo = new javax.swing.JButton();
+        btnOpsion_ModificarTipo = new javax.swing.JButton();
+        btnOpsion_EliminarTipo = new javax.swing.JButton();
         pnlDetalles1 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         lblMAC1 = new javax.swing.JLabel();
@@ -725,12 +816,15 @@ public class Plataforma extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         lblIP1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         pnlContacto1 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         lblCorreo1 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         lblTel1 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         pnlMenu = new javax.swing.JPanel();
         btnEmpleados = new javax.swing.JButton();
         lblEmpleados = new javax.swing.JLabel();
@@ -738,12 +832,43 @@ public class Plataforma extends javax.swing.JFrame {
         lblConceptos = new javax.swing.JLabel();
         btnDepartamentos = new javax.swing.JButton();
         lblPuestos = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         btnConceptos = new javax.swing.JButton();
         lblDep = new javax.swing.JLabel();
         btnTabla = new javax.swing.JButton();
         lblTabla = new javax.swing.JLabel();
+        pnlCatalogo = new javax.swing.JPanel();
+        btnME = new javax.swing.JButton();
+        btnMP = new javax.swing.JButton();
+        btnMD = new javax.swing.JButton();
+        pnlProcesos = new javax.swing.JPanel();
+        btnMC = new javax.swing.JButton();
+        btnMPP = new javax.swing.JButton();
+        pnlInformes = new javax.swing.JPanel();
+        btnIP = new javax.swing.JButton();
+        pnlHerramientas = new javax.swing.JPanel();
+        btnCalc = new javax.swing.JButton();
+        pnlAyuda = new javax.swing.JPanel();
+        btnManual = new javax.swing.JButton();
+        pnlOpciones_NominaConceptos = new javax.swing.JPanel();
+        btnOpsion_EliminarConcepto = new javax.swing.JButton();
+        btnOpsion_IngresarConcepto = new javax.swing.JButton();
+        btnOpsion_ModificarConcepto = new javax.swing.JButton();
+        btnOpsion_ConsultaConcepto = new javax.swing.JButton();
+        pnlOpciones_NominaDepartamentos = new javax.swing.JPanel();
+        btnOpsion_IngresarDep = new javax.swing.JButton();
+        btnOpsion_ModificarDep = new javax.swing.JButton();
+        btnOpsion_EliminarDep = new javax.swing.JButton();
+        btnOpsion_ConsultaDep = new javax.swing.JButton();
+        pnlOpciones_NominaPuestos = new javax.swing.JPanel();
+        btnOpsion_IngresarPuesto = new javax.swing.JButton();
+        btnOpsion_ModificarPuesto = new javax.swing.JButton();
+        btnOpsion_EliminarPuesto = new javax.swing.JButton();
+        btnOpsion_ConsultaPuesto = new javax.swing.JButton();
+        pnlOpciones_NominaEmpleados = new javax.swing.JPanel();
+        btnOpsion_IngresarEmpleado = new javax.swing.JButton();
+        btnOpsion_ModificarEmpleado = new javax.swing.JButton();
+        btnOpsion_ConsultaEmpleado = new javax.swing.JButton();
+        btnOpsion_EliminarEmpleado = new javax.swing.JButton();
         pnlDetalles2 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
         lblMAC2 = new javax.swing.JLabel();
@@ -762,6 +887,14 @@ public class Plataforma extends javax.swing.JFrame {
         lblCorreo2 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         lblTel2 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnHelp1 = new javax.swing.JButton();
+        btnHerramientas1 = new javax.swing.JButton();
+        btnInformes1 = new javax.swing.JButton();
+        btnProcesos1 = new javax.swing.JButton();
+        btnCatalogos1 = new javax.swing.JButton();
         pnlIInicio = new javax.swing.JPanel();
         pnlBienvenida = new javax.swing.JPanel();
         pnlCuerpoUsuarios = new javax.swing.JPanel();
@@ -794,7 +927,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco2 = new javax.swing.JLabel();
         lblAsterisco3 = new javax.swing.JLabel();
         lblAsterisco4 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<>();
+        cbTipo = new javax.swing.JComboBox<String>();
         lblTipo = new javax.swing.JLabel();
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
@@ -832,7 +965,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTelefono1 = new javax.swing.JPanel();
         txtTelefonoModificar = new javax.swing.JTextField();
         lblVeces = new javax.swing.JLabel();
-        cbTipo1 = new javax.swing.JComboBox<>();
+        cbTipo1 = new javax.swing.JComboBox<String>();
         lblAsterisco23 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
         lblNombreDeUsuario2 = new javax.swing.JLabel();
@@ -867,7 +1000,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblPrimerNombre3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUsuariosConsulta = new javax.swing.JTable();
-        cbTipoConsulta = new javax.swing.JComboBox<>();
+        cbTipoConsulta = new javax.swing.JComboBox<String>();
         chbPorNombreUsuario = new javax.swing.JCheckBox();
         chbPorId = new javax.swing.JCheckBox();
         chbPorIdConcepto = new javax.swing.JCheckBox();
@@ -1049,7 +1182,7 @@ public class Plataforma extends javax.swing.JFrame {
         txt_IDU_Empleado2 = new javax.swing.JTextField();
         jButton_BuscarE1 = new javax.swing.JButton();
         label_statusemp1 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         jTextField3 = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         pnlEliminarEmpleado = new javax.swing.JPanel();
@@ -1507,7 +1640,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlCentro.setPreferredSize(new java.awt.Dimension(700, 508));
         pnlCentro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlEncabezados.setBackground(new java.awt.Color(60, 60, 60));
+        pnlEncabezados.setBackground(new java.awt.Color(35, 35, 35));
         pnlEncabezados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIinicio.setBackground(new java.awt.Color(0, 0, 0));
@@ -1519,7 +1652,7 @@ public class Plataforma extends javax.swing.JFrame {
                 lblIinicioMouseClicked(evt);
             }
         });
-        pnlEncabezados.add(lblIinicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 40, -1));
+        pnlEncabezados.add(lblIinicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 10, 40, -1));
 
         lblUsuarios.setBackground(new java.awt.Color(153, 153, 255));
         lblUsuarios.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
@@ -1530,7 +1663,7 @@ public class Plataforma extends javax.swing.JFrame {
                 lblUsuariosMouseClicked(evt);
             }
         });
-        pnlEncabezados.add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+        pnlEncabezados.add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         lblNomina.setBackground(new java.awt.Color(0, 0, 0));
         lblNomina.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
@@ -1541,11 +1674,11 @@ public class Plataforma extends javax.swing.JFrame {
                 lblNominaMouseClicked(evt);
             }
         });
-        pnlEncabezados.add(lblNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
+        pnlEncabezados.add(lblNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
 
-        pnlOpciones_ventana.setBackground(new java.awt.Color(60, 60, 60));
+        pnlOpciones_ventana.setBackground(new java.awt.Color(35, 35, 35));
 
-        btnMinimize.setBackground(new java.awt.Color(60, 60, 60));
+        btnMinimize.setBackground(new java.awt.Color(35, 35, 35));
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Minimize.png"))); // NOI18N
         btnMinimize.setContentAreaFilled(false);
         btnMinimize.setFocusable(false);
@@ -1565,7 +1698,7 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlOpciones_ventana.add(btnMinimize);
 
-        btnMaximize.setBackground(new java.awt.Color(60, 60, 60));
+        btnMaximize.setBackground(new java.awt.Color(35, 35, 35));
         btnMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Maximize.png"))); // NOI18N
         btnMaximize.setContentAreaFilled(false);
         btnMaximize.setFocusable(false);
@@ -1585,7 +1718,7 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlOpciones_ventana.add(btnMaximize);
 
-        btnExit.setBackground(new java.awt.Color(60, 60, 60));
+        btnExit.setBackground(new java.awt.Color(35, 35, 35));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Salir.png"))); // NOI18N
         btnExit.setContentAreaFilled(false);
         btnExit.setFocusable(false);
@@ -1607,10 +1740,10 @@ public class Plataforma extends javax.swing.JFrame {
 
         pnlEncabezados.add(pnlOpciones_ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, -1, -1));
 
-        pnlTemas.setBackground(new java.awt.Color(60, 60, 60));
+        pnlTemas.setBackground(new java.awt.Color(35, 35, 35));
         pnlTemas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblOscuro.setBackground(new java.awt.Color(51, 51, 51));
+        lblOscuro.setBackground(new java.awt.Color(35, 35, 35));
         lblOscuro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
         lblOscuro.setForeground(new java.awt.Color(204, 204, 204));
         lblOscuro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Dark.png"))); // NOI18N
@@ -1622,7 +1755,7 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlTemas.add(lblOscuro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        lblClaro.setBackground(new java.awt.Color(204, 204, 204));
+        lblClaro.setBackground(new java.awt.Color(35, 35, 35));
         lblClaro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
         lblClaro.setForeground(new java.awt.Color(204, 204, 204));
         lblClaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ligth.png"))); // NOI18N
@@ -1640,644 +1773,13 @@ public class Plataforma extends javax.swing.JFrame {
 
         pnlMenu_barUser.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenu_barUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        pnlOpciones.setBackground(new java.awt.Color(102, 153, 255));
-        pnlOpciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlOpcionesMouseExited(evt);
-            }
-        });
-
-        btnOpsion_Consultar.setBackground(new java.awt.Color(102, 153, 255));
-        btnOpsion_Consultar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_Consultar.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ConsultarUser.png"))); // NOI18N
-        btnOpsion_Consultar.setText(" Consultar");
-        btnOpsion_Consultar.setBorder(null);
-        btnOpsion_Consultar.setBorderPainted(false);
-        btnOpsion_Consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_Consultar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_Consultar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultarMouseClicked(evt);
-            }
-        });
-        btnOpsion_Consultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ConsultarActionPerformed(evt);
-            }
-        });
-
-        btnOpsion_Ingresar.setBackground(new java.awt.Color(102, 153, 255));
-        btnOpsion_Ingresar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_Ingresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_Ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/IngresarUser.png"))); // NOI18N
-        btnOpsion_Ingresar.setText(" Ingresar Usuario");
-        btnOpsion_Ingresar.setBorder(null);
-        btnOpsion_Ingresar.setBorderPainted(false);
-        btnOpsion_Ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_Ingresar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_Ingresar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarMouseMoved(evt);
-            }
-        });
-        btnOpsion_Ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarMouseClicked(evt);
-            }
-        });
-        btnOpsion_Ingresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_IngresarActionPerformed(evt);
-            }
-        });
-
-        btnOpsion_Modificar.setBackground(new java.awt.Color(102, 153, 255));
-        btnOpsion_Modificar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_Modificar.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ModificarUser.png"))); // NOI18N
-        btnOpsion_Modificar.setText(" Modificar Usuario");
-        btnOpsion_Modificar.setBorder(null);
-        btnOpsion_Modificar.setBorderPainted(false);
-        btnOpsion_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_Modificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarMouseClicked(evt);
-            }
-        });
-        btnOpsion_Modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ModificarActionPerformed(evt);
-            }
-        });
-
-        btnOpsion_Eliminar.setBackground(new java.awt.Color(102, 153, 255));
-        btnOpsion_Eliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_Eliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/EliminarUser.png"))); // NOI18N
-        btnOpsion_Eliminar.setText(" Eliminar Usuario");
-        btnOpsion_Eliminar.setBorder(null);
-        btnOpsion_Eliminar.setBorderPainted(false);
-        btnOpsion_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_Eliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarMouseClicked(evt);
-            }
-        });
-        btnOpsion_Eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_EliminarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlOpcionesLayout = new javax.swing.GroupLayout(pnlOpciones);
-        pnlOpciones.setLayout(pnlOpcionesLayout);
-        pnlOpcionesLayout.setHorizontalGroup(
-            pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnOpsion_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOpsion_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOpsion_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOpsion_Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        pnlOpcionesLayout.setVerticalGroup(
-            pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesLayout.createSequentialGroup()
-                .addComponent(btnOpsion_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnOpsion_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnOpsion_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnOpsion_Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        pnlMenu_barUser.add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 210, 80));
-
-        pnlOpcionesTipo.setBackground(new java.awt.Color(0, 204, 204));
-        pnlOpcionesTipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlOpcionesTipoMouseExited(evt);
-            }
-        });
-
-        btnOpsion_ConsultarTipo.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_ConsultarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ConsultarTipo.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ConsultarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ConsultarUser.png"))); // NOI18N
-        btnOpsion_ConsultarTipo.setText(" Consultar");
-        btnOpsion_ConsultarTipo.setBorder(null);
-        btnOpsion_ConsultarTipo.setBorderPainted(false);
-        btnOpsion_ConsultarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ConsultarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ConsultarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultarTipoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ConsultarTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ConsultarTipoActionPerformed(evt);
-            }
-        });
-
-        btnOpsion_IngresarTipo.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_IngresarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_IngresarTipo.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_IngresarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/IngresarUser.png"))); // NOI18N
-        btnOpsion_IngresarTipo.setText(" Ingresar Tipo de Usuario");
-        btnOpsion_IngresarTipo.setBorder(null);
-        btnOpsion_IngresarTipo.setBorderPainted(false);
-        btnOpsion_IngresarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_IngresarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_IngresarTipo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarTipoMouseMoved(evt);
-            }
-        });
-        btnOpsion_IngresarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarTipoMouseClicked(evt);
-            }
-        });
-        btnOpsion_IngresarTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_IngresarTipoActionPerformed(evt);
-            }
-        });
-
-        btnOpsion_ModificarTipo.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_ModificarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ModificarTipo.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ModificarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ModificarUser.png"))); // NOI18N
-        btnOpsion_ModificarTipo.setText(" Modificar Tipo de Usuario");
-        btnOpsion_ModificarTipo.setBorder(null);
-        btnOpsion_ModificarTipo.setBorderPainted(false);
-        btnOpsion_ModificarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ModificarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ModificarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarTipoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ModificarTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ModificarTipoActionPerformed(evt);
-            }
-        });
-
-        btnOpsion_EliminarTipo.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_EliminarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_EliminarTipo.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_EliminarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/EliminarUser.png"))); // NOI18N
-        btnOpsion_EliminarTipo.setText(" Eliminar Tipo de Usuario");
-        btnOpsion_EliminarTipo.setBorder(null);
-        btnOpsion_EliminarTipo.setBorderPainted(false);
-        btnOpsion_EliminarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_EliminarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_EliminarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarTipoMouseClicked(evt);
-            }
-        });
-        btnOpsion_EliminarTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_EliminarTipoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlOpcionesTipoLayout = new javax.swing.GroupLayout(pnlOpcionesTipo);
-        pnlOpcionesTipo.setLayout(pnlOpcionesTipoLayout);
-        pnlOpcionesTipoLayout.setHorizontalGroup(
-            pnlOpcionesTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesTipoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pnlOpcionesTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnOpsion_IngresarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOpsion_ModificarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOpsion_EliminarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOpsion_ConsultarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        pnlOpcionesTipoLayout.setVerticalGroup(
-            pnlOpcionesTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesTipoLayout.createSequentialGroup()
-                .addComponent(btnOpsion_IngresarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnOpsion_ModificarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnOpsion_EliminarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnOpsion_ConsultarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        pnlMenu_barUser.add(pnlOpcionesTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 210, 80));
+        pnlMenu_barUser.add(lbllogouser, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 60, 80));
+        pnlMenu_barUser.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 80));
 
         pnlCentro.add(pnlMenu_barUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 1090, 80));
 
         pnlMenu_barNomina.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenu_barNomina.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        pnlOpciones_NominaEmpleados.setBackground(new java.awt.Color(0, 204, 106));
-        pnlOpciones_NominaEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlOpciones_NominaEmpleadosMouseExited(evt);
-            }
-        });
-        pnlOpciones_NominaEmpleados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnOpsion_IngresarEmpleado.setBackground(new java.awt.Color(88, 122, 255));
-        btnOpsion_IngresarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_IngresarEmpleado.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_IngresarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
-        btnOpsion_IngresarEmpleado.setText("Mantenimientos Empleado");
-        btnOpsion_IngresarEmpleado.setBorder(null);
-        btnOpsion_IngresarEmpleado.setBorderPainted(false);
-        btnOpsion_IngresarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_IngresarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_IngresarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarEmpleadoMouseMoved(evt);
-            }
-        });
-        btnOpsion_IngresarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarEmpleadoMouseClicked(evt);
-            }
-        });
-        btnOpsion_IngresarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_IngresarEmpleadoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaEmpleados.add(btnOpsion_IngresarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
-
-        btnOpsion_ModificarEmpleado.setBackground(new java.awt.Color(88, 122, 255));
-        btnOpsion_ModificarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ModificarEmpleado.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ModificarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
-        btnOpsion_ModificarEmpleado.setText(" Modificar Empleado");
-        btnOpsion_ModificarEmpleado.setBorder(null);
-        btnOpsion_ModificarEmpleado.setBorderPainted(false);
-        btnOpsion_ModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ModificarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ModificarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarEmpleadoMouseMoved(evt);
-            }
-        });
-        btnOpsion_ModificarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarEmpleadoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ModificarEmpleadoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaEmpleados.add(btnOpsion_ModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
-
-        btnOpsion_ConsultaEmpleado.setBackground(new java.awt.Color(88, 122, 255));
-        btnOpsion_ConsultaEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ConsultaEmpleado.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ConsultaEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
-        btnOpsion_ConsultaEmpleado.setText(" Consulta Empleado");
-        btnOpsion_ConsultaEmpleado.setBorder(null);
-        btnOpsion_ConsultaEmpleado.setBorderPainted(false);
-        btnOpsion_ConsultaEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ConsultaEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ConsultaEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultaEmpleadoMouseMoved(evt);
-            }
-        });
-        btnOpsion_ConsultaEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultaEmpleadoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ConsultaEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ConsultaEmpleadoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaEmpleados.add(btnOpsion_ConsultaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
-
-        btnOpsion_EliminarEmpleado.setBackground(new java.awt.Color(88, 122, 255));
-        btnOpsion_EliminarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_EliminarEmpleado.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_EliminarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
-        btnOpsion_EliminarEmpleado.setText(" Eliminar Empleado");
-        btnOpsion_EliminarEmpleado.setBorder(null);
-        btnOpsion_EliminarEmpleado.setBorderPainted(false);
-        btnOpsion_EliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_EliminarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_EliminarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarEmpleadoMouseMoved(evt);
-            }
-        });
-        btnOpsion_EliminarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarEmpleadoMouseClicked(evt);
-            }
-        });
-        btnOpsion_EliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_EliminarEmpleadoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaEmpleados.add(btnOpsion_EliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
-
-        pnlMenu_barNomina.add(pnlOpciones_NominaEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 210, 80));
-
-        pnlOpciones_NominaPuestos.setBackground(new java.awt.Color(0, 204, 106));
-        pnlOpciones_NominaPuestos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlOpciones_NominaPuestosMouseExited(evt);
-            }
-        });
-        pnlOpciones_NominaPuestos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnOpsion_IngresarPuesto.setBackground(new java.awt.Color(0, 204, 255));
-        btnOpsion_IngresarPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_IngresarPuesto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_IngresarPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
-        btnOpsion_IngresarPuesto.setText("Mantenimientos Puesto");
-        btnOpsion_IngresarPuesto.setBorder(null);
-        btnOpsion_IngresarPuesto.setBorderPainted(false);
-        btnOpsion_IngresarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_IngresarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_IngresarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarPuestoMouseClicked(evt);
-            }
-        });
-        btnOpsion_IngresarPuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_IngresarPuestoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaPuestos.add(btnOpsion_IngresarPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
-
-        btnOpsion_ModificarPuesto.setBackground(new java.awt.Color(0, 204, 255));
-        btnOpsion_ModificarPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ModificarPuesto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ModificarPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
-        btnOpsion_ModificarPuesto.setText(" Modificar Puesto");
-        btnOpsion_ModificarPuesto.setBorder(null);
-        btnOpsion_ModificarPuesto.setBorderPainted(false);
-        btnOpsion_ModificarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ModificarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ModificarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarPuestoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ModificarPuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ModificarPuestoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaPuestos.add(btnOpsion_ModificarPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
-
-        btnOpsion_EliminarPuesto.setBackground(new java.awt.Color(0, 204, 255));
-        btnOpsion_EliminarPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_EliminarPuesto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_EliminarPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
-        btnOpsion_EliminarPuesto.setText(" Eliminar Puesto");
-        btnOpsion_EliminarPuesto.setBorder(null);
-        btnOpsion_EliminarPuesto.setBorderPainted(false);
-        btnOpsion_EliminarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_EliminarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_EliminarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarPuestoMouseClicked(evt);
-            }
-        });
-        btnOpsion_EliminarPuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_EliminarPuestoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaPuestos.add(btnOpsion_EliminarPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
-
-        btnOpsion_ConsultaPuesto.setBackground(new java.awt.Color(0, 204, 255));
-        btnOpsion_ConsultaPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ConsultaPuesto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ConsultaPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
-        btnOpsion_ConsultaPuesto.setText(" Consulta Puestos");
-        btnOpsion_ConsultaPuesto.setBorder(null);
-        btnOpsion_ConsultaPuesto.setBorderPainted(false);
-        btnOpsion_ConsultaPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ConsultaPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ConsultaPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultaPuestoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ConsultaPuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ConsultaPuestoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaPuestos.add(btnOpsion_ConsultaPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
-
-        pnlMenu_barNomina.add(pnlOpciones_NominaPuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 210, 80));
-
-        pnlOpciones_NominaDepartamentos.setBackground(new java.awt.Color(0, 204, 106));
-        pnlOpciones_NominaDepartamentos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlOpciones_NominaDepartamentosMouseExited(evt);
-            }
-        });
-        pnlOpciones_NominaDepartamentos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnOpsion_IngresarDep.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_IngresarDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_IngresarDep.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_IngresarDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
-        btnOpsion_IngresarDep.setText("Mantenimientos Departamentos");
-        btnOpsion_IngresarDep.setBorder(null);
-        btnOpsion_IngresarDep.setBorderPainted(false);
-        btnOpsion_IngresarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_IngresarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_IngresarDep.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarDepMouseClicked(evt);
-            }
-        });
-        btnOpsion_IngresarDep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_IngresarDepActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaDepartamentos.add(btnOpsion_IngresarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
-
-        btnOpsion_ModificarDep.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_ModificarDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ModificarDep.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ModificarDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
-        btnOpsion_ModificarDep.setText(" Modificar Departamentos");
-        btnOpsion_ModificarDep.setBorder(null);
-        btnOpsion_ModificarDep.setBorderPainted(false);
-        btnOpsion_ModificarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ModificarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ModificarDep.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarDepMouseClicked(evt);
-            }
-        });
-        btnOpsion_ModificarDep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ModificarDepActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaDepartamentos.add(btnOpsion_ModificarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
-
-        btnOpsion_EliminarDep.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_EliminarDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_EliminarDep.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_EliminarDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
-        btnOpsion_EliminarDep.setText(" Eliminar Departamentos");
-        btnOpsion_EliminarDep.setBorder(null);
-        btnOpsion_EliminarDep.setBorderPainted(false);
-        btnOpsion_EliminarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_EliminarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_EliminarDep.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarDepMouseClicked(evt);
-            }
-        });
-        btnOpsion_EliminarDep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_EliminarDepActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaDepartamentos.add(btnOpsion_EliminarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
-
-        btnOpsion_ConsultaDep.setBackground(new java.awt.Color(0, 204, 204));
-        btnOpsion_ConsultaDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ConsultaDep.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ConsultaDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
-        btnOpsion_ConsultaDep.setText(" Consulta Departamentos");
-        btnOpsion_ConsultaDep.setBorder(null);
-        btnOpsion_ConsultaDep.setBorderPainted(false);
-        btnOpsion_ConsultaDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ConsultaDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ConsultaDep.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultaDepMouseClicked(evt);
-            }
-        });
-        btnOpsion_ConsultaDep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ConsultaDepActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaDepartamentos.add(btnOpsion_ConsultaDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
-
-        pnlMenu_barNomina.add(pnlOpciones_NominaDepartamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 210, 80));
-
-        pnlOpciones_NominaConceptos.setBackground(new java.awt.Color(0, 204, 106));
-        pnlOpciones_NominaConceptos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlOpciones_NominaConceptosMouseExited(evt);
-            }
-        });
-        pnlOpciones_NominaConceptos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnOpsion_EliminarConcepto.setBackground(new java.awt.Color(51, 153, 255));
-        btnOpsion_EliminarConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_EliminarConcepto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_EliminarConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
-        btnOpsion_EliminarConcepto.setText(" Eliminar Conceptos");
-        btnOpsion_EliminarConcepto.setBorder(null);
-        btnOpsion_EliminarConcepto.setBorderPainted(false);
-        btnOpsion_EliminarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_EliminarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_EliminarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_EliminarConceptoMouseClicked(evt);
-            }
-        });
-        btnOpsion_EliminarConcepto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_EliminarConceptoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaConceptos.add(btnOpsion_EliminarConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
-
-        btnOpsion_IngresarConcepto.setBackground(new java.awt.Color(51, 153, 255));
-        btnOpsion_IngresarConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_IngresarConcepto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_IngresarConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
-        btnOpsion_IngresarConcepto.setText("Mantenimientos Conceptos");
-        btnOpsion_IngresarConcepto.setBorder(null);
-        btnOpsion_IngresarConcepto.setBorderPainted(false);
-        btnOpsion_IngresarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_IngresarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_IngresarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_IngresarConceptoMouseClicked(evt);
-            }
-        });
-        btnOpsion_IngresarConcepto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_IngresarConceptoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaConceptos.add(btnOpsion_IngresarConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
-
-        btnOpsion_ModificarConcepto.setBackground(new java.awt.Color(51, 153, 255));
-        btnOpsion_ModificarConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ModificarConcepto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ModificarConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
-        btnOpsion_ModificarConcepto.setText(" Modificar Conceptos");
-        btnOpsion_ModificarConcepto.setBorder(null);
-        btnOpsion_ModificarConcepto.setBorderPainted(false);
-        btnOpsion_ModificarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ModificarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ModificarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ModificarConceptoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ModificarConcepto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ModificarConceptoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaConceptos.add(btnOpsion_ModificarConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
-
-        btnOpsion_ConsultaConcepto.setBackground(new java.awt.Color(51, 153, 255));
-        btnOpsion_ConsultaConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpsion_ConsultaConcepto.setForeground(new java.awt.Color(255, 255, 255));
-        btnOpsion_ConsultaConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
-        btnOpsion_ConsultaConcepto.setText(" Consulta Conceptos");
-        btnOpsion_ConsultaConcepto.setBorder(null);
-        btnOpsion_ConsultaConcepto.setBorderPainted(false);
-        btnOpsion_ConsultaConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOpsion_ConsultaConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOpsion_ConsultaConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnOpsion_ConsultaConceptoMouseClicked(evt);
-            }
-        });
-        btnOpsion_ConsultaConcepto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOpsion_ConsultaConceptoActionPerformed(evt);
-            }
-        });
-        pnlOpciones_NominaConceptos.add(btnOpsion_ConsultaConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
-
-        pnlMenu_barNomina.add(pnlOpciones_NominaConceptos, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 210, 80));
-
         pnlCentro.add(pnlMenu_barNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 1090, 80));
 
         pnlContenido.setBackground(new java.awt.Color(102, 102, 102));
@@ -2459,6 +1961,151 @@ public class Plataforma extends javax.swing.JFrame {
         pnlMenuUsuarios.setPreferredSize(new java.awt.Dimension(1100, 40));
         pnlMenuUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnCatalogos.setBackground(new java.awt.Color(46, 46, 46));
+        btnCatalogos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCatalogos.setForeground(new java.awt.Color(204, 204, 204));
+        btnCatalogos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Catalogos.png"))); // NOI18N
+        btnCatalogos.setText("Catalogos");
+        btnCatalogos.setBorder(null);
+        btnCatalogos.setBorderPainted(false);
+        btnCatalogos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCatalogos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnCatalogos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnCatalogosMouseMoved(evt);
+            }
+        });
+        btnCatalogos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCatalogosMouseClicked(evt);
+            }
+        });
+        btnCatalogos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCatalogosActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnCatalogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 20));
+
+        btnProcesos.setBackground(new java.awt.Color(46, 46, 46));
+        btnProcesos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnProcesos.setForeground(new java.awt.Color(204, 204, 204));
+        btnProcesos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Procesos.png"))); // NOI18N
+        btnProcesos.setText("Procesos");
+        btnProcesos.setBorder(null);
+        btnProcesos.setBorderPainted(false);
+        btnProcesos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProcesos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnProcesos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnProcesosMouseMoved(evt);
+            }
+        });
+        btnProcesos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProcesosMouseClicked(evt);
+            }
+        });
+        btnProcesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcesosActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnProcesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 120, 20));
+
+        btnHelp.setBackground(new java.awt.Color(46, 46, 46));
+        btnHelp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnHelp.setForeground(new java.awt.Color(204, 204, 204));
+        btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ayuda.png"))); // NOI18N
+        btnHelp.setText("Ayuda");
+        btnHelp.setBorder(null);
+        btnHelp.setBorderPainted(false);
+        btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnHelp.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnHelpMouseMoved(evt);
+            }
+        });
+        btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHelpMouseClicked(evt);
+            }
+        });
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 120, 20));
+
+        btnInformes.setBackground(new java.awt.Color(46, 46, 46));
+        btnInformes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnInformes.setForeground(new java.awt.Color(204, 204, 204));
+        btnInformes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/informes.png"))); // NOI18N
+        btnInformes.setText("Informes");
+        btnInformes.setBorder(null);
+        btnInformes.setBorderPainted(false);
+        btnInformes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInformes.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnInformes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnInformesMouseMoved(evt);
+            }
+        });
+        btnInformes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInformesMouseClicked(evt);
+            }
+        });
+        btnInformes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInformesActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 120, 20));
+
+        btnHerramientas.setBackground(new java.awt.Color(46, 46, 46));
+        btnHerramientas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnHerramientas.setForeground(new java.awt.Color(204, 204, 204));
+        btnHerramientas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Herramientas.png"))); // NOI18N
+        btnHerramientas.setText("Herramientas");
+        btnHerramientas.setBorder(null);
+        btnHerramientas.setBorderPainted(false);
+        btnHerramientas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHerramientas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnHerramientas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnHerramientasMouseMoved(evt);
+            }
+        });
+        btnHerramientas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHerramientasMouseClicked(evt);
+            }
+        });
+        btnHerramientas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHerramientasActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 140, 20));
+
+        jPanel1.setBackground(new java.awt.Color(46, 46, 46));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnlMenuUsuarios.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 470, 20));
+
         btnInicioUsuarios.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 16)); // NOI18N
         btnInicioUsuarios.setForeground(new java.awt.Color(54, 76, 98));
         btnInicioUsuarios.setText("USUARIOS");
@@ -2487,24 +2134,6 @@ public class Plataforma extends javax.swing.JFrame {
         lblIngresarUser.setOpaque(true);
         pnlMenuUsuarios.add(lblIngresarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 171, 125, 8));
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(127, 140, 141));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel24.setText("Usted inicia sesión como administrador,");
-        pnlMenuUsuarios.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 275, 20));
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(52, 152, 219));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel25.setText("Cerrar sesión ?");
-        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel25MouseClicked(evt);
-            }
-        });
-        pnlMenuUsuarios.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, -1, 20));
-
         btnTipodeUsuario.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 16)); // NOI18N
         btnTipodeUsuario.setForeground(new java.awt.Color(54, 76, 98));
         btnTipodeUsuario.setText("TIPO DE USUARIO");
@@ -2532,6 +2161,292 @@ public class Plataforma extends javax.swing.JFrame {
         lbltipodeUsuario.setBackground(new java.awt.Color(222, 222, 222));
         lbltipodeUsuario.setOpaque(true);
         pnlMenuUsuarios.add(lbltipodeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 171, 125, 8));
+
+        btnMantenimientoUsuarios.setBackground(new java.awt.Color(46, 46, 46));
+        btnMantenimientoUsuarios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnMantenimientoUsuarios.setForeground(new java.awt.Color(204, 204, 204));
+        btnMantenimientoUsuarios.setText("Mantemiento Usuarios");
+        btnMantenimientoUsuarios.setBorder(null);
+        btnMantenimientoUsuarios.setBorderPainted(false);
+        btnMantenimientoUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMantenimientoUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMantenimientoUsuarios.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMantenimientoUsuariosMouseMoved(evt);
+            }
+        });
+        btnMantenimientoUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMantenimientoUsuariosMouseClicked(evt);
+            }
+        });
+        btnMantenimientoUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMantenimientoUsuariosActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnMantenimientoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 170, 20));
+
+        pnlOpciones.setBackground(new java.awt.Color(102, 153, 255));
+        pnlOpciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlOpcionesMouseExited(evt);
+            }
+        });
+
+        btnOpsion_Consultar.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_Consultar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_Consultar.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ConsultarUser.png"))); // NOI18N
+        btnOpsion_Consultar.setText(" Consultar");
+        btnOpsion_Consultar.setBorder(null);
+        btnOpsion_Consultar.setBorderPainted(false);
+        btnOpsion_Consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Consultar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_Consultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultarMouseClicked(evt);
+            }
+        });
+        btnOpsion_Consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ConsultarActionPerformed(evt);
+            }
+        });
+
+        btnOpsion_Ingresar.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_Ingresar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_Ingresar.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_Ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/IngresarUser.png"))); // NOI18N
+        btnOpsion_Ingresar.setText(" Ingresar Usuario");
+        btnOpsion_Ingresar.setBorder(null);
+        btnOpsion_Ingresar.setBorderPainted(false);
+        btnOpsion_Ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Ingresar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_Ingresar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarMouseMoved(evt);
+            }
+        });
+        btnOpsion_Ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarMouseClicked(evt);
+            }
+        });
+        btnOpsion_Ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_IngresarActionPerformed(evt);
+            }
+        });
+
+        btnOpsion_Modificar.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_Modificar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_Modificar.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ModificarUser.png"))); // NOI18N
+        btnOpsion_Modificar.setText(" Modificar Usuario");
+        btnOpsion_Modificar.setBorder(null);
+        btnOpsion_Modificar.setBorderPainted(false);
+        btnOpsion_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Modificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarMouseClicked(evt);
+            }
+        });
+        btnOpsion_Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ModificarActionPerformed(evt);
+            }
+        });
+
+        btnOpsion_Eliminar.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_Eliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_Eliminar.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/EliminarUser.png"))); // NOI18N
+        btnOpsion_Eliminar.setText(" Eliminar Usuario");
+        btnOpsion_Eliminar.setBorder(null);
+        btnOpsion_Eliminar.setBorderPainted(false);
+        btnOpsion_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Eliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarMouseClicked(evt);
+            }
+        });
+        btnOpsion_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_EliminarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlOpcionesLayout = new javax.swing.GroupLayout(pnlOpciones);
+        pnlOpciones.setLayout(pnlOpcionesLayout);
+        pnlOpcionesLayout.setHorizontalGroup(
+            pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnOpsion_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpsion_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpsion_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpsion_Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        pnlOpcionesLayout.setVerticalGroup(
+            pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesLayout.createSequentialGroup()
+                .addComponent(btnOpsion_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnOpsion_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnOpsion_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnOpsion_Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pnlMenuUsuarios.add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 210, -1));
+
+        btnMantenimientoUsuarios1.setBackground(new java.awt.Color(14, 14, 14));
+        btnMantenimientoUsuarios1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnMantenimientoUsuarios1.setForeground(new java.awt.Color(204, 204, 204));
+        btnMantenimientoUsuarios1.setText("Mantemiento Tipos");
+        btnMantenimientoUsuarios1.setBorder(null);
+        btnMantenimientoUsuarios1.setBorderPainted(false);
+        btnMantenimientoUsuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMantenimientoUsuarios1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMantenimientoUsuarios1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMantenimientoUsuarios1MouseMoved(evt);
+            }
+        });
+        btnMantenimientoUsuarios1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMantenimientoUsuarios1MouseClicked(evt);
+            }
+        });
+        btnMantenimientoUsuarios1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMantenimientoUsuarios1ActionPerformed(evt);
+            }
+        });
+        pnlMenuUsuarios.add(btnMantenimientoUsuarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 170, 20));
+
+        pnlOpcionesTipo.setBackground(new java.awt.Color(0, 204, 204));
+        pnlOpcionesTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlOpcionesTipoMouseExited(evt);
+            }
+        });
+
+        btnOpsion_ConsultarTipo.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_ConsultarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ConsultarTipo.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ConsultarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ConsultarUser.png"))); // NOI18N
+        btnOpsion_ConsultarTipo.setText(" Consultar");
+        btnOpsion_ConsultarTipo.setBorder(null);
+        btnOpsion_ConsultarTipo.setBorderPainted(false);
+        btnOpsion_ConsultarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ConsultarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultarTipoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ConsultarTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ConsultarTipoActionPerformed(evt);
+            }
+        });
+
+        btnOpsion_IngresarTipo.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_IngresarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_IngresarTipo.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_IngresarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/IngresarUser.png"))); // NOI18N
+        btnOpsion_IngresarTipo.setText(" Ingresar Tipo de Usuario");
+        btnOpsion_IngresarTipo.setBorder(null);
+        btnOpsion_IngresarTipo.setBorderPainted(false);
+        btnOpsion_IngresarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_IngresarTipo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarTipoMouseMoved(evt);
+            }
+        });
+        btnOpsion_IngresarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarTipoMouseClicked(evt);
+            }
+        });
+        btnOpsion_IngresarTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_IngresarTipoActionPerformed(evt);
+            }
+        });
+
+        btnOpsion_ModificarTipo.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_ModificarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ModificarTipo.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ModificarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/ModificarUser.png"))); // NOI18N
+        btnOpsion_ModificarTipo.setText(" Modificar Tipo de Usuario");
+        btnOpsion_ModificarTipo.setBorder(null);
+        btnOpsion_ModificarTipo.setBorderPainted(false);
+        btnOpsion_ModificarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ModificarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarTipoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ModificarTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ModificarTipoActionPerformed(evt);
+            }
+        });
+
+        btnOpsion_EliminarTipo.setBackground(new java.awt.Color(36, 36, 36));
+        btnOpsion_EliminarTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_EliminarTipo.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_EliminarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/EliminarUser.png"))); // NOI18N
+        btnOpsion_EliminarTipo.setText(" Eliminar Tipo de Usuario");
+        btnOpsion_EliminarTipo.setBorder(null);
+        btnOpsion_EliminarTipo.setBorderPainted(false);
+        btnOpsion_EliminarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_EliminarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarTipoMouseClicked(evt);
+            }
+        });
+        btnOpsion_EliminarTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_EliminarTipoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlOpcionesTipoLayout = new javax.swing.GroupLayout(pnlOpcionesTipo);
+        pnlOpcionesTipo.setLayout(pnlOpcionesTipoLayout);
+        pnlOpcionesTipoLayout.setHorizontalGroup(
+            pnlOpcionesTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesTipoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(pnlOpcionesTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnOpsion_IngresarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpsion_ModificarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpsion_EliminarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpsion_ConsultarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        pnlOpcionesTipoLayout.setVerticalGroup(
+            pnlOpcionesTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOpcionesTipoLayout.createSequentialGroup()
+                .addComponent(btnOpsion_IngresarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnOpsion_ModificarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnOpsion_EliminarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnOpsion_ConsultarTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pnlMenuUsuarios.add(pnlOpcionesTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 210, -1));
 
         pnlDetalles1.setBackground(new java.awt.Color(255, 255, 255));
         pnlDetalles1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2591,7 +2506,10 @@ public class Plataforma extends javax.swing.JFrame {
         lblIP1.setText("127.0.0196");
         pnlDetalles1.add(lblIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, -1));
 
-        pnlMenuUsuarios.add(pnlDetalles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 420, 120));
+        pnlMenuUsuarios.add(pnlDetalles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 26, 420, 120));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\oie_USshpWXg9kiT.png")); // NOI18N
+        pnlMenuUsuarios.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, -1, -1));
 
         pnlContacto1.setBackground(new java.awt.Color(255, 255, 255));
         pnlContacto1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2621,7 +2539,25 @@ public class Plataforma extends javax.swing.JFrame {
         lblTel1.setText("4159-6960");
         pnlContacto1.add(lblTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 100, -1));
 
-        pnlMenuUsuarios.add(pnlContacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 600, 120));
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(127, 140, 141));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel24.setText("Usted inicia sesión como administrador,");
+        pnlContacto1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 10, 250, -1));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(52, 152, 219));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel25.setText("Cerrar sesión ?");
+        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+        });
+        pnlContacto1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
+        pnlMenuUsuarios.add(pnlContacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 26, 600, 120));
 
         pnlMenu.setBackground(new java.awt.Color(222, 222, 222));
         pnlMenu.setPreferredSize(new java.awt.Dimension(1100, 40));
@@ -2687,27 +2623,6 @@ public class Plataforma extends javax.swing.JFrame {
         lblPuestos.setPreferredSize(new java.awt.Dimension(100, 0));
         pnlMenu.add(lblPuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 125, 8));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(127, 140, 141));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel16.setText("Usted inicia sesión como administrador,");
-        pnlMenu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 275, -1));
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(52, 152, 219));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel17.setText("Cerrar sesión ?");
-        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel17MouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel17MousePressed(evt);
-            }
-        });
-        pnlMenu.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, -1, -1));
-
         btnConceptos.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 16)); // NOI18N
         btnConceptos.setForeground(new java.awt.Color(54, 76, 98));
         btnConceptos.setText("CONCEPTOS");
@@ -2745,6 +2660,698 @@ public class Plataforma extends javax.swing.JFrame {
         lblTabla.setOpaque(true);
         lblTabla.setPreferredSize(new java.awt.Dimension(100, 0));
         pnlMenu.add(lblTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 170, 125, 9));
+
+        btnME.setBackground(new java.awt.Color(46, 46, 46));
+        btnME.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnME.setForeground(new java.awt.Color(204, 204, 204));
+        btnME.setText("Mantenimiento Empleados");
+        btnME.setBorder(null);
+        btnME.setBorderPainted(false);
+        btnME.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnME.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnME.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnME.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMEMouseMoved(evt);
+            }
+        });
+        btnME.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMEMouseClicked(evt);
+            }
+        });
+        btnME.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMEActionPerformed(evt);
+            }
+        });
+
+        btnMP.setBackground(new java.awt.Color(46, 46, 46));
+        btnMP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnMP.setForeground(new java.awt.Color(204, 204, 204));
+        btnMP.setText("Mantenimiento Puestos");
+        btnMP.setBorder(null);
+        btnMP.setBorderPainted(false);
+        btnMP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMPMouseMoved(evt);
+            }
+        });
+        btnMP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMPMouseClicked(evt);
+            }
+        });
+        btnMP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMPActionPerformed(evt);
+            }
+        });
+
+        btnMD.setBackground(new java.awt.Color(46, 46, 46));
+        btnMD.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnMD.setForeground(new java.awt.Color(204, 204, 204));
+        btnMD.setText("Mantenimientos Dep");
+        btnMD.setBorder(null);
+        btnMD.setBorderPainted(false);
+        btnMD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMD.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMDMouseMoved(evt);
+            }
+        });
+        btnMD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMDMouseClicked(evt);
+            }
+        });
+        btnMD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMDActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlCatalogoLayout = new javax.swing.GroupLayout(pnlCatalogo);
+        pnlCatalogo.setLayout(pnlCatalogoLayout);
+        pnlCatalogoLayout.setHorizontalGroup(
+            pnlCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCatalogoLayout.createSequentialGroup()
+                .addGroup(pnlCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnME, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMP, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMD, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlCatalogoLayout.setVerticalGroup(
+            pnlCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCatalogoLayout.createSequentialGroup()
+                .addComponent(btnME, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnMP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnMD, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pnlMenu.add(pnlCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 190, 60));
+
+        btnMC.setBackground(new java.awt.Color(46, 46, 46));
+        btnMC.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnMC.setForeground(new java.awt.Color(204, 204, 204));
+        btnMC.setText("Mantenimiento Conceptos");
+        btnMC.setBorder(null);
+        btnMC.setBorderPainted(false);
+        btnMC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMC.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMCMouseMoved(evt);
+            }
+        });
+        btnMC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMCMouseClicked(evt);
+            }
+        });
+        btnMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMCActionPerformed(evt);
+            }
+        });
+
+        btnMPP.setBackground(new java.awt.Color(46, 46, 46));
+        btnMPP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnMPP.setForeground(new java.awt.Color(204, 204, 204));
+        btnMPP.setText("Mantenimientos Planilla");
+        btnMPP.setBorder(null);
+        btnMPP.setBorderPainted(false);
+        btnMPP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMPP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMPP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMPP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnMPPMouseMoved(evt);
+            }
+        });
+        btnMPP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMPPMouseClicked(evt);
+            }
+        });
+        btnMPP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMPPActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlProcesosLayout = new javax.swing.GroupLayout(pnlProcesos);
+        pnlProcesos.setLayout(pnlProcesosLayout);
+        pnlProcesosLayout.setHorizontalGroup(
+            pnlProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProcesosLayout.createSequentialGroup()
+                .addGroup(pnlProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMC, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMPP, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlProcesosLayout.setVerticalGroup(
+            pnlProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProcesosLayout.createSequentialGroup()
+                .addComponent(btnMC, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnMPP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pnlMenu.add(pnlProcesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 190, 40));
+
+        btnIP.setBackground(new java.awt.Color(46, 46, 46));
+        btnIP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnIP.setForeground(new java.awt.Color(204, 204, 204));
+        btnIP.setText("Informes de Planilla");
+        btnIP.setBorder(null);
+        btnIP.setBorderPainted(false);
+        btnIP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnIP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnIP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnIPMouseMoved(evt);
+            }
+        });
+        btnIP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIPMouseClicked(evt);
+            }
+        });
+        btnIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIPActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlInformesLayout = new javax.swing.GroupLayout(pnlInformes);
+        pnlInformes.setLayout(pnlInformesLayout);
+        pnlInformesLayout.setHorizontalGroup(
+            pnlInformesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInformesLayout.createSequentialGroup()
+                .addComponent(btnIP, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlInformesLayout.setVerticalGroup(
+            pnlInformesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInformesLayout.createSequentialGroup()
+                .addComponent(btnIP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pnlMenu.add(pnlInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 190, 20));
+
+        btnCalc.setBackground(new java.awt.Color(46, 46, 46));
+        btnCalc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCalc.setForeground(new java.awt.Color(204, 204, 204));
+        btnCalc.setText("Calculadora");
+        btnCalc.setBorder(null);
+        btnCalc.setBorderPainted(false);
+        btnCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCalc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnCalc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCalc.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnCalcMouseMoved(evt);
+            }
+        });
+        btnCalc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCalcMouseClicked(evt);
+            }
+        });
+        btnCalc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlHerramientasLayout = new javax.swing.GroupLayout(pnlHerramientas);
+        pnlHerramientas.setLayout(pnlHerramientasLayout);
+        pnlHerramientasLayout.setHorizontalGroup(
+            pnlHerramientasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHerramientasLayout.createSequentialGroup()
+                .addComponent(btnCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlHerramientasLayout.setVerticalGroup(
+            pnlHerramientasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHerramientasLayout.createSequentialGroup()
+                .addComponent(btnCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pnlMenu.add(pnlHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 190, 20));
+
+        btnManual.setBackground(new java.awt.Color(46, 46, 46));
+        btnManual.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnManual.setForeground(new java.awt.Color(204, 204, 204));
+        btnManual.setText("Manual");
+        btnManual.setBorder(null);
+        btnManual.setBorderPainted(false);
+        btnManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnManual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnManual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnManual.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnManualMouseMoved(evt);
+            }
+        });
+        btnManual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnManualMouseClicked(evt);
+            }
+        });
+        btnManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManualActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlAyudaLayout = new javax.swing.GroupLayout(pnlAyuda);
+        pnlAyuda.setLayout(pnlAyudaLayout);
+        pnlAyudaLayout.setHorizontalGroup(
+            pnlAyudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAyudaLayout.createSequentialGroup()
+                .addComponent(btnManual, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlAyudaLayout.setVerticalGroup(
+            pnlAyudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAyudaLayout.createSequentialGroup()
+                .addComponent(btnManual, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pnlMenu.add(pnlAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 190, 20));
+
+        pnlOpciones_NominaConceptos.setBackground(new java.awt.Color(0, 204, 106));
+        pnlOpciones_NominaConceptos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlOpciones_NominaConceptosMouseExited(evt);
+            }
+        });
+        pnlOpciones_NominaConceptos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnOpsion_EliminarConcepto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_EliminarConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_EliminarConcepto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_EliminarConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
+        btnOpsion_EliminarConcepto.setText(" Eliminar Conceptos");
+        btnOpsion_EliminarConcepto.setBorder(null);
+        btnOpsion_EliminarConcepto.setBorderPainted(false);
+        btnOpsion_EliminarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_EliminarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarConceptoMouseClicked(evt);
+            }
+        });
+        btnOpsion_EliminarConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_EliminarConceptoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaConceptos.add(btnOpsion_EliminarConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
+
+        btnOpsion_IngresarConcepto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_IngresarConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_IngresarConcepto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_IngresarConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
+        btnOpsion_IngresarConcepto.setText("Mantenimientos Conceptos");
+        btnOpsion_IngresarConcepto.setBorder(null);
+        btnOpsion_IngresarConcepto.setBorderPainted(false);
+        btnOpsion_IngresarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_IngresarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarConceptoMouseClicked(evt);
+            }
+        });
+        btnOpsion_IngresarConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_IngresarConceptoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaConceptos.add(btnOpsion_IngresarConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
+
+        btnOpsion_ModificarConcepto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ModificarConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ModificarConcepto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ModificarConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
+        btnOpsion_ModificarConcepto.setText(" Modificar Conceptos");
+        btnOpsion_ModificarConcepto.setBorder(null);
+        btnOpsion_ModificarConcepto.setBorderPainted(false);
+        btnOpsion_ModificarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ModificarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarConceptoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ModificarConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ModificarConceptoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaConceptos.add(btnOpsion_ModificarConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
+
+        btnOpsion_ConsultaConcepto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ConsultaConcepto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ConsultaConcepto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ConsultaConcepto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Conceptos.png"))); // NOI18N
+        btnOpsion_ConsultaConcepto.setText(" Consulta Conceptos");
+        btnOpsion_ConsultaConcepto.setBorder(null);
+        btnOpsion_ConsultaConcepto.setBorderPainted(false);
+        btnOpsion_ConsultaConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ConsultaConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultaConceptoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ConsultaConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ConsultaConceptoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaConceptos.add(btnOpsion_ConsultaConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
+
+        pnlMenu.add(pnlOpciones_NominaConceptos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 210, 80));
+
+        pnlOpciones_NominaDepartamentos.setBackground(new java.awt.Color(0, 204, 106));
+        pnlOpciones_NominaDepartamentos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlOpciones_NominaDepartamentosMouseExited(evt);
+            }
+        });
+        pnlOpciones_NominaDepartamentos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnOpsion_IngresarDep.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_IngresarDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_IngresarDep.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_IngresarDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
+        btnOpsion_IngresarDep.setText("Mantenimientos Departamentos");
+        btnOpsion_IngresarDep.setBorder(null);
+        btnOpsion_IngresarDep.setBorderPainted(false);
+        btnOpsion_IngresarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_IngresarDep.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarDepMouseClicked(evt);
+            }
+        });
+        btnOpsion_IngresarDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_IngresarDepActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaDepartamentos.add(btnOpsion_IngresarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
+
+        btnOpsion_ModificarDep.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ModificarDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ModificarDep.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ModificarDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
+        btnOpsion_ModificarDep.setText(" Modificar Departamentos");
+        btnOpsion_ModificarDep.setBorder(null);
+        btnOpsion_ModificarDep.setBorderPainted(false);
+        btnOpsion_ModificarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ModificarDep.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarDepMouseClicked(evt);
+            }
+        });
+        btnOpsion_ModificarDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ModificarDepActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaDepartamentos.add(btnOpsion_ModificarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
+
+        btnOpsion_EliminarDep.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_EliminarDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_EliminarDep.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_EliminarDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
+        btnOpsion_EliminarDep.setText(" Eliminar Departamentos");
+        btnOpsion_EliminarDep.setBorder(null);
+        btnOpsion_EliminarDep.setBorderPainted(false);
+        btnOpsion_EliminarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_EliminarDep.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarDepMouseClicked(evt);
+            }
+        });
+        btnOpsion_EliminarDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_EliminarDepActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaDepartamentos.add(btnOpsion_EliminarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
+
+        btnOpsion_ConsultaDep.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ConsultaDep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ConsultaDep.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ConsultaDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Departamentos.png"))); // NOI18N
+        btnOpsion_ConsultaDep.setText(" Consulta Departamentos");
+        btnOpsion_ConsultaDep.setBorder(null);
+        btnOpsion_ConsultaDep.setBorderPainted(false);
+        btnOpsion_ConsultaDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ConsultaDep.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultaDepMouseClicked(evt);
+            }
+        });
+        btnOpsion_ConsultaDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ConsultaDepActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaDepartamentos.add(btnOpsion_ConsultaDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
+
+        pnlMenu.add(pnlOpciones_NominaDepartamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 210, 80));
+
+        pnlOpciones_NominaPuestos.setBackground(new java.awt.Color(0, 204, 106));
+        pnlOpciones_NominaPuestos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlOpciones_NominaPuestosMouseExited(evt);
+            }
+        });
+        pnlOpciones_NominaPuestos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnOpsion_IngresarPuesto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_IngresarPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_IngresarPuesto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_IngresarPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
+        btnOpsion_IngresarPuesto.setText("Mantenimientos Puesto");
+        btnOpsion_IngresarPuesto.setBorder(null);
+        btnOpsion_IngresarPuesto.setBorderPainted(false);
+        btnOpsion_IngresarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_IngresarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarPuestoMouseClicked(evt);
+            }
+        });
+        btnOpsion_IngresarPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_IngresarPuestoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaPuestos.add(btnOpsion_IngresarPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
+
+        btnOpsion_ModificarPuesto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ModificarPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ModificarPuesto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ModificarPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
+        btnOpsion_ModificarPuesto.setText(" Modificar Puesto");
+        btnOpsion_ModificarPuesto.setBorder(null);
+        btnOpsion_ModificarPuesto.setBorderPainted(false);
+        btnOpsion_ModificarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ModificarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarPuestoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ModificarPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ModificarPuestoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaPuestos.add(btnOpsion_ModificarPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
+
+        btnOpsion_EliminarPuesto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_EliminarPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_EliminarPuesto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_EliminarPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
+        btnOpsion_EliminarPuesto.setText(" Eliminar Puesto");
+        btnOpsion_EliminarPuesto.setBorder(null);
+        btnOpsion_EliminarPuesto.setBorderPainted(false);
+        btnOpsion_EliminarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_EliminarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarPuestoMouseClicked(evt);
+            }
+        });
+        btnOpsion_EliminarPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_EliminarPuestoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaPuestos.add(btnOpsion_EliminarPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
+
+        btnOpsion_ConsultaPuesto.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ConsultaPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ConsultaPuesto.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ConsultaPuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Puestos.png"))); // NOI18N
+        btnOpsion_ConsultaPuesto.setText(" Consulta Puestos");
+        btnOpsion_ConsultaPuesto.setBorder(null);
+        btnOpsion_ConsultaPuesto.setBorderPainted(false);
+        btnOpsion_ConsultaPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ConsultaPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultaPuestoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ConsultaPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ConsultaPuestoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaPuestos.add(btnOpsion_ConsultaPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
+
+        pnlMenu.add(pnlOpciones_NominaPuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 210, 80));
+
+        pnlOpciones_NominaEmpleados.setBackground(new java.awt.Color(0, 204, 106));
+        pnlOpciones_NominaEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlOpciones_NominaEmpleadosMouseExited(evt);
+            }
+        });
+        pnlOpciones_NominaEmpleados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnOpsion_IngresarEmpleado.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_IngresarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_IngresarEmpleado.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_IngresarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
+        btnOpsion_IngresarEmpleado.setText("Mantenimientos Empleado");
+        btnOpsion_IngresarEmpleado.setBorder(null);
+        btnOpsion_IngresarEmpleado.setBorderPainted(false);
+        btnOpsion_IngresarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_IngresarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarEmpleadoMouseMoved(evt);
+            }
+        });
+        btnOpsion_IngresarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_IngresarEmpleadoMouseClicked(evt);
+            }
+        });
+        btnOpsion_IngresarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_IngresarEmpleadoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaEmpleados.add(btnOpsion_IngresarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 20));
+
+        btnOpsion_ModificarEmpleado.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ModificarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ModificarEmpleado.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ModificarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
+        btnOpsion_ModificarEmpleado.setText(" Modificar Empleado");
+        btnOpsion_ModificarEmpleado.setBorder(null);
+        btnOpsion_ModificarEmpleado.setBorderPainted(false);
+        btnOpsion_ModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ModificarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarEmpleadoMouseMoved(evt);
+            }
+        });
+        btnOpsion_ModificarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ModificarEmpleadoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ModificarEmpleadoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaEmpleados.add(btnOpsion_ModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 20));
+
+        btnOpsion_ConsultaEmpleado.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_ConsultaEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_ConsultaEmpleado.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_ConsultaEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
+        btnOpsion_ConsultaEmpleado.setText(" Consulta Empleado");
+        btnOpsion_ConsultaEmpleado.setBorder(null);
+        btnOpsion_ConsultaEmpleado.setBorderPainted(false);
+        btnOpsion_ConsultaEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_ConsultaEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultaEmpleadoMouseMoved(evt);
+            }
+        });
+        btnOpsion_ConsultaEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_ConsultaEmpleadoMouseClicked(evt);
+            }
+        });
+        btnOpsion_ConsultaEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_ConsultaEmpleadoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaEmpleados.add(btnOpsion_ConsultaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 20));
+
+        btnOpsion_EliminarEmpleado.setBackground(new java.awt.Color(46, 46, 46));
+        btnOpsion_EliminarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOpsion_EliminarEmpleado.setForeground(new java.awt.Color(204, 204, 204));
+        btnOpsion_EliminarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Empleados.png"))); // NOI18N
+        btnOpsion_EliminarEmpleado.setText(" Eliminar Empleado");
+        btnOpsion_EliminarEmpleado.setBorder(null);
+        btnOpsion_EliminarEmpleado.setBorderPainted(false);
+        btnOpsion_EliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOpsion_EliminarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarEmpleadoMouseMoved(evt);
+            }
+        });
+        btnOpsion_EliminarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpsion_EliminarEmpleadoMouseClicked(evt);
+            }
+        });
+        btnOpsion_EliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpsion_EliminarEmpleadoActionPerformed(evt);
+            }
+        });
+        pnlOpciones_NominaEmpleados.add(btnOpsion_EliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 20));
+
+        pnlMenu.add(pnlOpciones_NominaEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 210, 80));
 
         pnlDetalles2.setBackground(new java.awt.Color(255, 255, 255));
         pnlDetalles2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2804,7 +3411,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblIP2.setText("127.0.0196");
         pnlDetalles2.add(lblIP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, -1));
 
-        pnlMenu.add(pnlDetalles2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 420, 120));
+        pnlMenu.add(pnlDetalles2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 26, 420, 120));
 
         pnlContacto2.setBackground(new java.awt.Color(255, 255, 255));
         pnlContacto2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2834,7 +3441,173 @@ public class Plataforma extends javax.swing.JFrame {
         lblTel2.setText("4159-6960");
         pnlContacto2.add(lblTel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 100, -1));
 
-        pnlMenu.add(pnlContacto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 600, 120));
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(127, 140, 141));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel16.setText("Usted inicia sesión como administrador,");
+        pnlContacto2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 10, 260, -1));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(52, 152, 219));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("Cerrar sesión ?");
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel17MousePressed(evt);
+            }
+        });
+        pnlContacto2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
+        pnlMenu.add(pnlContacto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 26, 600, 120));
+
+        jPanel2.setBackground(new java.awt.Color(46, 46, 46));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnlMenu.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 470, 20));
+
+        btnHelp1.setBackground(new java.awt.Color(46, 46, 46));
+        btnHelp1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnHelp1.setForeground(new java.awt.Color(204, 204, 204));
+        btnHelp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ayuda.png"))); // NOI18N
+        btnHelp1.setText("Ayuda");
+        btnHelp1.setBorder(null);
+        btnHelp1.setBorderPainted(false);
+        btnHelp1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnHelp1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnHelp1MouseMoved(evt);
+            }
+        });
+        btnHelp1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHelp1MouseClicked(evt);
+            }
+        });
+        btnHelp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHelp1ActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnHelp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 120, 20));
+
+        btnHerramientas1.setBackground(new java.awt.Color(46, 46, 46));
+        btnHerramientas1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnHerramientas1.setForeground(new java.awt.Color(204, 204, 204));
+        btnHerramientas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Herramientas.png"))); // NOI18N
+        btnHerramientas1.setText("Herramientas");
+        btnHerramientas1.setBorder(null);
+        btnHerramientas1.setBorderPainted(false);
+        btnHerramientas1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHerramientas1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnHerramientas1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnHerramientas1MouseMoved(evt);
+            }
+        });
+        btnHerramientas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHerramientas1MouseClicked(evt);
+            }
+        });
+        btnHerramientas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHerramientas1ActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnHerramientas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 140, 20));
+
+        btnInformes1.setBackground(new java.awt.Color(46, 46, 46));
+        btnInformes1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnInformes1.setForeground(new java.awt.Color(204, 204, 204));
+        btnInformes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/informes.png"))); // NOI18N
+        btnInformes1.setText("Informes");
+        btnInformes1.setBorder(null);
+        btnInformes1.setBorderPainted(false);
+        btnInformes1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInformes1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnInformes1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnInformes1MouseMoved(evt);
+            }
+        });
+        btnInformes1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInformes1MouseClicked(evt);
+            }
+        });
+        btnInformes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInformes1ActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnInformes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 120, 20));
+
+        btnProcesos1.setBackground(new java.awt.Color(46, 46, 46));
+        btnProcesos1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnProcesos1.setForeground(new java.awt.Color(204, 204, 204));
+        btnProcesos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Procesos.png"))); // NOI18N
+        btnProcesos1.setText("Procesos");
+        btnProcesos1.setBorder(null);
+        btnProcesos1.setBorderPainted(false);
+        btnProcesos1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProcesos1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnProcesos1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnProcesos1MouseMoved(evt);
+            }
+        });
+        btnProcesos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProcesos1MouseClicked(evt);
+            }
+        });
+        btnProcesos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcesos1ActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnProcesos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 120, 20));
+
+        btnCatalogos1.setBackground(new java.awt.Color(46, 46, 46));
+        btnCatalogos1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCatalogos1.setForeground(new java.awt.Color(204, 204, 204));
+        btnCatalogos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Catalogos.png"))); // NOI18N
+        btnCatalogos1.setText("Catalogos");
+        btnCatalogos1.setBorder(null);
+        btnCatalogos1.setBorderPainted(false);
+        btnCatalogos1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCatalogos1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnCatalogos1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnCatalogos1MouseMoved(evt);
+            }
+        });
+        btnCatalogos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCatalogos1MouseClicked(evt);
+            }
+        });
+        btnCatalogos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCatalogos1ActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnCatalogos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 20));
 
         pnlIInicio.setLayout(new java.awt.CardLayout());
 
@@ -5111,7 +5884,7 @@ public class Plataforma extends javax.swing.JFrame {
                 btn_buscardepActionPerformed(evt);
             }
         });
-        pnlIngresoDep.add(btn_buscardep, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
+        pnlIngresoDep.add(btn_buscardep, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, -1, -1));
 
         txt_buscardep.setBackground(new java.awt.Color(231, 231, 231));
         txt_buscardep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -5122,7 +5895,7 @@ public class Plataforma extends javax.swing.JFrame {
                 txt_buscardepCaretUpdate(evt);
             }
         });
-        pnlIngresoDep.add(txt_buscardep, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 260, 35));
+        pnlIngresoDep.add(txt_buscardep, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 260, 35));
         pnlIngresoDep.add(label_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 80, -1));
 
         tblDep.setModel(new javax.swing.table.DefaultTableModel(
@@ -5784,14 +6557,17 @@ public class Plataforma extends javax.swing.JFrame {
         jButton9.setBackground(new java.awt.Color(0, 204, 204));
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("IGSS");
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/iggs.png"))); // NOI18N
         jButton9.setBorder(null);
+        jButton9.setBorderPainted(false);
+        jButton9.setContentAreaFilled(false);
+        jButton9.setFocusable(false);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        pnlTabla.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 70, 100, 30));
+        pnlTabla.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 110, 30));
 
         pnlCuerpoNomina.add(pnlTabla, "card6");
 
@@ -6008,86 +6784,26 @@ public class Plataforma extends javax.swing.JFrame {
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
 
-        lblEmpleados.setBackground(new Color(88, 122, 255));
-
-        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
-
-        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
-        lblDep.setBackground(new Color(color[0], color[1], color[2]));
-        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
-
-        pnlOpciones_NominaConceptos.setVisible(false);
-        pnlOpciones_NominaDepartamentos.setVisible(false);
-        pnlOpciones_NominaPuestos.setVisible(false);
-        pnlOpciones_NominaEmpleados.setVisible(true);
-
 
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     private void btnPuestosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuestosActionPerformed
-        lblPuestos.setBackground(new Color(0, 204, 255));
 
-        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
-        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
-        lblDep.setBackground(new Color(color[0], color[1], color[2]));
-        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
-        pnlOpciones_NominaEmpleados.setVisible(false);
-        pnlOpciones_NominaConceptos.setVisible(false);
-        pnlOpciones_NominaDepartamentos.setVisible(false);
-        pnlOpciones_NominaPuestos.setVisible(true);
 
     }//GEN-LAST:event_btnPuestosActionPerformed
 
     private void btnDepartamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartamentosActionPerformed
-        lblDep.setBackground(new Color(0, 204, 204));
-
-        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
-        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
-        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
-        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
-        pnlOpciones_NominaEmpleados.setVisible(false);
-        pnlOpciones_NominaPuestos.setVisible(false);
-
-        pnlOpciones_NominaConceptos.setVisible(false);
-        pnlOpciones_NominaDepartamentos.setVisible(true);
 
 
     }//GEN-LAST:event_btnDepartamentosActionPerformed
 
     private void btnConceptosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConceptosActionPerformed
-        lblConceptos.setBackground(new Color(51, 153, 255));
-
-        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
-        lblDep.setBackground(new Color(color[0], color[1], color[2]));
-        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
-        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
-        pnlOpciones_NominaEmpleados.setVisible(false);
-        pnlOpciones_NominaPuestos.setVisible(false);
-        pnlOpciones_NominaDepartamentos.setVisible(false);
-
-        pnlOpciones_NominaConceptos.setVisible(true);
 
 
     }//GEN-LAST:event_btnConceptosActionPerformed
 
     private void btnTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablaActionPerformed
-        lblTabla.setBackground(new Color(0, 207, 216));
 
-        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
-        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
-        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
-        lblDep.setBackground(new Color(color[0], color[1], color[2]));
-        pnlOpciones_NominaEmpleados.setVisible(false);
-        pnlOpciones_NominaPuestos.setVisible(false);
-        pnlOpciones_NominaDepartamentos.setVisible(false);
-        pnlOpciones_NominaConceptos.setVisible(false);
-
-        pnlCuerpoNomina.removeAll();
-        pnlCuerpoNomina.repaint();
-        pnlCuerpoNomina.revalidate();
-        pnlCuerpoNomina.add(pnlTabla);
-        pnlCuerpoNomina.repaint();
-        pnlCuerpoNomina.revalidate();
     }//GEN-LAST:event_btnTablaActionPerformed
 
     private void jPanel_PlataformaMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel_PlataformaMouseDragged
@@ -6099,12 +6815,19 @@ public class Plataforma extends javax.swing.JFrame {
     private void jPanel_PlataformaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel_PlataformaMousePressed
         xx = evt.getX();
         xy = evt.getY();
+        btnMantenimientoUsuarios.setVisible(false);
+        btnMantenimientoUsuarios1.setVisible(false);
         pnlOpciones.setVisible(false);
         pnlOpcionesTipo.setVisible(false);
         pnlOpciones_NominaConceptos.setVisible(false);
         pnlOpciones_NominaDepartamentos.setVisible(false);
         pnlOpciones_NominaPuestos.setVisible(false);
         pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlCatalogo.setVisible(false);
+        pnlProcesos.setVisible(false);
+        pnlHerramientas.setVisible(false);
+        pnlInformes.setVisible(false);
+        pnlAyuda.setVisible(false);
     }//GEN-LAST:event_jPanel_PlataformaMousePressed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -6112,12 +6835,10 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnInicioUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioUsuariosActionPerformed
-        pnlOpciones.setVisible(true);
+        /*        pnlOpciones.setVisible(true);
         pnlOpcionesTipo.setVisible(true);
-        pnlOpcionesTipo.setVisible(false);
-        lblIngresarUser.setBackground(new Color(102, 153, 255));
+        pnlOpcionesTipo.setVisible(false);*/
 
-        lbltipodeUsuario.setBackground(new Color(color[0], color[1], color[2]));
     }//GEN-LAST:event_btnInicioUsuariosActionPerformed
 
     private void lblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUsuariosMouseClicked
@@ -6351,7 +7072,7 @@ public class Plataforma extends javax.swing.JFrame {
             chbPermisoIngresoUserTipo, chbPermisoModificarUserTipo, chbPermisoEliminarUserTipo, chbPermisoConsultarUserTipo,
             chbPermisoIngresoEmpleado, chbPermisoModificarEmpleado, chbPermisoEliminarEmpleado, chbPermisoConsultaEmpleado,
             chbPermisoIngresoDep, chbPermisoModificarDep, chbPermisoEliminarDep, chbPermisoConsultaDep, chbPermisoIngresoConcepto,
-            chbPermisoModificarConcepto, chbPermisoEliminarConcepto, chbPermisoConsultaConcepto, chbPermisoTabla, chbPermisoBarras, chbPermisoPastel, chbPermisoUsuario, chbPermisoNomina};
+            chbPermisoModificarConcepto, chbPermisoEliminarConcepto, chbPermisoConsultaConcepto, chbPermisoTabla, chbPermisoBarras, chbPermisoPastel, chbPermisoUsuario, chbPermisoNomina, cbPercepcion, cbDeduccion, cbISR};
         //Menus
         lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
         lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
@@ -6420,7 +7141,7 @@ public class Plataforma extends javax.swing.JFrame {
         chbPorId.setBackground(new java.awt.Color(17, 17, 17));
         chbPorIdConcepto.setBackground(new java.awt.Color(17, 17, 17));
 
-        for (int i = 0; i < 48; i++) {
+        for (int i = 0; i < 51; i++) {
             Permisos[i].setBackground(new java.awt.Color(17, 17, 17));
         }
 
@@ -6522,7 +7243,7 @@ public class Plataforma extends javax.swing.JFrame {
             chbPermisoIngresoUserTipo, chbPermisoModificarUserTipo, chbPermisoEliminarUserTipo, chbPermisoConsultarUserTipo,
             chbPermisoIngresoEmpleado, chbPermisoModificarEmpleado, chbPermisoEliminarEmpleado, chbPermisoConsultaEmpleado,
             chbPermisoIngresoDep, chbPermisoModificarDep, chbPermisoEliminarDep, chbPermisoConsultaDep, chbPermisoIngresoConcepto,
-            chbPermisoModificarConcepto, chbPermisoEliminarConcepto, chbPermisoConsultaConcepto, chbPermisoTabla, chbPermisoBarras, chbPermisoPastel, chbPermisoUsuario, chbPermisoNomina};
+            chbPermisoModificarConcepto, chbPermisoEliminarConcepto, chbPermisoConsultaConcepto, chbPermisoTabla, chbPermisoBarras, chbPermisoPastel, chbPermisoUsuario, chbPermisoNomina, cbPercepcion, cbDeduccion, cbISR};
         //Menus
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/logo2.png")));
         lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/logo2.png")));
@@ -6591,7 +7312,7 @@ public class Plataforma extends javax.swing.JFrame {
         chbPorId.setBackground(new java.awt.Color(255, 255, 255));
         chbPorIdConcepto.setBackground(new java.awt.Color(255, 255, 255));
 
-        for (int i = 0; i < 48; i++) {
+        for (int i = 0; i < 51; i++) {
             Permisos[i].setBackground(new java.awt.Color(255, 255, 255));
         }
 
@@ -6643,7 +7364,6 @@ public class Plataforma extends javax.swing.JFrame {
         lblConsultaUserTipo.setForeground(new Color(44, 62, 80));
         //Titulos de Nomina de Empleados
         // lblUsernameNomina.setForeground(new Color(44, 62, 80));
-
         lblIngreso_NominaEmpleado.setForeground(new Color(44, 62, 80));
         lblModificar_NominaEmpleado.setForeground(new Color(44, 62, 80));
         lblEliminar_NominaEmpleado.setForeground(new Color(44, 62, 80));
@@ -6673,6 +7393,8 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_lblClaroMouseClicked
 
     private void btnOpsion_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpsion_IngresarActionPerformed
+        pnlOpciones.setVisible(false);
+        btnMantenimientoUsuarios.setVisible(false);
         pnlCuerpoUsuarios.removeAll();
         pnlCuerpoUsuarios.repaint();
         pnlCuerpoUsuarios.revalidate();
@@ -6682,6 +7404,8 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOpsion_IngresarActionPerformed
 
     private void btnOpsion_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpsion_ModificarActionPerformed
+        pnlOpciones.setVisible(false);
+        btnMantenimientoUsuarios.setVisible(false);
         pnlCuerpoUsuarios.removeAll();
         pnlCuerpoUsuarios.repaint();
         pnlCuerpoUsuarios.revalidate();
@@ -6696,6 +7420,8 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOpsion_ModificarActionPerformed
 
     private void btnOpsion_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpsion_EliminarActionPerformed
+        pnlOpciones.setVisible(false);
+        btnMantenimientoUsuarios.setVisible(false);
         pnlCuerpoUsuarios.removeAll();
         pnlCuerpoUsuarios.repaint();
         pnlCuerpoUsuarios.revalidate();
@@ -6705,6 +7431,8 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOpsion_EliminarActionPerformed
 
     private void btnOpsion_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpsion_ConsultarActionPerformed
+        pnlOpciones.setVisible(false);
+        btnMantenimientoUsuarios.setVisible(false);
         pnlCuerpoUsuarios.removeAll();
         pnlCuerpoUsuarios.repaint();
         pnlCuerpoUsuarios.revalidate();
@@ -6957,12 +7685,10 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTipodeUsuarioMouseExited
 
     private void btnTipodeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTipodeUsuarioActionPerformed
-        pnlOpcionesTipo.setVisible(true);
+        /*        pnlOpcionesTipo.setVisible(true);
         pnlOpciones.setVisible(true);
-        pnlOpciones.setVisible(false);
-        lblIngresarUser.setBackground(new Color(color[0], color[1], color[2]));
+        pnlOpciones.setVisible(false);*/
 
-        lbltipodeUsuario.setBackground(new Color(0, 204, 204));
     }//GEN-LAST:event_btnTipodeUsuarioActionPerformed
 
     private void btnOpsion_ConsultarTipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpsion_ConsultarTipoMouseClicked
@@ -8291,9 +9017,9 @@ public class Plataforma extends javax.swing.JFrame {
 
             GuardarBasedeDatosMatrizConceptos("Concepto_Planilla", 6, NombresColumnasConceptos);
             tblConceptos.setModel(new DefaultTableModel(BasedeDatosConceptos, NombresColumnasConceptos));
-            GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
+            /* GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
 
-            tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
+            tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));*/
 
         } catch (Exception e) {
         }
@@ -8361,9 +9087,7 @@ public class Plataforma extends javax.swing.JFrame {
             GuardarBasedeDatosMatrizEmpleados("Empleado", 10, NombresColumnasEmpleados);
             tblEmpleados.setModel(new DefaultTableModel(BasedeDatosEmpleados, NombresColumnasEmpleados));
             GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
-            GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
 
-            tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
 
             tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
             txt_ID_Empleado.setText("");
@@ -8424,9 +9148,7 @@ public class Plataforma extends javax.swing.JFrame {
             GuardarBasedeDatosMatrizEmpleados("Empleado", 10, NombresColumnasEmpleados);
             tblEmpleados.setModel(new DefaultTableModel(BasedeDatosEmpleados, NombresColumnasEmpleados));
             GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
-            GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
 
-            tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
 
             tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
             txt_ID_Empleado.setText("");
@@ -8897,21 +9619,400 @@ public class Plataforma extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         int cant3 = CantidadDeRegistros("Empleado");
-          float iggs=0;
+        int cantpuestos = CantidadDeRegistros("Puesto");
+        int cantPlanillaGen = CantidadDeRegistros("PlanillaGen");
+        float iggs = 0;
         for (int i = 0; i < cant3; i++) {
             if (txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosEmpleados[i][0])) {
-                iggs = Float.parseFloat(BasedeDatosEmpleados[i][6]);
+                for(int n =0; n<cantPlanillaGen; n++){
+                    if(txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosPlanillaGen[n][0])){
+                         iggs = Float.parseFloat(BasedeDatosPlanillaGen[n][2]);
+                    }
+                    else{
+                         iggs =  Float.parseFloat(BasedeDatosEmpleados[i][6]);
+                    }
+                }
+               
+                for (int j = 0; j < cantpuestos; j++) {
+                    if (BasedeDatosPuestos[j][0].equals(BasedeDatosEmpleados[i][7])) {
+                        if(BasedeDatosPuestos[j][1].equals("Representante Legal")){
+                            txtValorConcepto.setText("No se le puede cobrar iggs");
+                        txt_IDConceptoPlanilla.setText("");
+                        j = cantpuestos;
+                        }
+                        
+                    } else {
+                        txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
+                        txt_IDConceptoPlanilla.setText("1");
+                      
+                    }
+
+                }
                 i = cant3;
             }
         }
-               txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
-                txt_IDConceptoPlanilla.setText("1");
+
 
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void cbISRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbISRActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbISRActionPerformed
+
+    private void btnHerramientasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHerramientasMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHerramientasMouseMoved
+
+    private void btnHerramientasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHerramientasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHerramientasMouseClicked
+
+    private void btnHerramientasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHerramientasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHerramientasActionPerformed
+
+    private void btnCatalogosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatalogosMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCatalogosMouseMoved
+
+    private void btnCatalogosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatalogosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCatalogosMouseClicked
+
+    private void btnCatalogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogosActionPerformed
+        btnMantenimientoUsuarios.setVisible(true);
+        btnMantenimientoUsuarios1.setVisible(true);
+        btnMantenimientoUsuarios1.setVisible(false);
+        pnlOpcionesTipo.setVisible(false);
+    }//GEN-LAST:event_btnCatalogosActionPerformed
+
+    private void btnProcesosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesosMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProcesosMouseMoved
+
+    private void btnProcesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProcesosMouseClicked
+
+    private void btnProcesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesosActionPerformed
+        btnMantenimientoUsuarios1.setVisible(true);
+        btnMantenimientoUsuarios.setVisible(true);
+        btnMantenimientoUsuarios.setVisible(false);
+        pnlOpciones.setVisible(false);
+    }//GEN-LAST:event_btnProcesosActionPerformed
+
+    private void btnHelpMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHelpMouseMoved
+
+    private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHelpMouseClicked
+
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHelpActionPerformed
+
+    private void btnInformesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformesMouseMoved
+
+    private void btnInformesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformesMouseClicked
+
+    private void btnInformesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformesActionPerformed
+
+    private void btnHelp1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelp1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHelp1MouseMoved
+
+    private void btnHelp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelp1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHelp1MouseClicked
+
+    private void btnHelp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelp1ActionPerformed
+        pnlCatalogo.setVisible(false);
+        pnlProcesos.setVisible(false);
+        pnlHerramientas.setVisible(false);
+        pnlInformes.setVisible(false);
+        pnlAyuda.setVisible(true);
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+    }//GEN-LAST:event_btnHelp1ActionPerformed
+
+    private void btnHerramientas1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHerramientas1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHerramientas1MouseMoved
+
+    private void btnHerramientas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHerramientas1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHerramientas1MouseClicked
+
+    private void btnHerramientas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHerramientas1ActionPerformed
+        pnlCatalogo.setVisible(false);
+        pnlProcesos.setVisible(false);
+        pnlHerramientas.setVisible(true);
+        pnlInformes.setVisible(false);
+        pnlAyuda.setVisible(false);
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+    }//GEN-LAST:event_btnHerramientas1ActionPerformed
+
+    private void btnInformes1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformes1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformes1MouseMoved
+
+    private void btnInformes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformes1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformes1MouseClicked
+
+    private void btnInformes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformes1ActionPerformed
+        pnlCatalogo.setVisible(false);
+        pnlProcesos.setVisible(false);
+        pnlHerramientas.setVisible(false);
+        pnlInformes.setVisible(true);
+        pnlAyuda.setVisible(false);
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+    }//GEN-LAST:event_btnInformes1ActionPerformed
+
+    private void btnProcesos1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesos1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProcesos1MouseMoved
+
+    private void btnProcesos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesos1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProcesos1MouseClicked
+
+    private void btnProcesos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesos1ActionPerformed
+        pnlCatalogo.setVisible(false);
+        pnlProcesos.setVisible(true);
+        pnlHerramientas.setVisible(false);
+        pnlInformes.setVisible(false);
+        pnlAyuda.setVisible(false);
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+    }//GEN-LAST:event_btnProcesos1ActionPerformed
+
+    private void btnCatalogos1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatalogos1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCatalogos1MouseMoved
+
+    private void btnCatalogos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatalogos1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCatalogos1MouseClicked
+
+    private void btnCatalogos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogos1ActionPerformed
+        pnlCatalogo.setVisible(true);
+        pnlProcesos.setVisible(false);
+        pnlHerramientas.setVisible(false);
+        pnlInformes.setVisible(false);
+        pnlAyuda.setVisible(false);
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+
+
+    }//GEN-LAST:event_btnCatalogos1ActionPerformed
+
+    private void btnMantenimientoUsuariosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientoUsuariosMouseMoved
+        pnlOpciones.setVisible(true);
+        pnlOpcionesTipo.setVisible(true);
+        pnlOpcionesTipo.setVisible(false);
+        lblIngresarUser.setBackground(new Color(102, 153, 255));
+
+        lbltipodeUsuario.setBackground(new Color(color[0], color[1], color[2]));
+
+    }//GEN-LAST:event_btnMantenimientoUsuariosMouseMoved
+
+    private void btnMantenimientoUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientoUsuariosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMantenimientoUsuariosMouseClicked
+
+    private void btnMantenimientoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientoUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMantenimientoUsuariosActionPerformed
+
+    private void btnMantenimientoUsuarios1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientoUsuarios1MouseMoved
+        pnlOpcionesTipo.setVisible(true);
+        pnlOpciones.setVisible(true);
+        pnlOpciones.setVisible(false);
+        lblIngresarUser.setBackground(new Color(color[0], color[1], color[2]));
+
+        lbltipodeUsuario.setBackground(new Color(255, 102, 102));
+    }//GEN-LAST:event_btnMantenimientoUsuarios1MouseMoved
+
+    private void btnMantenimientoUsuarios1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMantenimientoUsuarios1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMantenimientoUsuarios1MouseClicked
+
+    private void btnMantenimientoUsuarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientoUsuarios1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMantenimientoUsuarios1ActionPerformed
+
+    private void btnMCMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMCMouseMoved
+        lblConceptos.setBackground(new Color(51, 153, 255));
+
+        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
+        lblDep.setBackground(new Color(color[0], color[1], color[2]));
+        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
+        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+
+        pnlOpciones_NominaConceptos.setVisible(true);
+    }//GEN-LAST:event_btnMCMouseMoved
+
+    private void btnMCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMCMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMCMouseClicked
+
+    private void btnMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMCActionPerformed
+
+    private void btnMEMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMEMouseMoved
+        lblEmpleados.setBackground(new Color(88, 122, 255));
+
+        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
+
+        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
+        lblDep.setBackground(new Color(color[0], color[1], color[2]));
+        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
+
+        pnlOpciones_NominaConceptos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaEmpleados.setVisible(true);
+    }//GEN-LAST:event_btnMEMouseMoved
+
+    private void btnMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMEMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMEMouseClicked
+
+    private void btnMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMEActionPerformed
+
+    private void btnMPMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMPMouseMoved
+        lblPuestos.setBackground(new Color(0, 204, 255));
+
+        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
+        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
+        lblDep.setBackground(new Color(color[0], color[1], color[2]));
+        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(true);
+    }//GEN-LAST:event_btnMPMouseMoved
+
+    private void btnMPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMPMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMPMouseClicked
+
+    private void btnMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMPActionPerformed
+
+    private void btnMDMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMDMouseMoved
+        lblDep.setBackground(new Color(0, 204, 204));
+
+        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
+        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
+        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
+        lblTabla.setBackground(new Color(color[0], color[1], color[2]));
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+
+        pnlOpciones_NominaConceptos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(true);
+    }//GEN-LAST:event_btnMDMouseMoved
+
+    private void btnMDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMDMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMDMouseClicked
+
+    private void btnMDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMDActionPerformed
+
+    private void btnMPPMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMPPMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMPPMouseMoved
+
+    private void btnMPPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMPPMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMPPMouseClicked
+
+    private void btnMPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMPPActionPerformed
+        lblTabla.setBackground(new Color(0, 207, 216));
+
+        lblEmpleados.setBackground(new Color(color[0], color[1], color[2]));
+        lblConceptos.setBackground(new Color(color[0], color[1], color[2]));
+        lblPuestos.setBackground(new Color(color[0], color[1], color[2]));
+        lblDep.setBackground(new Color(color[0], color[1], color[2]));
+        pnlOpciones_NominaEmpleados.setVisible(false);
+        pnlOpciones_NominaPuestos.setVisible(false);
+        pnlOpciones_NominaDepartamentos.setVisible(false);
+        pnlOpciones_NominaConceptos.setVisible(false);
+
+        pnlCuerpoNomina.removeAll();
+        pnlCuerpoNomina.repaint();
+        pnlCuerpoNomina.revalidate();
+        pnlCuerpoNomina.add(pnlTabla);
+        pnlCuerpoNomina.repaint();
+        pnlCuerpoNomina.revalidate();
+    }//GEN-LAST:event_btnMPPActionPerformed
+
+    private void btnIPMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIPMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIPMouseMoved
+
+    private void btnIPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIPMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIPMouseClicked
+
+    private void btnIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIPActionPerformed
+
+    private void btnCalcMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcMouseMoved
+
+    private void btnCalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcMouseClicked
+
+    private void btnCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcActionPerformed
+
+    private void btnManualMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManualMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManualMouseMoved
+
+    private void btnManualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManualMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManualMouseClicked
+
+    private void btnManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManualActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -9673,7 +10774,10 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarID;
     private javax.swing.JButton btnBuscarIDEModificarTipo;
     private javax.swing.JButton btnBuscarTabla;
+    private javax.swing.JButton btnCalc;
     private javax.swing.JButton btnCalculadora;
+    private javax.swing.JButton btnCatalogos;
+    private javax.swing.JButton btnCatalogos1;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnConceptos;
     private javax.swing.JButton btnCuenta;
@@ -9684,8 +10788,23 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGrafica;
+    private javax.swing.JButton btnHelp;
+    private javax.swing.JButton btnHelp1;
+    private javax.swing.JButton btnHerramientas;
+    private javax.swing.JButton btnHerramientas1;
     private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnIP;
+    private javax.swing.JButton btnInformes;
+    private javax.swing.JButton btnInformes1;
     private javax.swing.JButton btnInicioUsuarios;
+    private javax.swing.JButton btnMC;
+    private javax.swing.JButton btnMD;
+    private javax.swing.JButton btnME;
+    private javax.swing.JButton btnMP;
+    private javax.swing.JButton btnMPP;
+    private javax.swing.JButton btnMantenimientoUsuarios;
+    private javax.swing.JButton btnMantenimientoUsuarios1;
+    private javax.swing.JButton btnManual;
     private javax.swing.JButton btnMaximize;
     private javax.swing.JButton btnMinimize;
     private javax.swing.JButton btnModificarTabla1;
@@ -9717,6 +10836,8 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JButton btnOpsion_ModificarTipo;
     private javax.swing.JButton btnPagina;
     private javax.swing.JButton btnPastel;
+    private javax.swing.JButton btnProcesos;
+    private javax.swing.JButton btnProcesos1;
     private javax.swing.JButton btnPuestos;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnRegistrarTipo;
@@ -9851,6 +10972,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -9927,6 +11049,8 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel_Plataforma;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -10038,6 +11162,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel lblEliminar_NominaEmpleado2;
     private javax.swing.JLabel lblEliminar_NominaEmpleado3;
     private javax.swing.JLabel lblEmpleados;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblIP;
     private javax.swing.JLabel lblIP1;
     private javax.swing.JLabel lblIP2;
@@ -10105,6 +11230,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsernameInicio;
     private javax.swing.JLabel lblUsuarios;
     private javax.swing.JLabel lblVeces;
+    private javax.swing.JLabel lbllogouser;
     private javax.swing.JLabel lblname;
     private javax.swing.JLabel lblname1;
     private javax.swing.JLabel lblname10;
@@ -10124,6 +11250,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel lblnombre1;
     private javax.swing.JLabel lblnombre2;
     private javax.swing.JLabel lbltipodeUsuario;
+    private javax.swing.JPanel pnlAyuda;
     private javax.swing.JPanel pnlBienvenida;
     private javax.swing.JPanel pnlBuscarIDConsulta;
     private javax.swing.JPanel pnlBuscarIDConsulta1;
@@ -10131,6 +11258,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JPanel pnlBuscarIDEliminar1;
     private javax.swing.JPanel pnlBuscarIDEliminar2;
     private javax.swing.JPanel pnlBuscarIDModificar;
+    private javax.swing.JPanel pnlCatalogo;
     private javax.swing.JPanel pnlCentro;
     private javax.swing.JPanel pnlConceptos;
     private javax.swing.JPanel pnlConfirmar;
@@ -10162,11 +11290,13 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JPanel pnlEmpleados;
     private javax.swing.JPanel pnlEncabezados;
     private javax.swing.JPanel pnlGraph;
+    private javax.swing.JPanel pnlHerramientas;
     private javax.swing.JPanel pnlID;
     private javax.swing.JPanel pnlID1;
     private javax.swing.JPanel pnlIDTipoUsuario;
     private javax.swing.JPanel pnlIDTipoUsuario1;
     private javax.swing.JPanel pnlIInicio;
+    private javax.swing.JPanel pnlInformes;
     private javax.swing.JPanel pnlIngresoConcepto;
     private javax.swing.JPanel pnlIngresoDep;
     private javax.swing.JPanel pnlIngresoEmpleado;
@@ -10200,6 +11330,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JPanel pnlOpciones_NominaEmpleados;
     private javax.swing.JPanel pnlOpciones_NominaPuestos;
     private javax.swing.JPanel pnlOpciones_ventana;
+    private javax.swing.JPanel pnlProcesos;
     private javax.swing.JPanel pnlPuestos;
     private javax.swing.JPanel pnlSubOpcionGrafica;
     private javax.swing.JPanel pnlSubOpcionGrafica2;
