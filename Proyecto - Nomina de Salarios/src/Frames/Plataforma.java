@@ -66,10 +66,10 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
-    public static String constante = "C:\\Users\\hp\\Documents\\NominaEmpleados\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-    String Base_de_Datos = "jdbc:mysql://127.0.0.1:3306/Nomina_de_Empleados";
+    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "";
+    String Clave = "jorgito5828H";
 
     boolean theme = false;
     boolean graficas = false;
@@ -8898,12 +8898,13 @@ public class Plataforma extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         int cant3 = CantidadDeRegistros("Empleado");
           float iggs=0;
-        for (int i = 0; i < cant3; i++) {
+       /* for (int i = 0; i < cant3; i++) {
             if (txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosEmpleados[i][0])) {
-                iggs = Float.parseFloat(BasedeDatosEmpleados[i][6]);
+              
                 i = cant3;
             }
-        }
+        }*/
+         iggs = TotalPercepcion;
                txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
                 txt_IDConceptoPlanilla.setText("1");
 
