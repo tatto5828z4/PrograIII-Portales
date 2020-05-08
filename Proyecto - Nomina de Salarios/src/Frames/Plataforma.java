@@ -66,18 +66,6 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
-<<<<<<< HEAD
-    public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-    String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
-    String Usuario = "root";
-    String Clave = "admin";
-=======
-
-    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
-    String Usuario = "jorge";
-    String Clave = "condominio";
-
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
    String URL= "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src";
     //Esta variable la cambian es la direccion para generar los QR
@@ -89,8 +77,6 @@ public class Plataforma extends javax.swing.JFrame {
      //Uclave
     String Clave = "condominio";
     
->>>>>>> 2ff761fde8536c93db6939f7e4140d85dfe4572f
-
     boolean theme = false;
     boolean graficas = false;
     boolean maximized = true;
