@@ -26,6 +26,7 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URI;
 import java.sql.Connection;
@@ -37,6 +38,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -60,16 +63,24 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import jxl.Workbook;
+import jxl.WorkbookSettings;
+import jxl.write.WritableCellFormat;
+import jxl.write.WritableFont;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
 /**
- *
+ 
  * @author Langas
  */
 public class Plataforma extends javax.swing.JFrame {
-
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
-   String URL= "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src";
+   String URL= "C:\\Users\\jorgi\\Documents\\NuevoProyecto\\PrograIII-Portales-master\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
     //Esta variable la cambian es la direccion para generar los QR
-    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    public static String constante = "C:\\Users\\jorgi\\Documents\\NuevoProyecto\\PrograIII-Portales-master\\Proyecto - Nomina de Salarios\\src\\Imagenes";
      //Esta variable la solo una vez es la Base de datos general
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
      //Usuario
@@ -77,6 +88,7 @@ public class Plataforma extends javax.swing.JFrame {
      //Uclave
     String Clave = "condominio";
     
+
     boolean theme = false;
     boolean graficas = false;
     boolean maximized = true;
@@ -913,7 +925,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco2 = new javax.swing.JLabel();
         lblAsterisco3 = new javax.swing.JLabel();
         lblAsterisco4 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<String>();
+        cbTipo = new javax.swing.JComboBox<>();
         lblTipo = new javax.swing.JLabel();
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
@@ -951,7 +963,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTelefono1 = new javax.swing.JPanel();
         txtTelefonoModificar = new javax.swing.JTextField();
         lblVeces = new javax.swing.JLabel();
-        cbTipo1 = new javax.swing.JComboBox<String>();
+        cbTipo1 = new javax.swing.JComboBox<>();
         lblAsterisco23 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
         lblNombreDeUsuario2 = new javax.swing.JLabel();
@@ -986,7 +998,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblPrimerNombre3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUsuariosConsulta = new javax.swing.JTable();
-        cbTipoConsulta = new javax.swing.JComboBox<String>();
+        cbTipoConsulta = new javax.swing.JComboBox<>();
         chbPorNombreUsuario = new javax.swing.JCheckBox();
         chbPorId = new javax.swing.JCheckBox();
         chbPorIdConcepto = new javax.swing.JCheckBox();
@@ -1168,7 +1180,7 @@ public class Plataforma extends javax.swing.JFrame {
         txt_IDU_Empleado2 = new javax.swing.JTextField();
         jButton_BuscarE1 = new javax.swing.JButton();
         label_statusemp1 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<String>();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jTextField3 = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         pnlEliminarEmpleado = new javax.swing.JPanel();
@@ -1364,6 +1376,7 @@ public class Plataforma extends javax.swing.JFrame {
         cbDeduccion = new javax.swing.JCheckBox();
         cbISR = new javax.swing.JCheckBox();
         jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         jLabel32.setText("jLabel32");
 
@@ -1954,7 +1967,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnCatalogos.setText("Catalogos");
         btnCatalogos.setBorder(null);
         btnCatalogos.setBorderPainted(false);
-        btnCatalogos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCatalogos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCatalogos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnCatalogos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -1980,7 +1993,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnProcesos.setText("Procesos");
         btnProcesos.setBorder(null);
         btnProcesos.setBorderPainted(false);
-        btnProcesos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProcesos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnProcesos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnProcesos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2006,7 +2019,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnHelp.setText("Ayuda");
         btnHelp.setBorder(null);
         btnHelp.setBorderPainted(false);
-        btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnHelp.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnHelp.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2032,7 +2045,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnInformes.setText("Informes");
         btnInformes.setBorder(null);
         btnInformes.setBorderPainted(false);
-        btnInformes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInformes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnInformes.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInformes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2058,7 +2071,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnHerramientas.setText("Herramientas");
         btnHerramientas.setBorder(null);
         btnHerramientas.setBorderPainted(false);
-        btnHerramientas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHerramientas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnHerramientas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnHerramientas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2154,7 +2167,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnMantenimientoUsuarios.setText("Mantemiento Usuarios");
         btnMantenimientoUsuarios.setBorder(null);
         btnMantenimientoUsuarios.setBorderPainted(false);
-        btnMantenimientoUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMantenimientoUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMantenimientoUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMantenimientoUsuarios.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2187,7 +2200,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_Consultar.setText(" Consultar");
         btnOpsion_Consultar.setBorder(null);
         btnOpsion_Consultar.setBorderPainted(false);
-        btnOpsion_Consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_Consultar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_Consultar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2207,7 +2220,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_Ingresar.setText(" Ingresar Usuario");
         btnOpsion_Ingresar.setBorder(null);
         btnOpsion_Ingresar.setBorderPainted(false);
-        btnOpsion_Ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_Ingresar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_Ingresar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2232,7 +2245,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_Modificar.setText(" Modificar Usuario");
         btnOpsion_Modificar.setBorder(null);
         btnOpsion_Modificar.setBorderPainted(false);
-        btnOpsion_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_Modificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2252,7 +2265,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_Eliminar.setText(" Eliminar Usuario");
         btnOpsion_Eliminar.setBorder(null);
         btnOpsion_Eliminar.setBorderPainted(false);
-        btnOpsion_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_Eliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2297,7 +2310,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnMantenimientoUsuarios1.setText("Mantemiento Tipos");
         btnMantenimientoUsuarios1.setBorder(null);
         btnMantenimientoUsuarios1.setBorderPainted(false);
-        btnMantenimientoUsuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMantenimientoUsuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMantenimientoUsuarios1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMantenimientoUsuarios1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2330,7 +2343,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ConsultarTipo.setText(" Consultar");
         btnOpsion_ConsultarTipo.setBorder(null);
         btnOpsion_ConsultarTipo.setBorderPainted(false);
-        btnOpsion_ConsultarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ConsultarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ConsultarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2350,7 +2363,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_IngresarTipo.setText(" Ingresar Tipo de Usuario");
         btnOpsion_IngresarTipo.setBorder(null);
         btnOpsion_IngresarTipo.setBorderPainted(false);
-        btnOpsion_IngresarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_IngresarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_IngresarTipo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -2375,7 +2388,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ModificarTipo.setText(" Modificar Tipo de Usuario");
         btnOpsion_ModificarTipo.setBorder(null);
         btnOpsion_ModificarTipo.setBorderPainted(false);
-        btnOpsion_ModificarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ModificarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ModificarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2395,7 +2408,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_EliminarTipo.setText(" Eliminar Tipo de Usuario");
         btnOpsion_EliminarTipo.setBorder(null);
         btnOpsion_EliminarTipo.setBorderPainted(false);
-        btnOpsion_EliminarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_EliminarTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_EliminarTipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2493,8 +2506,6 @@ public class Plataforma extends javax.swing.JFrame {
         pnlDetalles1.add(lblIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, -1));
 
         pnlMenuUsuarios.add(pnlDetalles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 26, 420, 120));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\oie_USshpWXg9kiT.png")); // NOI18N
         pnlMenuUsuarios.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, -1, -1));
 
         pnlContacto1.setBackground(new java.awt.Color(255, 255, 255));
@@ -2551,7 +2562,7 @@ public class Plataforma extends javax.swing.JFrame {
 
         btnEmpleados.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 16)); // NOI18N
         btnEmpleados.setForeground(new java.awt.Color(54, 76, 98));
-        btnEmpleados.setText("EMPLEADOS");
+        btnEmpleados.setText("PERSONAL DE TRABAJO");
         btnEmpleados.setContentAreaFilled(false);
         btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEmpleados.setFocusable(false);
@@ -2565,7 +2576,7 @@ public class Plataforma extends javax.swing.JFrame {
                 btnEmpleadosActionPerformed(evt);
             }
         });
-        pnlMenu.add(btnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 145, 130, 30));
+        pnlMenu.add(btnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, 220, 30));
 
         lblEmpleados.setBackground(new java.awt.Color(88, 122, 255));
         lblEmpleados.setOpaque(true);
@@ -2650,10 +2661,10 @@ public class Plataforma extends javax.swing.JFrame {
         btnME.setBackground(new java.awt.Color(46, 46, 46));
         btnME.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnME.setForeground(new java.awt.Color(204, 204, 204));
-        btnME.setText("Mantenimiento Empleados");
+        btnME.setText("Mantenimiento de Personal - Empleados");
         btnME.setBorder(null);
         btnME.setBorderPainted(false);
-        btnME.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnME.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnME.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnME.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnME.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2678,7 +2689,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnMP.setText("Mantenimiento Puestos");
         btnMP.setBorder(null);
         btnMP.setBorderPainted(false);
-        btnMP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnMP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2703,7 +2714,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnMD.setText("Mantenimientos Dep");
         btnMD.setBorder(null);
         btnMD.setBorderPainted(false);
-        btnMD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMD.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnMD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMD.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2752,7 +2763,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnMC.setText("Mantenimiento Conceptos");
         btnMC.setBorder(null);
         btnMC.setBorderPainted(false);
-        btnMC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMC.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnMC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMC.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2777,7 +2788,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnMPP.setText("Mantenimientos Planilla");
         btnMPP.setBorder(null);
         btnMPP.setBorderPainted(false);
-        btnMPP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMPP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMPP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnMPP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMPP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2823,7 +2834,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnIP.setText("Informes de Planilla");
         btnIP.setBorder(null);
         btnIP.setBorderPainted(false);
-        btnIP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnIP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnIP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnIP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2865,7 +2876,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnCalc.setText("Calculadora");
         btnCalc.setBorder(null);
         btnCalc.setBorderPainted(false);
-        btnCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCalc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnCalc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCalc.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2907,7 +2918,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnManual.setText("Manual");
         btnManual.setBorder(null);
         btnManual.setBorderPainted(false);
-        btnManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnManual.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnManual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnManual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnManual.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -2958,7 +2969,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_EliminarConcepto.setText(" Eliminar Conceptos");
         btnOpsion_EliminarConcepto.setBorder(null);
         btnOpsion_EliminarConcepto.setBorderPainted(false);
-        btnOpsion_EliminarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_EliminarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_EliminarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2979,7 +2990,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_IngresarConcepto.setText("Mantenimientos Conceptos");
         btnOpsion_IngresarConcepto.setBorder(null);
         btnOpsion_IngresarConcepto.setBorderPainted(false);
-        btnOpsion_IngresarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_IngresarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_IngresarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3000,7 +3011,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ModificarConcepto.setText(" Modificar Conceptos");
         btnOpsion_ModificarConcepto.setBorder(null);
         btnOpsion_ModificarConcepto.setBorderPainted(false);
-        btnOpsion_ModificarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ModificarConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ModificarConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3021,7 +3032,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ConsultaConcepto.setText(" Consulta Conceptos");
         btnOpsion_ConsultaConcepto.setBorder(null);
         btnOpsion_ConsultaConcepto.setBorderPainted(false);
-        btnOpsion_ConsultaConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaConcepto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ConsultaConcepto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ConsultaConcepto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3052,7 +3063,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_IngresarDep.setText("Mantenimientos Departamentos");
         btnOpsion_IngresarDep.setBorder(null);
         btnOpsion_IngresarDep.setBorderPainted(false);
-        btnOpsion_IngresarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_IngresarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_IngresarDep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3073,7 +3084,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ModificarDep.setText(" Modificar Departamentos");
         btnOpsion_ModificarDep.setBorder(null);
         btnOpsion_ModificarDep.setBorderPainted(false);
-        btnOpsion_ModificarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ModificarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ModificarDep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3094,7 +3105,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_EliminarDep.setText(" Eliminar Departamentos");
         btnOpsion_EliminarDep.setBorder(null);
         btnOpsion_EliminarDep.setBorderPainted(false);
-        btnOpsion_EliminarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarDep.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_EliminarDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_EliminarDep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3115,7 +3126,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ConsultaDep.setText(" Consulta Departamentos");
         btnOpsion_ConsultaDep.setBorder(null);
         btnOpsion_ConsultaDep.setBorderPainted(false);
-        btnOpsion_ConsultaDep.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaDep.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ConsultaDep.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ConsultaDep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3146,7 +3157,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_IngresarPuesto.setText("Mantenimientos Puesto");
         btnOpsion_IngresarPuesto.setBorder(null);
         btnOpsion_IngresarPuesto.setBorderPainted(false);
-        btnOpsion_IngresarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_IngresarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_IngresarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3167,7 +3178,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ModificarPuesto.setText(" Modificar Puesto");
         btnOpsion_ModificarPuesto.setBorder(null);
         btnOpsion_ModificarPuesto.setBorderPainted(false);
-        btnOpsion_ModificarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ModificarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ModificarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3188,7 +3199,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_EliminarPuesto.setText(" Eliminar Puesto");
         btnOpsion_EliminarPuesto.setBorder(null);
         btnOpsion_EliminarPuesto.setBorderPainted(false);
-        btnOpsion_EliminarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_EliminarPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_EliminarPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3209,7 +3220,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ConsultaPuesto.setText(" Consulta Puestos");
         btnOpsion_ConsultaPuesto.setBorder(null);
         btnOpsion_ConsultaPuesto.setBorderPainted(false);
-        btnOpsion_ConsultaPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaPuesto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ConsultaPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ConsultaPuesto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3240,7 +3251,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_IngresarEmpleado.setText("Mantenimientos Empleado");
         btnOpsion_IngresarEmpleado.setBorder(null);
         btnOpsion_IngresarEmpleado.setBorderPainted(false);
-        btnOpsion_IngresarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_IngresarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_IngresarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_IngresarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3266,7 +3277,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ModificarEmpleado.setText(" Modificar Empleado");
         btnOpsion_ModificarEmpleado.setBorder(null);
         btnOpsion_ModificarEmpleado.setBorderPainted(false);
-        btnOpsion_ModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ModificarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ModificarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3292,7 +3303,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_ConsultaEmpleado.setText(" Consulta Empleado");
         btnOpsion_ConsultaEmpleado.setBorder(null);
         btnOpsion_ConsultaEmpleado.setBorderPainted(false);
-        btnOpsion_ConsultaEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_ConsultaEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_ConsultaEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_ConsultaEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3318,7 +3329,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnOpsion_EliminarEmpleado.setText(" Eliminar Empleado");
         btnOpsion_EliminarEmpleado.setBorder(null);
         btnOpsion_EliminarEmpleado.setBorderPainted(false);
-        btnOpsion_EliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpsion_EliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOpsion_EliminarEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOpsion_EliminarEmpleado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3472,7 +3483,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnHelp1.setText("Ayuda");
         btnHelp1.setBorder(null);
         btnHelp1.setBorderPainted(false);
-        btnHelp1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnHelp1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnHelp1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3498,7 +3509,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnHerramientas1.setText("Herramientas");
         btnHerramientas1.setBorder(null);
         btnHerramientas1.setBorderPainted(false);
-        btnHerramientas1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHerramientas1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnHerramientas1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnHerramientas1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3524,7 +3535,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnInformes1.setText("Informes");
         btnInformes1.setBorder(null);
         btnInformes1.setBorderPainted(false);
-        btnInformes1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInformes1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnInformes1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInformes1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3550,7 +3561,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnProcesos1.setText("Procesos");
         btnProcesos1.setBorder(null);
         btnProcesos1.setBorderPainted(false);
-        btnProcesos1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProcesos1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnProcesos1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnProcesos1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -3576,7 +3587,7 @@ public class Plataforma extends javax.swing.JFrame {
         btnCatalogos1.setText("Catalogos");
         btnCatalogos1.setBorder(null);
         btnCatalogos1.setBorderPainted(false);
-        btnCatalogos1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCatalogos1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCatalogos1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnCatalogos1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -4451,7 +4462,7 @@ public class Plataforma extends javax.swing.JFrame {
         chbPermisoModificarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoModificarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoModificarEmpleado.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoModificarEmpleado.setText("Modificar Empleado");
+        chbPermisoModificarEmpleado.setText("Modificar Personal");
         chbPermisoModificarEmpleado.setEnabled(false);
         pnlIngreso_UsuariosTipo.add(chbPermisoModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 160, -1));
 
@@ -4490,7 +4501,7 @@ public class Plataforma extends javax.swing.JFrame {
         chbPermisoEliminarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoEliminarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoEliminarEmpleado.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoEliminarEmpleado.setText("Eliminar  Empleado");
+        chbPermisoEliminarEmpleado.setText("Eliminar  Personal");
         chbPermisoEliminarEmpleado.setEnabled(false);
         pnlIngreso_UsuariosTipo.add(chbPermisoEliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 160, -1));
 
@@ -4532,14 +4543,14 @@ public class Plataforma extends javax.swing.JFrame {
         chbPermisoConsultaEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoConsultaEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoConsultaEmpleado.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoConsultaEmpleado.setText("Consulta Empleado");
+        chbPermisoConsultaEmpleado.setText("Consulta Personal");
         chbPermisoConsultaEmpleado.setEnabled(false);
         pnlIngreso_UsuariosTipo.add(chbPermisoConsultaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 280, 160, -1));
 
         chbPermisoIngresoEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoIngresoEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoIngresoEmpleado.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoIngresoEmpleado.setText("Mantenimiento de Empleado");
+        chbPermisoIngresoEmpleado.setText("Mantenimiento de Personal");
         chbPermisoIngresoEmpleado.setEnabled(false);
         pnlIngreso_UsuariosTipo.add(chbPermisoIngresoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 220, -1));
 
@@ -4805,25 +4816,25 @@ public class Plataforma extends javax.swing.JFrame {
         chbPermisoIngresoEmpleado1.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoIngresoEmpleado1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoIngresoEmpleado1.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoIngresoEmpleado1.setText("Ingreso de Empleado");
+        chbPermisoIngresoEmpleado1.setText("Ingreso de Personal");
         pnlModificar_UsuariosTipo.add(chbPermisoIngresoEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 160, -1));
 
         chbPermisoModificarEmpleado1.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoModificarEmpleado1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoModificarEmpleado1.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoModificarEmpleado1.setText("Modificar Empleado");
+        chbPermisoModificarEmpleado1.setText("Modificar Personal");
         pnlModificar_UsuariosTipo.add(chbPermisoModificarEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 160, -1));
 
         chbPermisoEliminarEmpleado1.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoEliminarEmpleado1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoEliminarEmpleado1.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoEliminarEmpleado1.setText("Eliminar  Empleado");
+        chbPermisoEliminarEmpleado1.setText("Eliminar  Personal");
         pnlModificar_UsuariosTipo.add(chbPermisoEliminarEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 160, -1));
 
         chbPermisoConsultaEmpleado1.setBackground(new java.awt.Color(255, 255, 255));
         chbPermisoConsultaEmpleado1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         chbPermisoConsultaEmpleado1.setForeground(new java.awt.Color(153, 153, 153));
-        chbPermisoConsultaEmpleado1.setText("Consulta Empleado");
+        chbPermisoConsultaEmpleado1.setText("Consulta Personal");
         pnlModificar_UsuariosTipo.add(chbPermisoConsultaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 160, -1));
 
         chbPermisoTabla1.setBackground(new java.awt.Color(255, 255, 255));
@@ -5411,8 +5422,6 @@ public class Plataforma extends javax.swing.JFrame {
         jLabel82.setText("Valor de Concepto:");
         pnlModificarEmpleado.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
 
-        pnlIngresoEmpleado.add(pnlModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 1090, 490));
-
         pnlEliminarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -5477,17 +5486,19 @@ public class Plataforma extends javax.swing.JFrame {
         pnlEmpleados.setLayout(pnlEmpleadosLayout);
         pnlEmpleadosLayout.setHorizontalGroup(
             pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
+            .addComponent(pnlModificarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
         );
         pnlEmpleadosLayout.setVerticalGroup(
             pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+            .addComponent(pnlModificarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE))
+                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE))
         );
 
         pnlCuerpoNomina.add(pnlEmpleados, "card8");
@@ -5750,15 +5761,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlPuestos.setLayout(pnlPuestosLayout);
         pnlPuestosLayout.setHorizontalGroup(
             pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1350, Short.MAX_VALUE)
+            .addGap(0, 1090, Short.MAX_VALUE)
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlIngresoPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlModificarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlEliminarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
         );
         pnlPuestosLayout.setVerticalGroup(
             pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6025,15 +6036,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlDepartamentos.setLayout(pnlDepartamentosLayout);
         pnlDepartamentosLayout.setHorizontalGroup(
             pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1350, Short.MAX_VALUE)
+            .addGap(0, 1090, Short.MAX_VALUE)
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlIngresoDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlModificarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlEliminarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlConsultaDep, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
         );
         pnlDepartamentosLayout.setVerticalGroup(
             pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6346,15 +6357,15 @@ public class Plataforma extends javax.swing.JFrame {
         pnlConceptos.setLayout(pnlConceptosLayout);
         pnlConceptosLayout.setHorizontalGroup(
             pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1350, Short.MAX_VALUE)
+            .addGap(0, 1090, Short.MAX_VALUE)
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlIngresoConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlModificarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlEliminarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlConsultaConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
         );
         pnlConceptosLayout.setVerticalGroup(
             pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6555,6 +6566,19 @@ public class Plataforma extends javax.swing.JFrame {
         });
         pnlTabla.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 110, 30));
 
+        jButton10.setForeground(new java.awt.Color(51, 51, 51));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/oie_JUZlOV8cmTXU.png"))); // NOI18N
+        jButton10.setBorder(null);
+        jButton10.setBorderPainted(false);
+        jButton10.setContentAreaFilled(false);
+        jButton10.setFocusable(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        pnlTabla.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 110, 30));
+
         pnlCuerpoNomina.add(pnlTabla, "card6");
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
@@ -6569,9 +6593,9 @@ public class Plataforma extends javax.swing.JFrame {
                     .addComponent(pnlCuerpoUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlMenuInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlMenuInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
             .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE))
+                .addComponent(pnlIInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8805,7 +8829,7 @@ public class Plataforma extends javax.swing.JFrame {
                 txt_nombredep.setText(rs.getString("nombre_departamento"));
                 txt_estadodep.setText(rs.getString("estado"));
             } else {
-                JOptionPane.showMessageDialog(null, "Departamento no registrado.");
+                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
             }
 
         } catch (Exception e) {
@@ -9467,6 +9491,7 @@ public class Plataforma extends javax.swing.JFrame {
                 pst2.executeUpdate();
                 pst2.executeUpdate();
                 GuardarBasedeDatosMatrizEmpleadosPlanillaGen("PlanillaGen", 5, NombresColumnasPlanillaGen);
+                tblPlanillaGen.setModel(new DefaultTableModel(BasedeDatosPlanillaGen, NombresColumnasPlanillaGen));
 
             }
 
@@ -9696,7 +9721,14 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHelpMouseClicked
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
-        // TODO add your handling code here:
+        try {
+            
+            ProcessBuilder p= new ProcessBuilder();
+            p.command("cmd.exe", "/c", URL);
+            p.start();
+        } catch (IOException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnHelpActionPerformed
 
     private void btnInformesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseMoved
@@ -9997,8 +10029,43 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnManualMouseClicked
 
     private void btnManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManualActionPerformed
-        // TODO add your handling code here:
+       try {
+            
+            ProcessBuilder p= new ProcessBuilder();
+            p.command("cmd.exe", "/c", URL);
+            p.start();
+        } catch (IOException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnManualActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+       try {
+           String ruta = "Nomina_formato.xls";
+            WorkbookSettings conf = new WorkbookSettings();
+            conf.setEncoding("ISO-8859-1");
+            WritableWorkbook woorbook = Workbook.createWorkbook(new File(ruta), conf);
+            WritableSheet sheet = woorbook.createSheet("RESULTADO", 0);
+            WritableFont h = new WritableFont(WritableFont.COURIER, 12, WritableFont.NO_BOLD);
+            WritableCellFormat hFormat = new WritableCellFormat(h);
+            
+            for (int i = 0; i < BasedeDatosPlanillaGen.length; i++) // filas
+            {
+                for (int j = 0; j < BasedeDatosPlanillaGen[i].length; j++) // columnas
+                {
+                    sheet.addCell(new jxl.write.Label(j, i, BasedeDatosPlanillaGen[i][j], hFormat));
+                }
+            }
+            woorbook.write();
+            woorbook.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (WriteException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -10908,6 +10975,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JCheckBox chbPorIdConcepto;
     private javax.swing.JCheckBox chbPorNombreUsuario;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
