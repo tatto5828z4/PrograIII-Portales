@@ -66,10 +66,10 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Plataforma extends javax.swing.JFrame {
 
-    public static String constante = "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-    String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
-    String Usuario = "root";
-    String Clave = "Langas798";
+    public static String constante = "C:\\Users\\jorgi\\Documents\\PrograParcial2\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
+    String Usuario = "jorge";
+    String Clave = "condominio";
 
     boolean theme = false;
     boolean graficas = false;
