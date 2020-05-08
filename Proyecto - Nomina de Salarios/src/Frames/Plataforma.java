@@ -62,14 +62,14 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  *
- * @author hp
+ * @author Langas
  */
 public class Plataforma extends javax.swing.JFrame {
 
-    public static String constante = "C:\\Users\\hp\\Documents\\NominaEmpleados\\Proyecto - Nomina de Salarios\\src\\Imagenes";
-    String Base_de_Datos = "jdbc:mysql://127.0.0.1:3306/Nomina_de_Empleados";
+    public static String constante = "C:\\Users\\Langas\\Documents\\Proyecto2_Progralll\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://localhost/Nomina_de_Empleados";
     String Usuario = "root";
-    String Clave = "";
+    String Clave = "Langas798";
 
     boolean theme = false;
     boolean graficas = false;
@@ -221,9 +221,7 @@ public class Plataforma extends javax.swing.JFrame {
                 public void mouseEntered(MouseEvent e) {
 
                     btn.setBackground(new Color(0, 153, 255));
-                    if (botones[1] == btnAjustes) {
-
-                    }
+                   
 
                 }
 
@@ -909,7 +907,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco2 = new javax.swing.JLabel();
         lblAsterisco3 = new javax.swing.JLabel();
         lblAsterisco4 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<>();
+        cbTipo = new javax.swing.JComboBox<String>();
         lblTipo = new javax.swing.JLabel();
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
@@ -947,7 +945,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTelefono1 = new javax.swing.JPanel();
         txtTelefonoModificar = new javax.swing.JTextField();
         lblVeces = new javax.swing.JLabel();
-        cbTipo1 = new javax.swing.JComboBox<>();
+        cbTipo1 = new javax.swing.JComboBox<String>();
         lblAsterisco23 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
         lblNombreDeUsuario2 = new javax.swing.JLabel();
@@ -982,7 +980,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblPrimerNombre3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUsuariosConsulta = new javax.swing.JTable();
-        cbTipoConsulta = new javax.swing.JComboBox<>();
+        cbTipoConsulta = new javax.swing.JComboBox<String>();
         chbPorNombreUsuario = new javax.swing.JCheckBox();
         chbPorId = new javax.swing.JCheckBox();
         chbPorIdConcepto = new javax.swing.JCheckBox();
@@ -1164,7 +1162,7 @@ public class Plataforma extends javax.swing.JFrame {
         txt_IDU_Empleado2 = new javax.swing.JTextField();
         jButton_BuscarE1 = new javax.swing.JButton();
         label_statusemp1 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         jTextField3 = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         pnlEliminarEmpleado = new javax.swing.JPanel();
@@ -9070,6 +9068,7 @@ public class Plataforma extends javax.swing.JFrame {
             tblEmpleados.setModel(new DefaultTableModel(BasedeDatosEmpleados, NombresColumnasEmpleados));
             GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
 
+
             tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
             txt_ID_Empleado.setText("");
             txt_Nombre_Empleado1.setText("");
@@ -9129,6 +9128,7 @@ public class Plataforma extends javax.swing.JFrame {
             GuardarBasedeDatosMatrizEmpleados("Empleado", 10, NombresColumnasEmpleados);
             tblEmpleados.setModel(new DefaultTableModel(BasedeDatosEmpleados, NombresColumnasEmpleados));
             GuardarBasedeDatosMatrizEmpleadosPlanillaDet("PlanillaDet", 4, NombresColumnasPlanillaDet);
+
 
             tblPlanillaDet.setModel(new DefaultTableModel(BasedeDatosEmpleadosPlanillaDet, NombresColumnasPlanillaDet));
             txt_ID_Empleado.setText("");
