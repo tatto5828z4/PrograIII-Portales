@@ -47,9 +47,9 @@ public class Login2 extends javax.swing.JFrame {
       //Esta variable la solo una vez es la Base de datos general
      String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
        //Usuario
-    String Usuario = "josue";
+    String Usuario = "jorge";
      //Uclave
-    String Clave = "zapata";
+    String Clave = "condominio";
      int[] color = {255, 2255, 255};
     
     private Timer tiempo;
