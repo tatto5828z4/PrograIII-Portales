@@ -26,6 +26,7 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URI;
 import java.sql.Connection;
@@ -37,6 +38,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -79,7 +82,7 @@ public class Plataforma extends javax.swing.JFrame {
     String Clave = "cifuentes";
 
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
-    String URL= "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src";
+    String URL= "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
     //Esta variable la cambian es la direccion para generar los QR
     //public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
      /*//Esta variable la solo una vez es la Base de datos general
@@ -9706,11 +9709,19 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHelpMouseMoved
 
     private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnHelpMouseClicked
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         // TODO add your handling code here:
+        try {
+            //String URL= "C:\\Users\\Brayan Cifuentes\\Desktop\\Manual de usuario.docx";
+            ProcessBuilder p= new ProcessBuilder();
+            p.command("cmd.exe", "/c", URL);
+            p.start();
+        } catch (IOException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnHelpActionPerformed
 
     private void btnInformesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseMoved
@@ -9743,6 +9754,16 @@ public class Plataforma extends javax.swing.JFrame {
         pnlOpciones_NominaPuestos.setVisible(false);
         pnlOpciones_NominaDepartamentos.setVisible(false);
         pnlOpciones_NominaConceptos.setVisible(false);
+        
+        
+        try {
+            //String URL= "C:\\Users\\Brayan Cifuentes\\Desktop\\Manual de usuario.docx";
+            ProcessBuilder p= new ProcessBuilder();
+            p.command("cmd.exe", "/c", URL);
+            p.start();
+        } catch (IOException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnHelp1ActionPerformed
 
     private void btnHerramientas1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHerramientas1MouseMoved
