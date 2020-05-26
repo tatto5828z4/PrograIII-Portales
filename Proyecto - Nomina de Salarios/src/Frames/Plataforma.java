@@ -98,23 +98,16 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     //Esta variable la cambian es la direccion para generar los QR
     //public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
      /*//Esta variable la solo una vez es la Base de datos general
-=======
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
     String URL = "C:\\Users\\jorgi\\Documents\\NuevoProyecto\\PrograIII-Portales-master\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
     //Esta variable la cambian es la direccion para generar los QR
     public static String constante = "C:\\Users\\jorgi\\Documents\\NuevoProyecto\\PrograIII-Portales-master\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     //Esta variable la solo una vez es la Base de datos general
->>>>>>> 02906463b984441bf627bfd806af40a730675726
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
     //Usuario
     String Usuario = "jorge";
     //Uclave
     String Clave = "condominio";
-<<<<<<< HEAD
-    
->>>>>>> 2ff761fde8536c93db6939f7e4140d85dfe4572f*/
-//=======
-//>>>>>>> 02906463b984441bf627bfd806af40a730675726
 
     boolean theme = false;
     boolean graficas = false;
