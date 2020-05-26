@@ -129,3 +129,10 @@ ON UPDATE CASCADE
 ON DELETE CASCADE
 )engine InnoDB;
 
+create table actividad(
+	titulo_actividad varchar(250),
+    descripcion_actividad varchar (250),
+    tipo_actividad varchar(250),
+    fecha_actividad varchar(250),
+    prioridad_actividad varchar(250)
+)ENGINE = InnoDB DEFAULT CHARSET=latin1;
