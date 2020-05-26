@@ -35,7 +35,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -73,22 +75,46 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
+import Agenda.*;
 /**
  *
  * @author Langas
  */
-public class Plataforma extends javax.swing.JFrame {
+public class Plataforma extends javax.swing.JFrame implements Runnable {
 
+
+    //RELOJ
+    String hora, minutos, segundos, ampm;
+    Calendar calendario;
+    Thread h1;
+
+    public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+    String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
+    String Usuario = "brayan";
+    String Clave = "cifuentes";
+
+    //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
+    String URL= "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
+    //Esta variable la cambian es la direccion para generar los QR
+    //public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
+     /*//Esta variable la solo una vez es la Base de datos general
+=======
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
     String URL = "C:\\Users\\jorgi\\Documents\\NuevoProyecto\\PrograIII-Portales-master\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
     //Esta variable la cambian es la direccion para generar los QR
     public static String constante = "C:\\Users\\jorgi\\Documents\\NuevoProyecto\\PrograIII-Portales-master\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     //Esta variable la solo una vez es la Base de datos general
+>>>>>>> 02906463b984441bf627bfd806af40a730675726
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
     //Usuario
     String Usuario = "jorge";
     //Uclave
     String Clave = "condominio";
+<<<<<<< HEAD
+    
+>>>>>>> 2ff761fde8536c93db6939f7e4140d85dfe4572f*/
+//=======
+//>>>>>>> 02906463b984441bf627bfd806af40a730675726
 
     boolean theme = false;
     boolean graficas = false;
@@ -137,6 +163,9 @@ public class Plataforma extends javax.swing.JFrame {
     public Plataforma() {
 
         initComponents();
+        //reloj
+        h1=new Thread(this);
+        h1.start();
 
         this.setLocationRelativeTo(null);
         for (int i = 0; i < 8; i++) {
@@ -714,6 +743,40 @@ public class Plataforma extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    public void run() {
+        //definimos el hilo
+                Thread t= Thread.currentThread();
+                
+                while(t==h1){
+                    
+                    calcula();
+                    lbl_reloj.setText(hora+":"+minutos+":"+segundos+" "+ampm);
+                    try {
+                        Thread.sleep(1000);
+                        
+                    } catch (Exception e) {
+                    }
+                }
+            }
+
+            private void calcula() {
+                Calendar calendario = new GregorianCalendar();
+                Date FechaHoraActual= new Date();
+                calendario.setTime(FechaHoraActual);
+                ampm= calendario.get(Calendar.AM_PM)==Calendar.AM?"AM":"PM";
+                
+                if (ampm.equals("PM")) {
+                    int h=calendario.get(Calendar.HOUR_OF_DAY)-12;
+                    hora=h>9?""+h:"0"+h;
+                    
+                }else
+                {
+                    hora=calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+                }
+                minutos=calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
+                segundos=calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+                
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -748,6 +811,8 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTemas = new javax.swing.JPanel();
         lblOscuro = new javax.swing.JLabel();
         lblClaro = new javax.swing.JLabel();
+        lbl_reloj = new javax.swing.JLabel();
+        lblNomina1 = new javax.swing.JLabel();
         pnlMenu_barUser = new javax.swing.JPanel();
         lbllogouser = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
@@ -778,6 +843,7 @@ public class Plataforma extends javax.swing.JFrame {
         cbHorizontal = new javax.swing.JCheckBox();
         cbLineal = new javax.swing.JCheckBox();
         cbPastel = new javax.swing.JCheckBox();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
         pnlMenuUsuarios = new javax.swing.JPanel();
         btnCatalogos = new javax.swing.JButton();
         btnProcesos = new javax.swing.JButton();
@@ -822,6 +888,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblTel1 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jDayChooser2 = new com.toedter.calendar.JDayChooser();
         pnlMenu = new javax.swing.JPanel();
         btnEmpleados = new javax.swing.JButton();
         lblEmpleados = new javax.swing.JLabel();
@@ -886,6 +953,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblTel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jDayChooser3 = new com.toedter.calendar.JDayChooser();
         jPanel2 = new javax.swing.JPanel();
         btnHelp1 = new javax.swing.JButton();
         btnHerramientas1 = new javax.swing.JButton();
@@ -1665,7 +1733,7 @@ public class Plataforma extends javax.swing.JFrame {
                 lblNominaMouseClicked(evt);
             }
         });
-        pnlEncabezados.add(lblNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
+        pnlEncabezados.add(lblNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         pnlOpciones_ventana.setBackground(new java.awt.Color(35, 35, 35));
 
@@ -1759,6 +1827,23 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTemas.add(lblClaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pnlEncabezados.add(pnlTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 10, 70, 20));
+
+        lbl_reloj.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        lbl_reloj.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_reloj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_reloj.setText("Reloj");
+        pnlEncabezados.add(lbl_reloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 7, 140, 20));
+
+        lblNomina1.setBackground(new java.awt.Color(0, 0, 0));
+        lblNomina1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+        lblNomina1.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomina1.setText("CRONOGRAMA DE ACTIVIDADES");
+        lblNomina1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNomina1MouseClicked(evt);
+            }
+        });
+        pnlEncabezados.add(lblNomina1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, -1));
 
         pnlCentro.add(pnlEncabezados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 40));
 
@@ -1900,7 +1985,7 @@ public class Plataforma extends javax.swing.JFrame {
                 cbVerticalActionPerformed(evt);
             }
         });
-        pnlContacto.add(cbVertical, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        pnlContacto.add(cbVertical, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
         cbHorizontal.setBackground(new java.awt.Color(255, 255, 255));
         cbHorizontal.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
@@ -1913,7 +1998,7 @@ public class Plataforma extends javax.swing.JFrame {
                 cbHorizontalActionPerformed(evt);
             }
         });
-        pnlContacto.add(cbHorizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 120, -1));
+        pnlContacto.add(cbHorizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 67, 120, -1));
 
         cbLineal.setBackground(new java.awt.Color(255, 255, 255));
         cbLineal.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
@@ -1940,7 +2025,8 @@ public class Plataforma extends javax.swing.JFrame {
                 cbPastelActionPerformed(evt);
             }
         });
-        pnlContacto.add(cbPastel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, 100, -1));
+        pnlContacto.add(cbPastel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 95, 100, -1));
+        pnlContacto.add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 220, 100));
 
         pnlMenuInicio.add(pnlContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 600, 120));
 
@@ -2528,7 +2614,7 @@ public class Plataforma extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(127, 140, 141));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel24.setText("Usted inicia sesión como administrador,");
-        pnlContacto1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 10, 250, -1));
+        pnlContacto1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 5, 250, -1));
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(52, 152, 219));
@@ -2540,7 +2626,8 @@ public class Plataforma extends javax.swing.JFrame {
                 jLabel25MouseClicked(evt);
             }
         });
-        pnlContacto1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+        pnlContacto1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 5, -1, -1));
+        pnlContacto1.add(jDayChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 210, 80));
 
         pnlMenuUsuarios.add(pnlContacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 26, 600, 120));
 
@@ -3430,7 +3517,7 @@ public class Plataforma extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(127, 140, 141));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel16.setText("Usted inicia sesión como administrador,");
-        pnlContacto2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 10, 260, -1));
+        pnlContacto2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 5, 260, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(52, 152, 219));
@@ -3445,7 +3532,8 @@ public class Plataforma extends javax.swing.JFrame {
                 jLabel17MousePressed(evt);
             }
         });
-        pnlContacto2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+        pnlContacto2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 5, -1, -1));
+        pnlContacto2.add(jDayChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 210, 80));
 
         pnlMenu.add(pnlContacto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 26, 600, 120));
 
@@ -9691,13 +9779,20 @@ public class Plataforma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHelpMouseMoved
 
     private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnHelpMouseClicked
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
+//<<<<<<< HEAD
+        // TODO add your handling code here:
         try {
+            String URL= "C:\\Users\\Brayan Cifuentes\\Desktop\\Manual de usuario.docx";
+            ProcessBuilder p= new ProcessBuilder();
+//=======
+        //try {
 
-            ProcessBuilder p = new ProcessBuilder();
+            //ProcessBuilder p = new ProcessBuilder();
+//>>>>>>> 02906463b984441bf627bfd806af40a730675726
             p.command("cmd.exe", "/c", URL);
             p.start();
         } catch (IOException ex) {
@@ -9735,6 +9830,16 @@ public class Plataforma extends javax.swing.JFrame {
         pnlOpciones_NominaPuestos.setVisible(false);
         pnlOpciones_NominaDepartamentos.setVisible(false);
         pnlOpciones_NominaConceptos.setVisible(false);
+        
+        
+        try {
+            //String URL= "C:\\Users\\Brayan Cifuentes\\Desktop\\Manual de usuario.docx";
+            ProcessBuilder p= new ProcessBuilder();
+            p.command("cmd.exe", "/c", URL);
+            p.start();
+        } catch (IOException ex) {
+            Logger.getLogger(Plataforma.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnHelp1ActionPerformed
 
     private void btnHerramientas1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHerramientas1MouseMoved
@@ -10122,6 +10227,13 @@ public class Plataforma extends javax.swing.JFrame {
             txt_IDConceptoPlanilla.setText("");
         }
     }//GEN-LAST:event_txt_IDEmpleadoPlanillaKeyTyped
+
+    private void lblNomina1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNomina1MouseClicked
+        // TODO add your handling code here:
+        //codigo
+        Main inicio = new Main();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_lblNomina1MouseClicked
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -11057,7 +11169,10 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JButton jButton_InsertarE2;
     private javax.swing.JButton jButton_Modificar;
     private javax.swing.JButton jButton_ModificarE;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private com.toedter.calendar.JDayChooser jDayChooser2;
+    private com.toedter.calendar.JDayChooser jDayChooser3;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -11306,6 +11421,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombreDeUsuario1;
     private javax.swing.JLabel lblNombreDeUsuario2;
     private javax.swing.JLabel lblNomina;
+    private javax.swing.JLabel lblNomina1;
     private javax.swing.JLabel lblOscuro;
     private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblPass1;
@@ -11342,6 +11458,7 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsernameInicio;
     private javax.swing.JLabel lblUsuarios;
     private javax.swing.JLabel lblVeces;
+    private javax.swing.JLabel lbl_reloj;
     private javax.swing.JLabel lbllogouser;
     private javax.swing.JLabel lblname;
     private javax.swing.JLabel lblname1;
