@@ -916,7 +916,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblAsterisco2 = new javax.swing.JLabel();
         lblAsterisco3 = new javax.swing.JLabel();
         lblAsterisco4 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<String>();
+        cbTipo = new javax.swing.JComboBox<>();
         lblTipo = new javax.swing.JLabel();
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
@@ -954,7 +954,7 @@ public class Plataforma extends javax.swing.JFrame {
         pnlTelefono1 = new javax.swing.JPanel();
         txtTelefonoModificar = new javax.swing.JTextField();
         lblVeces = new javax.swing.JLabel();
-        cbTipo1 = new javax.swing.JComboBox<String>();
+        cbTipo1 = new javax.swing.JComboBox<>();
         lblAsterisco23 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
         lblNombreDeUsuario2 = new javax.swing.JLabel();
@@ -989,7 +989,7 @@ public class Plataforma extends javax.swing.JFrame {
         lblPrimerNombre3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUsuariosConsulta = new javax.swing.JTable();
-        cbTipoConsulta = new javax.swing.JComboBox<String>();
+        cbTipoConsulta = new javax.swing.JComboBox<>();
         chbPorNombreUsuario = new javax.swing.JCheckBox();
         chbPorId = new javax.swing.JCheckBox();
         chbPorIdConcepto = new javax.swing.JCheckBox();
@@ -1110,6 +1110,9 @@ public class Plataforma extends javax.swing.JFrame {
         pnlCuerpoNomina = new javax.swing.JPanel();
         pnlInicio = new javax.swing.JPanel();
         lblLogo1 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel108 = new javax.swing.JLabel();
         pnlEmpleados = new javax.swing.JPanel();
         pnlIngresoEmpleado = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado = new javax.swing.JLabel();
@@ -1171,7 +1174,7 @@ public class Plataforma extends javax.swing.JFrame {
         txt_IDU_Empleado2 = new javax.swing.JTextField();
         jButton_BuscarE1 = new javax.swing.JButton();
         label_statusemp1 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<String>();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jTextField3 = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         pnlEliminarEmpleado = new javax.swing.JPanel();
@@ -2496,8 +2499,6 @@ public class Plataforma extends javax.swing.JFrame {
         pnlDetalles1.add(lblIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, -1));
 
         pnlMenuUsuarios.add(pnlDetalles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 26, 420, 120));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\oie_USshpWXg9kiT.png")); // NOI18N
         pnlMenuUsuarios.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, -1, -1));
 
         pnlContacto1.setBackground(new java.awt.Color(255, 255, 255));
@@ -5129,6 +5130,15 @@ public class Plataforma extends javax.swing.JFrame {
             }
         });
         pnlInicio.add(lblLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
+
+        jLabel105.setText("jLabel105");
+        pnlInicio.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
+
+        jLabel107.setText("jLabel107");
+        pnlInicio.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
+
+        jLabel108.setText("jLabel108");
+        pnlInicio.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, -1, -1));
 
         pnlCuerpoNomina.add(pnlInicio, "card4");
 
@@ -10956,6 +10966,9 @@ public class Plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
