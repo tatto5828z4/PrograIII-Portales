@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Frames;
-
 import static Frames.Plataforma.GenerarQR;
 import com.sun.glass.events.KeyEvent;
 import ds.desktop.notify.DesktopNotify;
