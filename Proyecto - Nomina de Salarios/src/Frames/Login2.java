@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package Frames;
-
+<<<<<<< HEAD
+=======
+import Animacion.Animacion;
+>>>>>>> Josue
 import static Frames.Plataforma.GenerarQR;
 import com.sun.glass.events.KeyEvent;
 import ds.desktop.notify.DesktopNotify;
@@ -95,16 +98,19 @@ public class Login2 extends javax.swing.JFrame {
 
     public Login2() {
         initComponents();
+
         this.setLocationRelativeTo(null);
 
         jProgressBar.setVisible(false);
         lblConectar.setVisible(false);
         lblPorcentaje.setVisible(false);
         lblCalendario.setVisible(false);
-
+        Ver.setVisible(true);
+        No_Ver.setVisible(false);
         jTabbedPane1.removeAll();
         jTabbedPane1.repaint();
         jTabbedPane1.revalidate();
+
         if (CantidadDeRegistros("Usuarios") == 0) {
             jTabbedPane1.addTab("INICIAR SESION", tab1Icon, pnlIngreso);
             jTabbedPane1.addTab("RECUPERAR", tab2Icon, pnlRecuperar);
@@ -140,9 +146,12 @@ public class Login2 extends javax.swing.JFrame {
                 lblPorcentaje.setText(Integer.toString(numero) + "%");
             } else {
                 tiempo.stop();
-                Plataforma PF = new Plataforma();
-                PF.setVisible(true);
+                Animacion animacion = new Animacion();
+                animacion.setVisible(true);
                 dispose();
+                /*Plataforma PF = new Plataforma();
+                PF.setVisible(true);
+                dispose();*/
             }
         }
     }
@@ -298,6 +307,7 @@ public class Login2 extends javax.swing.JFrame {
 
     public void InicioSesion() {
         String nulldato = null;
+        boolean Encontrado = false;
         /* for (int i = 2; i < 25; i++) {
             if (PermisosOpciones1[i].equals("0")) {
                 nulldato = null;
@@ -322,14 +332,16 @@ public class Login2 extends javax.swing.JFrame {
             } else {
                 BuscarRegistroUsuarios(DatosPersonales1[1], "Concepto", "ID_Concepto", 25);
                 if (txtUsuario.getText().trim().equals(DatosPersonales1[2]) && psContraseña.getText().trim().equals(DatosPersonales1[3])) {
-                    tiempo.start();
-
+                             
+                    tiempo.start();   
+                    Encontrado = true;
                 } else {
                     JOptionPane.showMessageDialog(null, "AVISO\n" + "NOMBRE DE USUARIO O CONTRASEÑA INCORRECTA", "AVISO", JOptionPane.INFORMATION_MESSAGE, icon);
                 }
 
             }
         }
+        
 
     }
   
@@ -356,8 +368,10 @@ public class Login2 extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         pnlUsername = new javax.swing.JPanel();
         lblPass = new javax.swing.JLabel();
-        psContraseña = new javax.swing.JPasswordField();
         pnlContraseña = new javax.swing.JPanel();
+        No_Ver = new javax.swing.JLabel();
+        Ver = new javax.swing.JLabel();
+        psContraseña = new javax.swing.JPasswordField();
         cbPermanecerConectado = new javax.swing.JCheckBox();
         btnAcceder = new javax.swing.JButton();
         lblCrear = new javax.swing.JLabel();
@@ -441,7 +455,7 @@ public class Login2 extends javax.swing.JFrame {
         btnAjustes.setBorder(null);
         btnAjustes.setBorderPainted(false);
         btnAjustes.setContentAreaFilled(false);
-        btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAjustes.setFocusable(false);
         btnAjustes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -525,7 +539,7 @@ public class Login2 extends javax.swing.JFrame {
                 txtUsuarioKeyTyped(evt);
             }
         });
-        pnlIngreso.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 220, 40));
+        pnlIngreso.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 190, 40));
 
         pnlUsername.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -533,14 +547,14 @@ public class Login2 extends javax.swing.JFrame {
         pnlUsername.setLayout(pnlUsernameLayout);
         pnlUsernameLayout.setHorizontalGroup(
             pnlUsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
+            .addGap(0, 240, Short.MAX_VALUE)
         );
         pnlUsernameLayout.setVerticalGroup(
             pnlUsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        pnlIngreso.add(pnlUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 235, 40));
+        pnlIngreso.add(pnlUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 220, 240, 40));
 
         lblPass.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
         lblPass.setForeground(new java.awt.Color(167, 167, 167));
@@ -551,6 +565,27 @@ public class Login2 extends javax.swing.JFrame {
             }
         });
         pnlIngreso.add(lblPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        pnlContraseña.setBackground(new java.awt.Color(231, 231, 231));
+        pnlContraseña.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        No_Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/No_Visible.png"))); // NOI18N
+        No_Ver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        No_Ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                No_VerMouseClicked(evt);
+            }
+        });
+        pnlContraseña.add(No_Ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 20, 20));
+
+        Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/Visible.png"))); // NOI18N
+        Ver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerMouseClicked(evt);
+            }
+        });
+        pnlContraseña.add(Ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 20));
 
         psContraseña.setBackground(new java.awt.Color(231, 231, 231));
         psContraseña.setForeground(new java.awt.Color(167, 167, 167));
@@ -569,22 +604,9 @@ public class Login2 extends javax.swing.JFrame {
                 psContraseñaKeyTyped(evt);
             }
         });
-        pnlIngreso.add(psContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 220, 40));
+        pnlContraseña.add(psContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 190, 40));
 
-        pnlContraseña.setBackground(new java.awt.Color(231, 231, 231));
-
-        javax.swing.GroupLayout pnlContraseñaLayout = new javax.swing.GroupLayout(pnlContraseña);
-        pnlContraseña.setLayout(pnlContraseñaLayout);
-        pnlContraseñaLayout.setHorizontalGroup(
-            pnlContraseñaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
-        );
-        pnlContraseñaLayout.setVerticalGroup(
-            pnlContraseñaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        pnlIngreso.add(pnlContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 235, 40));
+        pnlIngreso.add(pnlContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 290, 240, 40));
 
         cbPermanecerConectado.setBackground(new java.awt.Color(255, 255, 255));
         cbPermanecerConectado.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
@@ -638,9 +660,15 @@ public class Login2 extends javax.swing.JFrame {
 
         lblOscuro.setBackground(new java.awt.Color(255, 255, 255));
         lblOscuro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+<<<<<<< HEAD
         lblOscuro.setForeground(new java.awt.Color(0, 0, 0));
         lblOscuro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Dark.png"))); // NOI18N
         lblOscuro.setText("DARK");
+=======
+        lblOscuro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Dark.png"))); // NOI18N
+        lblOscuro.setText("DARK");
+        lblOscuro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+>>>>>>> Josue
         lblOscuro.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 lblOscuroMouseMoved(evt);
@@ -655,9 +683,15 @@ public class Login2 extends javax.swing.JFrame {
 
         lblClaro.setBackground(new java.awt.Color(255, 255, 255));
         lblClaro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+<<<<<<< HEAD
         lblClaro.setForeground(new java.awt.Color(0, 0, 0));
         lblClaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ligth.png"))); // NOI18N
         lblClaro.setText("LIGTH");
+=======
+        lblClaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ligth.png"))); // NOI18N
+        lblClaro.setText("LIGTH");
+        lblClaro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+>>>>>>> Josue
         lblClaro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblClaroMouseClicked(evt);
@@ -792,7 +826,7 @@ public class Login2 extends javax.swing.JFrame {
         btnRecuperar.setBorder(null);
         btnRecuperar.setBorderPainted(false);
         btnRecuperar.setContentAreaFilled(false);
-        btnRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRecuperar.setFocusable(false);
         btnRecuperar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -1111,7 +1145,7 @@ public class Login2 extends javax.swing.JFrame {
         btnRegistrarse.setBorder(null);
         btnRegistrarse.setBorderPainted(false);
         btnRegistrarse.setContentAreaFilled(false);
-        btnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRegistrarse.setEnabled(false);
         btnRegistrarse.setFocusable(false);
         btnRegistrarse.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1247,7 +1281,7 @@ public class Login2 extends javax.swing.JFrame {
         btnSalir.setBorder(null);
         btnSalir.setBorderPainted(false);
         btnSalir.setContentAreaFilled(false);
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
@@ -1327,6 +1361,7 @@ public class Login2 extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         tiempo = new Timer(5, new progreso());
+                     
     }//GEN-LAST:event_formWindowOpened
 
     private void lblCalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCalendarioMouseClicked
@@ -1708,7 +1743,7 @@ public class Login2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDTipoMousePressed
 
     private void btnAccederMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAccederMouseClicked
-       InicioSesion();
+       InicioSesion();       
     }//GEN-LAST:event_btnAccederMouseClicked
 
     private void lblOscuroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOscuroMouseClicked
@@ -1784,6 +1819,29 @@ lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logi
         // TODO add your handling code here:
     }//GEN-LAST:event_lblOscuroMouseMoved
 
+<<<<<<< HEAD
+=======
+    private void VerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerMouseClicked
+        // Se va a ver la contraseña:
+        No_Ver.setVisible(true);
+        No_Ver.setEnabled(true);
+        int contra = psContraseña.getEchoChar();
+        psContraseña.setEchoChar((char)0);
+        Ver.setVisible(false);
+        Ver.setEnabled(false);
+
+    }//GEN-LAST:event_VerMouseClicked
+
+    private void No_VerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_VerMouseClicked
+        // No se va a ver la contraseña:
+        Ver.setVisible(true);
+        Ver.setEnabled(true);
+        psContraseña.setEchoChar((char)8226);
+        No_Ver.setVisible(false);
+        No_Ver.setEnabled(false);
+    }//GEN-LAST:event_No_VerMouseClicked
+
+>>>>>>> Josue
     /**
      * @param args the command line arguments
      */
@@ -1817,11 +1875,15 @@ lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logi
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login2().setVisible(true);
+
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel No_Ver;
+    private javax.swing.JLabel Ver;
     private javax.swing.JButton btnAcceder;
     private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnRecuperar;
