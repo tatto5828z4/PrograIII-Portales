@@ -95,6 +95,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     String Usuario = "brayan";
     String Clave = "cifuentes";
     String hola = "";
+    String hola2 = "";
 
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
     String URL= "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
