@@ -9608,7 +9608,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                             if (n == cantPlanillaGen - 1) {
                                 iggs = Float.parseFloat(BasedeDatosEmpleados[i][6]);
                             }
-
                         }
                     }
                 } else {
@@ -9628,10 +9627,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                                 txt_IDConceptoPlanilla.setText("1");
                             }
                     }
-                    
-
                 }
-
                 i = cant3;
             }
 
