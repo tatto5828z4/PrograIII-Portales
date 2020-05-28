@@ -9650,8 +9650,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                             txt_IDConceptoPlanilla.setText("1");
                         }
                     }
-<<<<<<< HEAD
-=======
                     /*else
                     {
                      
@@ -9664,7 +9662,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                     }*/
                     
 
->>>>>>> 6d1f71f932ab15aea1c50878d49e8fb3ce52158d
+
                 }
                 i = cant3;
             }
