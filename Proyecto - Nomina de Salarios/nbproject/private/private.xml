@@ -2,13 +2,23 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Proyectos_Git/Nueva_Version_Nomina/Proyecto%20-%20Nomina%20de%20Salarios/src/Frames/Login.java</file>
             <file>file:/D:/Proyectos_Git/Nueva_Version_Nomina/Proyecto%20-%20Nomina%20de%20Salarios/src/Frames/Login2.java</file>
             <file>file:/D:/Proyectos_Git/Nueva_Version_Nomina/Proyecto%20-%20Nomina%20de%20Salarios/src/Agenda/Actividad.java</file>
             <file>file:/D:/Proyectos_Git/Nueva_Version_Nomina/Proyecto%20-%20Nomina%20de%20Salarios/src/Frames/Plataforma.java</file>
             <file>file:/D:/Proyectos_Git/Nueva_Version_Nomina/Proyecto%20-%20Nomina%20de%20Salarios/src/Agenda/Main.java</file>
             <file>file:/D:/Proyectos_Git/Nueva_Version_Nomina/Proyecto%20-%20Nomina%20de%20Salarios/src/Agenda/Conexion.java</file>
+=======
+            <file>file:/C:/Users/jorgi/Documents/mundo/Proyecto%20-%20Nomina%20de%20Salarios/src/Frames/Login2.java</file>
+            <file>file:/C:/Users/jorgi/Documents/mundo/Proyecto%20-%20Nomina%20de%20Salarios/src/Frames/Login.java</file>
+            <file>file:/C:/Users/jorgi/Documents/mundo/Proyecto%20-%20Nomina%20de%20Salarios/src/Frames/Plataforma.java</file>
+>>>>>>> 9972dea3a9e524f5480a448bf282530314f8c4cc
         </group>
+>>>>>>> ec692187cadd910ccf59b3a1bffc09200ebac154
     </open-files>
 </project-private>

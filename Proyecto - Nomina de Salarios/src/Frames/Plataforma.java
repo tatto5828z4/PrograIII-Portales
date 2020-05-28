@@ -1,9 +1,13 @@
+package Frames;
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Frames;
+
 
 import com.barcodelib.barcode.QRCode;
 import com.itextpdf.text.Chunk;
@@ -90,8 +94,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
     public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
-    String Usuario = "brayan";
-    String Clave = "cifuentes";
+    String Usuario = "josue";
+    String Clave = "zapata";
 
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
     String URL= "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
@@ -976,10 +980,14 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         txtIDUsuario = new javax.swing.JTextField();
         lblPass = new javax.swing.JLabel();
         pnlContraseña = new javax.swing.JPanel();
-        txtContraseñaUser = new javax.swing.JTextField();
+        txtContraseñaUser = new javax.swing.JPasswordField();
+        Ver = new javax.swing.JLabel();
+        No_Ver = new javax.swing.JLabel();
         lblConfirmar = new javax.swing.JLabel();
         pnlConfirmar = new javax.swing.JPanel();
-        txtConfirmarUser = new javax.swing.JTextField();
+        txtConfirmarUser = new javax.swing.JPasswordField();
+        Ver1 = new javax.swing.JLabel();
+        No_Ver1 = new javax.swing.JLabel();
         lblMail = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         pnlMail = new javax.swing.JPanel();
@@ -997,6 +1005,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         lblAsterisco6 = new javax.swing.JLabel();
         lblPrimerNombre = new javax.swing.JLabel();
         lblAsterisco9 = new javax.swing.JLabel();
+        txtConfirmarUser2 = new javax.swing.JTextField();
         jspnlModificar_Usuarios = new javax.swing.JScrollPane();
         pnlModificar_Usuarios = new javax.swing.JPanel();
         lblModificarUser = new javax.swing.JLabel();
@@ -1304,10 +1313,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         pnlConsultaPuesto = new javax.swing.JPanel();
         lblConsulta_NominaEmpleado1 = new javax.swing.JLabel();
         jSeparator17 = new javax.swing.JSeparator();
-        jButton5 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
         pnlDepartamentos = new javax.swing.JPanel();
         pnlIngresoDep = new javax.swing.JPanel();
         lblIngreso_NominaEmpleado2 = new javax.swing.JLabel();
@@ -1331,18 +1336,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         pnlModificarDep = new javax.swing.JPanel();
         lblModificar_NominaEmpleado2 = new javax.swing.JLabel();
         jSeparator19 = new javax.swing.JSeparator();
-        jLabel87 = new javax.swing.JLabel();
-        txt_iddep1 = new javax.swing.JTextField();
-        jLabel88 = new javax.swing.JLabel();
-        txt_nombredep1 = new javax.swing.JTextField();
-        jLabel89 = new javax.swing.JLabel();
-        txt_estadodep1 = new javax.swing.JTextField();
-        btn_ingresardep1 = new javax.swing.JButton();
-        btn_modificardep1 = new javax.swing.JButton();
-        btn_eliminardep1 = new javax.swing.JButton();
-        jLabel90 = new javax.swing.JLabel();
-        btn_buscardep1 = new javax.swing.JButton();
-        txt_buscardep1 = new javax.swing.JTextField();
         pnlEliminarDep = new javax.swing.JPanel();
         lblEliminar_NominaEmpleado2 = new javax.swing.JLabel();
         jSeparator20 = new javax.swing.JSeparator();
@@ -3768,15 +3761,29 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         pnlContraseña.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtContraseñaUser.setBackground(new java.awt.Color(231, 231, 231));
-        txtContraseñaUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtContraseñaUser.setForeground(new java.awt.Color(153, 153, 153));
         txtContraseñaUser.setBorder(null);
         txtContraseñaUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtContraseñaUserKeyReleased(evt);
             }
         });
-        pnlContraseña.add(txtContraseñaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 250, 40));
+        pnlContraseña.add(txtContraseñaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, 40));
+
+        Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/Visible.png"))); // NOI18N
+        Ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerMouseClicked(evt);
+            }
+        });
+        pnlContraseña.add(Ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 20));
+
+        No_Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/No_Visible.png"))); // NOI18N
+        No_Ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                No_VerMouseClicked(evt);
+            }
+        });
+        pnlContraseña.add(No_Ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 20, 20));
 
         pnlIngreso_Usuarios.add(pnlContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 260, 40));
 
@@ -3789,15 +3796,29 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         pnlConfirmar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtConfirmarUser.setBackground(new java.awt.Color(231, 231, 231));
-        txtConfirmarUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtConfirmarUser.setForeground(new java.awt.Color(153, 153, 153));
         txtConfirmarUser.setBorder(null);
         txtConfirmarUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtConfirmarUserKeyReleased(evt);
             }
         });
-        pnlConfirmar.add(txtConfirmarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 250, 40));
+        pnlConfirmar.add(txtConfirmarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, 40));
+
+        Ver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/Visible.png"))); // NOI18N
+        Ver1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ver1MouseClicked(evt);
+            }
+        });
+        pnlConfirmar.add(Ver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 20));
+
+        No_Ver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/No_Visible.png"))); // NOI18N
+        No_Ver1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                No_Ver1MouseClicked(evt);
+            }
+        });
+        pnlConfirmar.add(No_Ver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 20, 20));
 
         pnlIngreso_Usuarios.add(pnlConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 260, 40));
 
@@ -3906,6 +3927,17 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         lblAsterisco9.setForeground(new java.awt.Color(255, 102, 102));
         lblAsterisco9.setText("*");
         pnlIngreso_Usuarios.add(lblAsterisco9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 10, -1));
+
+        txtConfirmarUser2.setBackground(new java.awt.Color(231, 231, 231));
+        txtConfirmarUser2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtConfirmarUser2.setForeground(new java.awt.Color(153, 153, 153));
+        txtConfirmarUser2.setBorder(null);
+        txtConfirmarUser2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtConfirmarUser2KeyReleased(evt);
+            }
+        });
+        pnlIngreso_Usuarios.add(txtConfirmarUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 250, 40));
 
         pnlCuerpoUsuarios.add(pnlIngreso_Usuarios, "card4");
 
@@ -5539,11 +5571,11 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         );
         pnlEmpleadosLayout.setVerticalGroup(
             pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+            .addComponent(pnlIngresoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
             .addComponent(pnlModificarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlConsultaEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
 
         pnlCuerpoNomina.add(pnlEmpleados, "card8");
@@ -5791,27 +5823,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         pnlConsultaPuesto.add(lblConsulta_NominaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlConsultaPuesto.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
-        jButton5.setText("jButton4");
-        pnlConsultaPuesto.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
-
-        jTextField6.setText("jTextField5");
-        pnlConsultaPuesto.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane10.setViewportView(jTable4);
-
-        pnlConsultaPuesto.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
-
         javax.swing.GroupLayout pnlPuestosLayout = new javax.swing.GroupLayout(pnlPuestos);
         pnlPuestos.setLayout(pnlPuestosLayout);
         pnlPuestosLayout.setHorizontalGroup(
@@ -5828,15 +5839,15 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         );
         pnlPuestosLayout.setVerticalGroup(
             pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlIngresoPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlModificarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlEliminarPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlPuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
 
         pnlCuerpoNomina.add(pnlPuestos, "card5");
@@ -5984,54 +5995,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         pnlModificarDep.add(lblModificar_NominaEmpleado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
         pnlModificarDep.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 870, 10));
 
-        jLabel87.setText("Ingrese ID del Departamento");
-        pnlModificarDep.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
-        pnlModificarDep.add(txt_iddep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 40, -1));
-
-        jLabel88.setText("Ingrese Nombre del Departamento");
-        pnlModificarDep.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
-        pnlModificarDep.add(txt_nombredep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 130, -1));
-
-        jLabel89.setText("Ingrese el estado del Departamento");
-        pnlModificarDep.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
-        pnlModificarDep.add(txt_estadodep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, -1));
-
-        btn_ingresardep1.setText("Ingresar");
-        btn_ingresardep1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ingresardep1ActionPerformed(evt);
-            }
-        });
-        pnlModificarDep.add(btn_ingresardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
-
-        btn_modificardep1.setText("Modificar");
-        btn_modificardep1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_modificardep1ActionPerformed(evt);
-            }
-        });
-        pnlModificarDep.add(btn_modificardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
-
-        btn_eliminardep1.setText("Eliminar");
-        btn_eliminardep1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_eliminardep1ActionPerformed(evt);
-            }
-        });
-        pnlModificarDep.add(btn_eliminardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
-
-        jLabel90.setText("Ingrese ID departamento");
-        pnlModificarDep.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
-
-        btn_buscardep1.setText("Buscar");
-        btn_buscardep1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscardep1ActionPerformed(evt);
-            }
-        });
-        pnlModificarDep.add(btn_buscardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
-        pnlModificarDep.add(txt_buscardep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 110, -1));
-
         pnlEliminarDep.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarDep.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -6111,15 +6074,15 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         );
         pnlDepartamentosLayout.setVerticalGroup(
             pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoDep, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlIngresoDep, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlModificarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlEliminarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlDepartamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaDep, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlConsultaDep, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
 
         pnlCuerpoNomina.add(pnlDepartamentos, "card4");
@@ -6396,15 +6359,15 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         );
         pnlConceptosLayout.setVerticalGroup(
             pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlIngresoConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlIngresoConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlModificarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlModificarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlEliminarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlEliminarConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
             .addGroup(pnlConceptosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlConsultaConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+                .addComponent(pnlConsultaConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
 
         pnlCuerpoNomina.add(pnlConceptos, "card4");
@@ -8142,11 +8105,11 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                 JOptionPane.showMessageDialog(null, "USUARIO REGISTRADO - LOS DATOS FUERON ANOTADOS EN LA BASE DE DATOS", "INGRESADO CORRECTAMENTE", JOptionPane.INFORMATION_MESSAGE, Ingresado);
                 DesktopNotify.showDesktopMessage("Registrado", "El Usuario fue ingresado con Exito", DesktopNotify.SUCCESS, 7000L);
                 txtContraseñaUser.setForeground(new Color(153, 153, 153));
-                txtConfirmarUser.setForeground(new Color(153, 153, 153));
+                txtConfirmarUser2.setForeground(new Color(153, 153, 153));
                 txtIDUsuario.setText("");
                 txtNombreDeUsuario.setText("");
                 txtContraseñaUser.setText("");
-                txtConfirmarUser.setText("");
+                txtConfirmarUser2.setText("");
                 txtMail.setText("");
                 txtTelefono.setText("");
 
@@ -8161,8 +8124,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void txtConfirmarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfirmarUserKeyReleased
-        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser.getText().trim().equals("")))) {
+    private void txtConfirmarUser2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfirmarUser2KeyReleased
+        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser2.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser2.getText().trim().equals("")))) {
             btnRegistrar.setEnabled(true);
             txtContraseñaUser.setForeground(new Color(0, 204, 102));
             txtConfirmarUser.setForeground(new Color(0, 204, 102));
@@ -8172,7 +8135,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
             txtContraseñaUser.setForeground(Color.RED);
             txtConfirmarUser.setForeground(Color.RED);
         }
-    }//GEN-LAST:event_txtConfirmarUserKeyReleased
+    }//GEN-LAST:event_txtConfirmarUser2KeyReleased
 
     private void txtConfirmarUserModficarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfirmarUserModficarKeyReleased
         if (txtContraseñaUserModificar.getText().trim().equals(txtConfirmarUserModficar.getText().trim()) && (!(txtContraseñaUserModificar.getText().trim().equals("")) && !(txtConfirmarUserModficar.getText().trim().equals("")))) {
@@ -8186,19 +8149,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
             txtConfirmarUserModficar.setForeground(Color.RED);
         }
     }//GEN-LAST:event_txtConfirmarUserModficarKeyReleased
-
-    private void txtContraseñaUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaUserKeyReleased
-        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser.getText().trim().equals("")))) {
-            btnRegistrar.setEnabled(true);
-            txtContraseñaUser.setForeground(new Color(0, 204, 102));
-            txtConfirmarUser.setForeground(new Color(0, 204, 102));
-
-        } else {
-            btnRegistrar.setEnabled(false);
-            txtContraseñaUser.setForeground(Color.RED);
-            txtConfirmarUser.setForeground(Color.RED);
-        }
-    }//GEN-LAST:event_txtContraseñaUserKeyReleased
 
     private void btnBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIDActionPerformed
 
@@ -9279,22 +9229,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_buscarpuesto1ActionPerformed
 
-    private void btn_ingresardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresardep1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_ingresardep1ActionPerformed
-
-    private void btn_modificardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificardep1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_modificardep1ActionPerformed
-
-    private void btn_eliminardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminardep1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_eliminardep1ActionPerformed
-
-    private void btn_buscardep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscardep1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_buscardep1ActionPerformed
-
     private void jButton_InsertarE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_InsertarE2ActionPerformed
 
         try {
@@ -9696,7 +9630,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                             if (n == cantPlanillaGen - 1) {
                                 iggs = Float.parseFloat(BasedeDatosEmpleados[i][6]);
                             }
-
                         }
                     }
                 } else {
@@ -9704,22 +9637,33 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                 }
 
                 for (int j = 0; j < cantpuestos; j++) {
-                    if (BasedeDatosPuestos[j][0].equals(BasedeDatosEmpleados[i][7])) {
+                    if (BasedeDatosPuestos[j][0].equals(BasedeDatosEmpleados[i][7])) 
+                    {
                         if (BasedeDatosPuestos[j][1].equals("Representante Legal")) {
                             txtValorConcepto.setText("No se le puede cobrar iggs");
                             txt_IDConceptoPlanilla.setText("");
                             j = cantpuestos;
-                        } 
-                    }else{
-                        if (j == cantpuestos - 1) {
-                                txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
-                                txt_IDConceptoPlanilla.setText("1");
-                            }
+                        }
+                        else if(txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosEmpleados[i][0]))
+                        {
+                            txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
+                            txt_IDConceptoPlanilla.setText("1");
+                        }
                     }
+                    /*else
+                    {
+                     
+                            if (j == cantpuestos - 1) {
+                                //txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
+                                //txt_IDConceptoPlanilla.setText("1");
+                                
+                            }
+
+                    }*/
                     
 
-                }
 
+                }
                 i = cant3;
             }
 
@@ -10234,6 +10178,72 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         Main inicio = new Main();
         inicio.setVisible(true);
     }//GEN-LAST:event_lblNomina1MouseClicked
+
+    private void VerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerMouseClicked
+        // Se va a ver la contraseña:
+        No_Ver.setVisible(true);
+        No_Ver.setEnabled(true);
+        int contra = txtContraseñaUser.getEchoChar();
+        txtContraseñaUser.setEchoChar((char)0);
+        Ver.setVisible(false);
+        Ver.setEnabled(false);
+    }//GEN-LAST:event_VerMouseClicked
+
+    private void No_VerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_VerMouseClicked
+        // No se va a ver la contraseña:
+        Ver.setVisible(true);
+        Ver.setEnabled(true);
+        txtContraseñaUser.setEchoChar((char)8226);
+        No_Ver.setVisible(false);
+        No_Ver.setEnabled(false);
+    }//GEN-LAST:event_No_VerMouseClicked
+
+    private void Ver1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ver1MouseClicked
+        // TODO add your handling code here:
+        No_Ver1.setVisible(true);
+        No_Ver1.setEnabled(true);
+        int contra = txtConfirmarUser.getEchoChar();
+        txtConfirmarUser.setEchoChar((char)0);
+        Ver1.setVisible(false);
+        Ver1.setEnabled(false);
+    }//GEN-LAST:event_Ver1MouseClicked
+
+    private void No_Ver1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Ver1MouseClicked
+        // TODO add your handling code here:
+        Ver1.setVisible(true);
+        Ver1.setEnabled(true);
+        txtConfirmarUser.setEchoChar((char)8226);
+        No_Ver1.setVisible(false);
+        No_Ver1.setEnabled(false);
+    }//GEN-LAST:event_No_Ver1MouseClicked
+
+    private void txtContraseñaUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaUserKeyReleased
+        // TODO add your handling code here:
+        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser.getText().trim().equals("")))) {
+            btnRegistrar.setEnabled(true);
+            txtContraseñaUser.setForeground(new Color(0, 204, 102));
+            txtConfirmarUser.setForeground(new Color(0, 204, 102));
+
+        } else {
+            btnRegistrar.setEnabled(false);
+            txtContraseñaUser.setForeground(Color.RED);
+            txtConfirmarUser.setForeground(Color.RED);
+        }
+    }//GEN-LAST:event_txtContraseñaUserKeyReleased
+
+    private void txtConfirmarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfirmarUserKeyReleased
+        // TODO add your handling code here:
+        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser.getText().trim().equals("")))) {
+            btnRegistrar.setEnabled(true);
+            txtContraseñaUser.setForeground(new Color(0, 204, 102));
+            txtConfirmarUser.setForeground(new Color(0, 204, 102));
+
+        } else {
+            btnRegistrar.setEnabled(false);
+            txtContraseñaUser.setForeground(Color.RED);
+            txtConfirmarUser.setForeground(Color.RED);
+        }
+    }//GEN-LAST:event_txtConfirmarUserKeyReleased
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -10990,6 +11000,10 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel No_Ver;
+    private javax.swing.JLabel No_Ver1;
+    private javax.swing.JLabel Ver;
+    private javax.swing.JLabel Ver1;
     private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnBarras;
     private javax.swing.JButton btnBuscarID;
@@ -11066,19 +11080,15 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton btnTemas;
     private javax.swing.JButton btnTipodeUsuario;
     private javax.swing.JButton btn_buscardep;
-    private javax.swing.JButton btn_buscardep1;
     private javax.swing.JButton btn_buscarpuesto;
     private javax.swing.JButton btn_buscarpuesto1;
     private javax.swing.JButton btn_eliminardep;
-    private javax.swing.JButton btn_eliminardep1;
     private javax.swing.JButton btn_eliminarpuesto;
     private javax.swing.JButton btn_eliminarpuesto1;
     private javax.swing.JButton btn_ingresardep;
-    private javax.swing.JButton btn_ingresardep1;
     private javax.swing.JButton btn_ingresarpuesto;
     private javax.swing.JButton btn_ingresarpuesto1;
     private javax.swing.JButton btn_modificardep;
-    private javax.swing.JButton btn_modificardep1;
     private javax.swing.JButton btn_modificarpuesto;
     private javax.swing.JButton btn_modificarpuesto1;
     private javax.swing.JComboBox<String> cbClase;
@@ -11156,7 +11166,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
@@ -11260,11 +11269,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
@@ -11277,7 +11282,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel_Plataforma;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
@@ -11321,7 +11325,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
@@ -11335,7 +11338,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
@@ -11587,9 +11589,10 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField txtBuscarIDModificar;
     private javax.swing.JTextField txtBuscarIDModificarTipo;
     private javax.swing.JTextField txtBuscarTabla;
-    private javax.swing.JTextField txtConfirmarUser;
+    private javax.swing.JPasswordField txtConfirmarUser;
+    private javax.swing.JTextField txtConfirmarUser2;
     private javax.swing.JTextField txtConfirmarUserModficar;
-    private javax.swing.JTextField txtContraseñaUser;
+    private javax.swing.JPasswordField txtContraseñaUser;
     private javax.swing.JTextField txtContraseñaUserModificar;
     private javax.swing.JTextField txtIDTipoUsuario;
     private javax.swing.JTextField txtIDTipoUsuarioModificar;
@@ -11634,17 +11637,13 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField txt_Valor_Concepto_Planilla;
     private javax.swing.JTextField txt_Valor_Concepto_Planilla1;
     private javax.swing.JTextField txt_buscardep;
-    private javax.swing.JTextField txt_buscardep1;
     private javax.swing.JTextField txt_buscarpuesto;
     private javax.swing.JTextField txt_buscarpuesto1;
-    private javax.swing.JTextField txt_estadodep1;
     private javax.swing.JTextField txt_estadopuesto1;
     private javax.swing.JTextField txt_iddep;
-    private javax.swing.JTextField txt_iddep1;
     private javax.swing.JTextField txt_idpuesto;
     private javax.swing.JTextField txt_idpuesto1;
     private javax.swing.JTextField txt_nombredep;
-    private javax.swing.JTextField txt_nombredep1;
     private javax.swing.JTextField txt_nombrepuesto;
     private javax.swing.JTextField txt_nombrepuesto1;
     // End of variables declaration//GEN-END:variables
