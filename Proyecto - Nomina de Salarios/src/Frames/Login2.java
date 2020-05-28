@@ -1,10 +1,13 @@
+package Frames;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Frames;
 
+
+import Animacion.Animacion;
 import static Frames.Plataforma.GenerarQR;
 import com.sun.glass.events.KeyEvent;
 import ds.desktop.notify.DesktopNotify;
@@ -50,7 +53,7 @@ public class Login2 extends javax.swing.JFrame {
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
     String Usuario = "brayan";
     String Clave = "cifuentes";
-    
+    String Hola = "";
 //=======
 
      /*String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
@@ -101,6 +104,8 @@ public class Login2 extends javax.swing.JFrame {
         lblConectar.setVisible(false);
         lblPorcentaje.setVisible(false);
         lblCalendario.setVisible(false);
+        Ver.setVisible(true);
+        No_Ver.setVisible(false);
 
         jTabbedPane1.removeAll();
         jTabbedPane1.repaint();
@@ -140,9 +145,12 @@ public class Login2 extends javax.swing.JFrame {
                 lblPorcentaje.setText(Integer.toString(numero) + "%");
             } else {
                 tiempo.stop();
-                Plataforma PF = new Plataforma();
-                PF.setVisible(true);
+                Animacion anima= new Animacion();
+                anima.setVisible(true);
                 dispose();
+                /*Plataforma PF = new Plataforma();
+                PF.setVisible(true);
+                dispose();*/
             }
         }
     }
@@ -347,24 +355,6 @@ public class Login2 extends javax.swing.JFrame {
         btnAjustes = new javax.swing.JButton();
         pnlIzquierdo = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        pnlIngreso = new javax.swing.JPanel();
-        lblLogo = new javax.swing.JLabel();
-        lblConect = new javax.swing.JLabel();
-        lblSignIn = new javax.swing.JLabel();
-        lblmundo = new javax.swing.JLabel();
-        lblUser = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        pnlUsername = new javax.swing.JPanel();
-        lblPass = new javax.swing.JLabel();
-        psContraseña = new javax.swing.JPasswordField();
-        pnlContraseña = new javax.swing.JPanel();
-        cbPermanecerConectado = new javax.swing.JCheckBox();
-        btnAcceder = new javax.swing.JButton();
-        lblCrear = new javax.swing.JLabel();
-        lblRecuperar = new javax.swing.JLabel();
-        pnlTemas = new javax.swing.JPanel();
-        lblOscuro = new javax.swing.JLabel();
-        lblClaro = new javax.swing.JLabel();
         pnlRecuperar = new javax.swing.JPanel();
         lblLogo2 = new javax.swing.JLabel();
         lblConect2 = new javax.swing.JLabel();
@@ -405,6 +395,26 @@ public class Login2 extends javax.swing.JFrame {
         txtIDTipo = new javax.swing.JTextField();
         pnlUsername10 = new javax.swing.JPanel();
         lblPass7 = new javax.swing.JLabel();
+        pnlIngreso = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        lblConect = new javax.swing.JLabel();
+        lblSignIn = new javax.swing.JLabel();
+        lblmundo = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        pnlUsername = new javax.swing.JPanel();
+        lblPass = new javax.swing.JLabel();
+        psContraseña = new javax.swing.JPasswordField();
+        pnlContraseña = new javax.swing.JPanel();
+        Ver = new javax.swing.JLabel();
+        No_Ver = new javax.swing.JLabel();
+        cbPermanecerConectado = new javax.swing.JCheckBox();
+        btnAcceder = new javax.swing.JButton();
+        lblCrear = new javax.swing.JLabel();
+        lblRecuperar = new javax.swing.JLabel();
+        pnlTemas = new javax.swing.JPanel();
+        lblOscuro = new javax.swing.JLabel();
+        lblClaro = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         lblPorcentaje = new javax.swing.JLabel();
         lblConectar = new javax.swing.JLabel();
@@ -441,7 +451,7 @@ public class Login2 extends javax.swing.JFrame {
         btnAjustes.setBorder(null);
         btnAjustes.setBorderPainted(false);
         btnAjustes.setContentAreaFilled(false);
-        btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAjustes.setFocusable(false);
         btnAjustes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -471,203 +481,6 @@ public class Login2 extends javax.swing.JFrame {
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jTabbedPane1.setInheritsPopupMenu(true);
-
-        pnlIngreso.setBackground(new java.awt.Color(255, 255, 255));
-        pnlIngreso.setForeground(new java.awt.Color(255, 255, 255));
-        pnlIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/oie_62331388LKjvr2U.png"))); // NOI18N
-        pnlIngreso.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 25, -1, 50));
-
-        lblConect.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        lblConect.setForeground(new java.awt.Color(51, 51, 51));
-        lblConect.setText("CONECT (MySQL)");
-        pnlIngreso.add(lblConect, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
-
-        lblSignIn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 34)); // NOI18N
-        lblSignIn.setForeground(new java.awt.Color(51, 51, 51));
-        lblSignIn.setText("SIGN IN");
-        pnlIngreso.add(lblSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 120, -1));
-
-        lblmundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/oie_6233435AKIJjT1Z.png"))); // NOI18N
-        pnlIngreso.add(lblmundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
-
-        lblUser.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
-        lblUser.setForeground(new java.awt.Color(167, 167, 167));
-        lblUser.setText("Nombre de usuario");
-        lblUser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblUserMouseClicked(evt);
-            }
-        });
-        pnlIngreso.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
-
-        txtUsuario.setBackground(new java.awt.Color(231, 231, 231));
-        txtUsuario.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(167, 167, 167));
-        txtUsuario.setBorder(null);
-        txtUsuario.setSelectionColor(new java.awt.Color(65, 209, 123));
-        txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtUsuarioMousePressed(evt);
-            }
-        });
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
-            }
-        });
-        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtUsuarioKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUsuarioKeyTyped(evt);
-            }
-        });
-        pnlIngreso.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 220, 40));
-
-        pnlUsername.setBackground(new java.awt.Color(231, 231, 231));
-
-        javax.swing.GroupLayout pnlUsernameLayout = new javax.swing.GroupLayout(pnlUsername);
-        pnlUsername.setLayout(pnlUsernameLayout);
-        pnlUsernameLayout.setHorizontalGroup(
-            pnlUsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
-        );
-        pnlUsernameLayout.setVerticalGroup(
-            pnlUsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        pnlIngreso.add(pnlUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 235, 40));
-
-        lblPass.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
-        lblPass.setForeground(new java.awt.Color(167, 167, 167));
-        lblPass.setText("Password");
-        lblPass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPassMouseClicked(evt);
-            }
-        });
-        pnlIngreso.add(lblPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
-
-        psContraseña.setBackground(new java.awt.Color(231, 231, 231));
-        psContraseña.setForeground(new java.awt.Color(167, 167, 167));
-        psContraseña.setBorder(null);
-        psContraseña.setSelectionColor(new java.awt.Color(65, 209, 123));
-        psContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                psContraseñaMousePressed(evt);
-            }
-        });
-        psContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                psContraseñaKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                psContraseñaKeyTyped(evt);
-            }
-        });
-        pnlIngreso.add(psContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 220, 40));
-
-        pnlContraseña.setBackground(new java.awt.Color(231, 231, 231));
-
-        javax.swing.GroupLayout pnlContraseñaLayout = new javax.swing.GroupLayout(pnlContraseña);
-        pnlContraseña.setLayout(pnlContraseñaLayout);
-        pnlContraseñaLayout.setHorizontalGroup(
-            pnlContraseñaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
-        );
-        pnlContraseñaLayout.setVerticalGroup(
-            pnlContraseñaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        pnlIngreso.add(pnlContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 235, 40));
-
-        cbPermanecerConectado.setBackground(new java.awt.Color(255, 255, 255));
-        cbPermanecerConectado.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-        cbPermanecerConectado.setForeground(new java.awt.Color(102, 102, 102));
-        cbPermanecerConectado.setText("Mantener sesion iniciada");
-        cbPermanecerConectado.setBorder(null);
-        cbPermanecerConectado.setMargin(new java.awt.Insets(3, 3, 3, 3));
-        pnlIngreso.add(cbPermanecerConectado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
-
-        btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/entrar2.png"))); // NOI18N
-        btnAcceder.setBorder(null);
-        btnAcceder.setBorderPainted(false);
-        btnAcceder.setContentAreaFilled(false);
-        btnAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAcceder.setFocusable(false);
-        btnAcceder.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnAccederMouseMoved(evt);
-            }
-        });
-        btnAcceder.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAccederMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnAccederMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnAccederMousePressed(evt);
-            }
-        });
-        btnAcceder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccederActionPerformed(evt);
-            }
-        });
-        pnlIngreso.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, -1, 70));
-
-        lblCrear.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblCrear.setForeground(new java.awt.Color(204, 204, 204));
-        lblCrear.setText("Crear una cuenta");
-        pnlIngreso.add(lblCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, -1, -1));
-
-        lblRecuperar.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblRecuperar.setForeground(new java.awt.Color(204, 204, 204));
-        lblRecuperar.setText("¿No puedes iniciar sesión?");
-        pnlIngreso.add(lblRecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, -1, -1));
-
-        pnlTemas.setBackground(new java.awt.Color(255, 255, 255));
-        pnlTemas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblOscuro.setBackground(new java.awt.Color(255, 255, 255));
-        lblOscuro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblOscuro.setForeground(new java.awt.Color(0, 0, 0));
-        lblOscuro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Dark.png"))); // NOI18N
-        lblOscuro.setText("DARK");
-        lblOscuro.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                lblOscuroMouseMoved(evt);
-            }
-        });
-        lblOscuro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOscuroMouseClicked(evt);
-            }
-        });
-        pnlTemas.add(lblOscuro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        lblClaro.setBackground(new java.awt.Color(255, 255, 255));
-        lblClaro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
-        lblClaro.setForeground(new java.awt.Color(0, 0, 0));
-        lblClaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ligth.png"))); // NOI18N
-        lblClaro.setText("LIGTH");
-        lblClaro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblClaroMouseClicked(evt);
-            }
-        });
-        pnlTemas.add(lblClaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        pnlIngreso.add(pnlTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 5, 70, 20));
-
-        jTabbedPane1.addTab("", pnlIngreso);
 
         pnlRecuperar.setBackground(new java.awt.Color(255, 255, 255));
         pnlRecuperar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -792,7 +605,7 @@ public class Login2 extends javax.swing.JFrame {
         btnRecuperar.setBorder(null);
         btnRecuperar.setBorderPainted(false);
         btnRecuperar.setContentAreaFilled(false);
-        btnRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRecuperar.setFocusable(false);
         btnRecuperar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -1111,7 +924,7 @@ public class Login2 extends javax.swing.JFrame {
         btnRegistrarse.setBorder(null);
         btnRegistrarse.setBorderPainted(false);
         btnRegistrarse.setContentAreaFilled(false);
-        btnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRegistrarse.setEnabled(false);
         btnRegistrarse.setFocusable(false);
         btnRegistrarse.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1239,6 +1052,207 @@ public class Login2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("", pnlRegistro);
 
+        pnlIngreso.setBackground(new java.awt.Color(255, 255, 255));
+        pnlIngreso.setForeground(new java.awt.Color(255, 255, 255));
+        pnlIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/oie_62331388LKjvr2U.png"))); // NOI18N
+        pnlIngreso.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 25, -1, 50));
+
+        lblConect.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        lblConect.setForeground(new java.awt.Color(51, 51, 51));
+        lblConect.setText("CONECT (MySQL)");
+        pnlIngreso.add(lblConect, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+
+        lblSignIn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 34)); // NOI18N
+        lblSignIn.setForeground(new java.awt.Color(51, 51, 51));
+        lblSignIn.setText("SIGN IN");
+        pnlIngreso.add(lblSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 120, -1));
+
+        lblmundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/oie_6233435AKIJjT1Z.png"))); // NOI18N
+        pnlIngreso.add(lblmundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
+
+        lblUser.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
+        lblUser.setForeground(new java.awt.Color(167, 167, 167));
+        lblUser.setText("Nombre de usuario");
+        lblUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUserMouseClicked(evt);
+            }
+        });
+        pnlIngreso.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        txtUsuario.setBackground(new java.awt.Color(231, 231, 231));
+        txtUsuario.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(167, 167, 167));
+        txtUsuario.setBorder(null);
+        txtUsuario.setSelectionColor(new java.awt.Color(65, 209, 123));
+        txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtUsuarioMousePressed(evt);
+            }
+        });
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
+            }
+        });
+        pnlIngreso.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 220, 40));
+
+        pnlUsername.setBackground(new java.awt.Color(231, 231, 231));
+
+        javax.swing.GroupLayout pnlUsernameLayout = new javax.swing.GroupLayout(pnlUsername);
+        pnlUsername.setLayout(pnlUsernameLayout);
+        pnlUsernameLayout.setHorizontalGroup(
+            pnlUsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pnlUsernameLayout.setVerticalGroup(
+            pnlUsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        pnlIngreso.add(pnlUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 235, 40));
+
+        lblPass.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
+        lblPass.setForeground(new java.awt.Color(167, 167, 167));
+        lblPass.setText("Password");
+        lblPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPassMouseClicked(evt);
+            }
+        });
+        pnlIngreso.add(lblPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        psContraseña.setBackground(new java.awt.Color(231, 231, 231));
+        psContraseña.setForeground(new java.awt.Color(167, 167, 167));
+        psContraseña.setBorder(null);
+        psContraseña.setSelectionColor(new java.awt.Color(65, 209, 123));
+        psContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                psContraseñaMousePressed(evt);
+            }
+        });
+        psContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                psContraseñaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                psContraseñaKeyTyped(evt);
+            }
+        });
+        pnlIngreso.add(psContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 180, 40));
+
+        pnlContraseña.setBackground(new java.awt.Color(231, 231, 231));
+        pnlContraseña.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/Visible.png"))); // NOI18N
+        Ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerMouseClicked(evt);
+            }
+        });
+        pnlContraseña.add(Ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, 20));
+
+        No_Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/No_Visible.png"))); // NOI18N
+        No_Ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                No_VerMouseClicked(evt);
+            }
+        });
+        pnlContraseña.add(No_Ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 20, 20));
+
+        pnlIngreso.add(pnlContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 235, 40));
+
+        cbPermanecerConectado.setBackground(new java.awt.Color(255, 255, 255));
+        cbPermanecerConectado.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
+        cbPermanecerConectado.setForeground(new java.awt.Color(102, 102, 102));
+        cbPermanecerConectado.setText("Mantener sesion iniciada");
+        cbPermanecerConectado.setBorder(null);
+        cbPermanecerConectado.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        pnlIngreso.add(cbPermanecerConectado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+
+        btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/entrar2.png"))); // NOI18N
+        btnAcceder.setBorder(null);
+        btnAcceder.setBorderPainted(false);
+        btnAcceder.setContentAreaFilled(false);
+        btnAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAcceder.setFocusable(false);
+        btnAcceder.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnAccederMouseMoved(evt);
+            }
+        });
+        btnAcceder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAccederMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAccederMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAccederMousePressed(evt);
+            }
+        });
+        btnAcceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccederActionPerformed(evt);
+            }
+        });
+        pnlIngreso.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, -1, 70));
+
+        lblCrear.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+        lblCrear.setForeground(new java.awt.Color(204, 204, 204));
+        lblCrear.setText("Crear una cuenta");
+        pnlIngreso.add(lblCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, -1, -1));
+
+        lblRecuperar.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+        lblRecuperar.setForeground(new java.awt.Color(204, 204, 204));
+        lblRecuperar.setText("¿No puedes iniciar sesión?");
+        pnlIngreso.add(lblRecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, -1, -1));
+
+        pnlTemas.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTemas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblOscuro.setBackground(new java.awt.Color(255, 255, 255));
+        lblOscuro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+        lblOscuro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Dark.png"))); // NOI18N
+        lblOscuro.setText("DARK");
+        lblOscuro.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                lblOscuroMouseMoved(evt);
+            }
+        });
+        lblOscuro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOscuroMouseClicked(evt);
+            }
+        });
+        pnlTemas.add(lblOscuro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        lblClaro.setBackground(new java.awt.Color(255, 255, 255));
+        lblClaro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 14)); // NOI18N
+        lblClaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Plataforma/Ligth.png"))); // NOI18N
+        lblClaro.setText("LIGTH");
+        lblClaro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblClaroMouseClicked(evt);
+            }
+        });
+        pnlTemas.add(lblClaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        pnlIngreso.add(pnlTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 5, 70, 20));
+
+        jTabbedPane1.addTab("", pnlIngreso);
+
         pnlIzquierdo.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -3, 305, 646));
 
         pnlContenido.add(pnlIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 640));
@@ -1247,7 +1261,7 @@ public class Login2 extends javax.swing.JFrame {
         btnSalir.setBorder(null);
         btnSalir.setBorderPainted(false);
         btnSalir.setContentAreaFilled(false);
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
@@ -1784,6 +1798,26 @@ lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logi
         // TODO add your handling code here:
     }//GEN-LAST:event_lblOscuroMouseMoved
 
+    private void VerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerMouseClicked
+        // Se va a ver la contraseña:
+        No_Ver.setVisible(true);
+        No_Ver.setEnabled(true);
+        int contra = psContraseña.getEchoChar();
+        psContraseña.setEchoChar((char)0);
+        Ver.setVisible(false);
+        Ver.setEnabled(false);
+
+    }//GEN-LAST:event_VerMouseClicked
+
+    private void No_VerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_VerMouseClicked
+        // No se va a ver la contraseña:
+        Ver.setVisible(true);
+        Ver.setEnabled(true);
+        psContraseña.setEchoChar((char)8226);
+        No_Ver.setVisible(false);
+        No_Ver.setEnabled(false);
+    }//GEN-LAST:event_No_VerMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1812,6 +1846,7 @@ lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logi
             java.util.logging.Logger.getLogger(Login2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1822,6 +1857,8 @@ lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logi
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel No_Ver;
+    private javax.swing.JLabel Ver;
     private javax.swing.JButton btnAcceder;
     private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnRecuperar;
