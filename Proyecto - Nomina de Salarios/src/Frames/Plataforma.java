@@ -1,5 +1,7 @@
 package Frames;
 
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -92,8 +94,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
     public static String constante = "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
-    String Usuario = "brayan";
-    String Clave = "cifuentes";
+    String Usuario = "josue";
+    String Clave = "zapata";
 
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
     String URL= "D:\\Proyectos_Git\\Nueva_Version_Nomina\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
@@ -3760,6 +3762,11 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
         txtContraseñaUser.setBackground(new java.awt.Color(231, 231, 231));
         txtContraseñaUser.setBorder(null);
+        txtContraseñaUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtContraseñaUserKeyReleased(evt);
+            }
+        });
         pnlContraseña.add(txtContraseñaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, 40));
 
         Ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/Visible.png"))); // NOI18N
@@ -3790,6 +3797,11 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
         txtConfirmarUser.setBackground(new java.awt.Color(231, 231, 231));
         txtConfirmarUser.setBorder(null);
+        txtConfirmarUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtConfirmarUserKeyReleased(evt);
+            }
+        });
         pnlConfirmar.add(txtConfirmarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, 40));
 
         Ver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login/Visible.png"))); // NOI18N
@@ -3925,7 +3937,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                 txtConfirmarUser2KeyReleased(evt);
             }
         });
-        pnlIngreso_Usuarios.add(txtConfirmarUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 250, 40));
+        pnlIngreso_Usuarios.add(txtConfirmarUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 250, 40));
 
         pnlCuerpoUsuarios.add(pnlIngreso_Usuarios, "card4");
 
@@ -8116,12 +8128,12 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser2.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser2.getText().trim().equals("")))) {
             btnRegistrar.setEnabled(true);
             txtContraseñaUser.setForeground(new Color(0, 204, 102));
-            txtConfirmarUser2.setForeground(new Color(0, 204, 102));
+            txtConfirmarUser.setForeground(new Color(0, 204, 102));
 
         } else {
             btnRegistrar.setEnabled(false);
             txtContraseñaUser.setForeground(Color.RED);
-            txtConfirmarUser2.setForeground(Color.RED);
+            txtConfirmarUser.setForeground(Color.RED);
         }
     }//GEN-LAST:event_txtConfirmarUser2KeyReleased
 
@@ -9618,7 +9630,6 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                             if (n == cantPlanillaGen - 1) {
                                 iggs = Float.parseFloat(BasedeDatosEmpleados[i][6]);
                             }
-
                         }
                     }
                 } else {
@@ -9626,18 +9637,29 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
                 }
 
                 for (int j = 0; j < cantpuestos; j++) {
-                    if (BasedeDatosPuestos[j][0].equals(BasedeDatosEmpleados[i][7])) {
+                    if (BasedeDatosPuestos[j][0].equals(BasedeDatosEmpleados[i][7])) 
+                    {
                         if (BasedeDatosPuestos[j][1].equals("Representante Legal")) {
                             txtValorConcepto.setText("No se le puede cobrar iggs");
                             txt_IDConceptoPlanilla.setText("");
                             j = cantpuestos;
-                        } 
-                    }else{
-                        if (j == cantpuestos - 1) {
-                                txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
-                                txt_IDConceptoPlanilla.setText("1");
-                            }
+                        }
+                        else if(txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosEmpleados[i][0]))
+                        {
+                            txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
+                            txt_IDConceptoPlanilla.setText("1");
+                        }
                     }
+                    /*else
+                    {
+                     
+                            if (j == cantpuestos - 1) {
+                                //txtValorConcepto.setText(Float.toString((float) (iggs * 0.0483)));
+                                //txt_IDConceptoPlanilla.setText("1");
+                                
+                            }
+
+                    }*/
                     
 
                 }
@@ -10194,6 +10216,34 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         No_Ver1.setVisible(false);
         No_Ver1.setEnabled(false);
     }//GEN-LAST:event_No_Ver1MouseClicked
+
+    private void txtContraseñaUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaUserKeyReleased
+        // TODO add your handling code here:
+        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser.getText().trim().equals("")))) {
+            btnRegistrar.setEnabled(true);
+            txtContraseñaUser.setForeground(new Color(0, 204, 102));
+            txtConfirmarUser.setForeground(new Color(0, 204, 102));
+
+        } else {
+            btnRegistrar.setEnabled(false);
+            txtContraseñaUser.setForeground(Color.RED);
+            txtConfirmarUser.setForeground(Color.RED);
+        }
+    }//GEN-LAST:event_txtContraseñaUserKeyReleased
+
+    private void txtConfirmarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfirmarUserKeyReleased
+        // TODO add your handling code here:
+        if (txtContraseñaUser.getText().trim().equals(txtConfirmarUser.getText().trim()) && (!(txtContraseñaUser.getText().trim().equals("")) && !(txtConfirmarUser.getText().trim().equals("")))) {
+            btnRegistrar.setEnabled(true);
+            txtContraseñaUser.setForeground(new Color(0, 204, 102));
+            txtConfirmarUser.setForeground(new Color(0, 204, 102));
+
+        } else {
+            btnRegistrar.setEnabled(false);
+            txtContraseñaUser.setForeground(Color.RED);
+            txtConfirmarUser.setForeground(Color.RED);
+        }
+    }//GEN-LAST:event_txtConfirmarUserKeyReleased
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
