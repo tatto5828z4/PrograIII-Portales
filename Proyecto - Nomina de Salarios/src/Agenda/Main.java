@@ -1991,7 +1991,7 @@ public class Main extends javax.swing.JFrame {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "ERROR DE CONEXION!\nError de registro en la base de datos!");
             }
-            cc.desconectar();
+            //cc.desconectar();
             //cc.desconectar();
         }
     }//GEN-LAST:event_jButtonAceptarActionPerformed
