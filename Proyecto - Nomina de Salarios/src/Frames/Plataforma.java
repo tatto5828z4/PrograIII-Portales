@@ -95,8 +95,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
     public static String constante = "C:\\Users\\jorgi\\Documents\\mundo\\Proyecto - Nomina de Salarios\\src\\Imagenes";
     String Base_de_Datos = "jdbc:mysql://35.225.163.187/Nomina_de_Empleados";
-    String Usuario = "jorge";
-    String Clave = "condominio";
+    String Usuario = "brayan";
+    String Clave = "cifuentes";
 
     //Esta variable la cambian es la direccion del manual, el word esta en la carpeta src
     String URL= "C:\\Users\\jorgi\\Documents\\mundo\\Proyecto - Nomina de Salarios\\src\\Manual-de-usuario.docx";
@@ -1227,6 +1227,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         jScrollPane15 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        lbl_nombrepuesto = new javax.swing.JLabel();
+        lbl_nombredepto = new javax.swing.JLabel();
         pnlModificarEmpleado = new javax.swing.JPanel();
         lblModificar_NominaEmpleado = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
@@ -5417,10 +5419,20 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
         cbDepartamento.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         cbDepartamento.setFocusable(false);
+        cbDepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbDepartamentoActionPerformed(evt);
+            }
+        });
         pnlIngresoEmpleado.add(cbDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 190, -1));
 
         cbPuesto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         cbPuesto.setFocusable(false);
+        cbPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPuestoActionPerformed(evt);
+            }
+        });
         pnlIngresoEmpleado.add(cbPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 190, -1));
 
         jTextArea1.setColumns(20);
@@ -5433,6 +5445,16 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setText(".Q");
         pnlIngresoEmpleado.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, -1, -1));
+
+        lbl_nombrepuesto.setForeground(new java.awt.Color(153, 153, 153));
+        lbl_nombrepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_nombrepuesto.setText("Nombre");
+        pnlIngresoEmpleado.add(lbl_nombrepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 190, -1));
+
+        lbl_nombredepto.setForeground(new java.awt.Color(153, 153, 153));
+        lbl_nombredepto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_nombredepto.setText("Nombre");
+        pnlIngresoEmpleado.add(lbl_nombredepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, 190, -1));
 
         pnlModificarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         pnlModificarEmpleado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -10252,6 +10274,35 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
             txtConfirmarUser.setForeground(Color.RED);
         }
     }//GEN-LAST:event_txtConfirmarUserKeyReleased
+
+    private void cbPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPuestoActionPerformed
+        // TODO add your handling code here:
+        
+        String valor = (String) cbPuesto.getSelectedItem();
+        //txt_IDConceptoPlanilla.setText(valor);
+        
+        for (int i = 0; i < BasedeDatosPuestos.length; i++) {
+            if (valor.equals(BasedeDatosPuestos[i][0]) ) {
+                
+                 lbl_nombrepuesto.setText(BasedeDatosPuestos[i][1]);
+            }
+        }
+    }//GEN-LAST:event_cbPuestoActionPerformed
+
+    private void cbDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDepartamentoActionPerformed
+        // TODO add your handling code here:
+        
+        String valor = (String) cbDepartamento.getSelectedItem();
+        //txt_IDConceptoPlanilla.setText(valor);
+        
+        for (int i = 0; i < BasedeDatosDep.length; i++) {
+            if (valor.equals(BasedeDatosDep[i][0]) ) {
+                
+                 lbl_nombredepto.setText(BasedeDatosDep[i][1]);
+            }
+        }
+        
+    }//GEN-LAST:event_cbDepartamentoActionPerformed
     public void AgregarItemsdeTipo() {
         cbTipo.removeAllItems();
         cbTipo1.removeAllItems();
@@ -11470,6 +11521,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel lblVeces;
     private javax.swing.JLabel lbl_concepto;
     private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_nombredepto;
+    private javax.swing.JLabel lbl_nombrepuesto;
     private javax.swing.JLabel lbl_reloj;
     private javax.swing.JLabel lbllogouser;
     private javax.swing.JLabel lblname;
