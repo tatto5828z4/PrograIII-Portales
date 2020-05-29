@@ -9225,7 +9225,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
             boolean EmpleadoPG = false;
             try {
                 Connection cn1 = DriverManager.getConnection(Base_de_Datos, Usuario, Clave);
-                PreparedStatement pst1 = cn1.prepareStatement("select * from PlanillaGen where id_planillaGen = ?");
+                PreparedStatement pst1 = cn1.prepareStatement("select * from PlanillaGen where id_empleado = ?");
                 pst1.setString(1, txt_IDEmpleadoPlanilla.getText().trim());
 
                 ResultSet rs = pst1.executeQuery();
@@ -9292,7 +9292,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
             } else {
                 int cant3 = CantidadDeRegistros("PlanillaGen");
                 for (int i = 0; i < cant3; i++) {
-                    if (txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosPlanillaGen[i][0])) {
+                    if (txt_IDEmpleadoPlanilla.getText().trim().equals(BasedeDatosPlanillaGen[i][1])) {//Brayan Mula
                         TotalPercepcion = Float.parseFloat(BasedeDatosPlanillaGen[i][2]);
                         TotalDeducion = Float.parseFloat(BasedeDatosPlanillaGen[i][3]);
                         i = cant3;
@@ -9325,8 +9325,7 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
+        
     }//GEN-LAST:event_jButton_InsertarE2ActionPerformed
 
     private void txt_BuscarECaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_BuscarECaretUpdate
