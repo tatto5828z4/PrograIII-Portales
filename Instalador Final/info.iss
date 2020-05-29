@@ -3,29 +3,28 @@
 
 #define MyAppName "Nomina de Salarios"
 #define MyAppVersion "3.0"
-#define MyAppPublisher "JPLB"
+#define MyAppPublisher "JLPB"
 #define MyAppExeName "Nomina.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{6423E5B4-AAD7-4B23-9F86-0E71D4EAC675}
+AppId={{EE4B2A97-1E2E-477B-8A77-2BAD206B0366}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
-OutputDir=C:\Users\Brayan Cifuentes\Desktop\Instalador Final
+OutputDir=C:\Users\Brayan Cifuentes\Desktop\Instalador TERMINADO
 OutputBaseFilename=Nomina de Salarios
-SetupIconFile=C:\Users\Brayan Cifuentes\Desktop\Intall\Nomina.ico
+SetupIconFile=C:\Users\Brayan Cifuentes\Desktop\Programa Final\Nomina.ico
 Compression=lzma
 SolidCompression=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Tasks]
@@ -33,8 +32,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "C:\Users\Brayan Cifuentes\Desktop\Intall\Nomina.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brayan Cifuentes\Desktop\Intall\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Brayan Cifuentes\Desktop\Programa Final\Nomina.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Brayan Cifuentes\Desktop\Programa Final\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
