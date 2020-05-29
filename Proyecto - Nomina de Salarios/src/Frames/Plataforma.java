@@ -80,6 +80,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
 import Agenda.*;
+import Informes.Formulario;
 /**
  *
  * @author Langas
@@ -1429,6 +1430,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
         cbIDEmpleado = new javax.swing.JComboBox<>();
         jScrollPane25 = new javax.swing.JScrollPane();
         jTextArea5 = new javax.swing.JTextArea();
+        lbl_nombre = new javax.swing.JLabel();
+        lbl_concepto = new javax.swing.JLabel();
 
         jLabel32.setText("jLabel32");
 
@@ -6601,6 +6604,16 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
         pnlTabla.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 480, 100));
 
+        lbl_nombre.setForeground(new java.awt.Color(153, 153, 153));
+        lbl_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_nombre.setText("Nombre");
+        pnlTabla.add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
+
+        lbl_concepto.setForeground(new java.awt.Color(153, 153, 153));
+        lbl_concepto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_concepto.setText("Nombre");
+        pnlTabla.add(lbl_concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, -1));
+
         pnlCuerpoNomina.add(pnlTabla, "card6");
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
@@ -10024,6 +10037,11 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
 
     private void btnIPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIPMouseClicked
         // TODO add your handling code here:
+        
+        //aca
+        Formulario Form= new Formulario();
+        Form.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnIPMouseClicked
 
     private void btnIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIPActionPerformed
@@ -10106,11 +10124,27 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private void cbIDEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbIDEmpleadoActionPerformed
         String valor = (String) cbIDEmpleado.getSelectedItem();
         txt_IDEmpleadoPlanilla.setText(valor);
+        
+        for (int i = 0; i < BasedeDatosEmpleados.length; i++) {
+            if (valor.equals(BasedeDatosEmpleados[i][0]) ) {
+                
+                 lbl_nombre.setText(BasedeDatosEmpleados[i][1]);
+            }
+        }
+        
     }//GEN-LAST:event_cbIDEmpleadoActionPerformed
 
     private void cbIDConceptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbIDConceptoActionPerformed
         String valor = (String) cbIDConcepto.getSelectedItem();
         txt_IDConceptoPlanilla.setText(valor);
+        
+        for (int i = 0; i < BasedeDatosConceptos.length; i++) {
+            if (valor.equals(BasedeDatosConceptos[i][0]) ) {
+                
+                 lbl_concepto.setText(BasedeDatosConceptos[i][1]);
+            }
+        }
+        
     }//GEN-LAST:event_cbIDConceptoActionPerformed
 
     private void txt_IDEmpleadoPlanillaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_IDEmpleadoPlanillaKeyTyped
@@ -11434,6 +11468,8 @@ public class Plataforma extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel lblUsernameInicio;
     private javax.swing.JLabel lblUsuarios;
     private javax.swing.JLabel lblVeces;
+    private javax.swing.JLabel lbl_concepto;
+    private javax.swing.JLabel lbl_nombre;
     private javax.swing.JLabel lbl_reloj;
     private javax.swing.JLabel lbllogouser;
     private javax.swing.JLabel lblname;
